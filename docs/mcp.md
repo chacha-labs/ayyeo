@@ -393,3 +393,7 @@ require full instance-administrator authority; a read-only or project-scoped key
 cannot read private conversations. New/resume preserve the prior conversation.
 Delete removes its transcript and compaction notes, retaining shared project
 notes. Native Aero can read history but cannot invoke conversation mutations.
+
+### Local Codex subscription connection
+
+The setup toolkit includes `canonry_codex_status`, `canonry_codex_connect` (optional `model`), `canonry_codex_refresh`, and `canonry_codex_disconnect`. Every operation requires an instance-administrator credential. They use the same API operations as `cnry settings codex`. No tokens or executable paths are accepted. Connect reuses the host CLI subscription; disconnect disables Canonry only. Select provider `codex` explicitly for Simple runs or Advanced plan execution. Hosted instances report unavailable.

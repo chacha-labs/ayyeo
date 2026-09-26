@@ -1,0 +1,13 @@
+{
+  "bootstrapped": true,
+  "status": "updated",
+  "changed": true,
+  "configPath": "$LOCAL_CONFIG/baselines/kolkata-20260926T210118Z/config.yaml",
+  "databasePath": "$LOCAL_CONFIG/baselines/kolkata-20260926T210118Z/data.db",
+  "apiUrl": "http://127.0.0.1:59331",
+  "providers": [
+    "gemini",
+    "claude"
+  ],
+  "googleConfigured": false
+}

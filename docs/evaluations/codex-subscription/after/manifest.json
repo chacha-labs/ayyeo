@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "project": "baseline-aurora-solar",
+  "displayName": "Aurora Solar",
+  "canonicalDomain": "aurorasolar.com",
+  "aliases": [
+    "Aurora Solar"
+  ],
+  "country": "US",
+  "language": "en",
+  "location": null,
+  "providers": {
+    "gemini": {
+      "model": "gemini-2.5-flash",
+      "quota": {
+        "maxConcurrency": 1,
+        "maxRequestsPerMinute": 6,
+        "maxRequestsPerDay": 20
+      }
+    },
+    "claude": {
+      "model": "claude-sonnet-4-6",
+      "quota": {
+        "maxConcurrency": 1,
+        "maxRequestsPerMinute": 6,
+        "maxRequestsPerDay": 20
+      }
+    },
+    "codex": {
+      "model": "gpt-6-astra",
+      "quota": {
+        "maxConcurrency": 1,
+        "maxRequestsPerMinute": 6,
+        "maxRequestsPerDay": 100
+      }
+    }
+  },
+  "queries": [
+    {
+      "key": "q01",
+      "text": "what is automated solar proposal software",
+      "sourceIndex": 0
+    },
+    {
+      "key": "q02",
+      "text": "how does solar CRM integration improve sales",
+      "sourceIndex": 1
+    },
+    {
+      "key": "q03",
+      "text": "why is accurate solar system design crucial for proposals",
+      "sourceIndex": 2
+    },
+    {
+      "key": "q04",
+      "text": "benefits of digital solar sales tools for large teams",
+      "sourceIndex": 3
+    },
+    {
+      "key": "q05",
+      "text": "understanding ROI of solar proposal software",
+      "sourceIndex": 4
+    },
+    {
+      "key": "q06",
+      "text": "challenges of manual solar quoting for growing businesses",
+      "sourceIndex": 5
+    },
+    {
+      "key": "q07",
+      "text": "best solar quoting software for 20-person sales team",
+      "sourceIndex": 6
+    },
+    {
+      "key": "q08",
+      "text": "top residential solar proposal tools for enterprise",
+      "sourceIndex": 7
+    },
+    {
+      "key": "q09",
+      "text": "leading solar design and proposal software",
+      "sourceIndex": 8
+    },
+    {
+      "key": "q10",
+      "text": "solar sales software for large residential installers",
+      "sourceIndex": 9
+    },
+    {
+      "key": "q11",
+      "text": "cloud-based solar proposal solutions for sales managers",
+      "sourceIndex": 10
+    },
+    {
+      "key": "q12",
+      "text": "reputable solar sales quoting platforms",
+      "sourceIndex": 11
+    },
+    {
+      "key": "q13",
+      "text": "Aurora Solar website",
+      "sourceIndex": 14
+    },
+    {
+      "key": "q14",
+      "text": "solar proposal software comparison sites",
+      "sourceIndex": 17
+    },
+    {
+      "key": "q15",
+      "text": "Aurora Solar vs EnergyLink for residential solar",
+      "sourceIndex": 18
+    },
+    {
+      "key": "q16",
+      "text": "Enact Systems vs Solo for solar proposals",
+      "sourceIndex": 20
+    },
+    {
+      "key": "q17",
+      "text": "what are alternatives to manual solar quoting",
+      "sourceIndex": 21
+    },
+    {
+      "key": "q18",
+      "text": "which solar design software integrates best with CRM",
+      "sourceIndex": 22
+    },
+    {
+      "key": "q19",
+      "text": "best solar proposal solution: local install vs cloud",
+      "sourceIndex": 23
+    },
+    {
+      "key": "q20",
+      "text": "solar proposal software pricing for enterprise",
+      "sourceIndex": 24
+    }
+  ],
+  "querySource": "packages/api-routes/test/fixtures/discovery-replay/b2b-saas.json",
+  "sourceSha256": "932960d2c0cd2ed3554a7633c0766221962c2162007a0b3d18f281343c1942c0",
+  "execution": "One 20-query mixed-provider pass, followed by two 20-query Codex-only passes; native SDK retries unchanged.",
+  "trigger": "probe",
+  "commit": "ce28687c960cb27f6e173cc56510b33b44a0f0b3",
+  "limitations": [
+    "Simple portfolio live workload; Advanced parity covered by automated execution tests.",
+    "Two failed Codex answers have error records but no saved raw answer body.",
+    "Verbatim-program AST hardening was added after this workload and verified with pilot-program fixtures and a separate final-build live smoke."
+  ],
+  "phase": "after-change",
+  "baselineSha256": "b121e36055930093bb9ddae2263300f0475cb5badef75f1485960298f33e4fca",
+  "codexModel": "gpt-6-astra",
+  "runtimeVersion": "0.157.1",
+  "plannedPasses": {
+    "gemini": 1,
+    "claude": 1,
+    "codex": 3
+  },
+  "logicalQueryBudgets": {
+    "gemini": 20,
+    "claude": 20,
+    "codex": 60
+  },
+  "sha256": "96e0afb3d19e0f064b7821ece4631f43b02ed8fb9f1b995ba85f65b018aed4f9"
+}

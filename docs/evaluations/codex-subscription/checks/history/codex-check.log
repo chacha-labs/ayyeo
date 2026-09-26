@@ -1,0 +1,39 @@
+
+> canonry@5.21.0 check $WORKSPACE
+> node scripts/lint-changed.mjs
+
+lint: checking 54 changed file(s)
+
+$WORKSPACE/packages/api-routes/src/openapi.ts
+  1620:7  warning  Unexpected 'todo' comment: 'TODO: Define `ProjectDeletePreviewDto`...'    no-warning-comments
+  1706:7  warning  Unexpected 'todo' comment: 'TODO: Define `ProjectLocationsResponse`...'   no-warning-comments
+  1933:7  warning  Unexpected 'todo' comment: 'TODO: Add `QueriesReplacePreviewDto` Zod...'  no-warning-comments
+  2069:7  warning  Unexpected 'todo' comment: 'TODO: Add `KeywordGenerateResponse` Zod...'   no-warning-comments
+  2291:7  warning  Unexpected 'todo' comment: 'TODO: Add `TriggerAllRunsResponse` Zod...'    no-warning-comments
+  2380:7  warning  Unexpected 'todo' comment: 'TODO: Add `ApplyResultDto` Zod schema in...'  no-warning-comments
+  2446:7  warning  Unexpected 'todo' comment: 'TODO: Add `ProjectTimelineDto` Zod...'        no-warning-comments
+  2468:7  warning  Unexpected 'todo' comment: 'TODO: Add `GapAnalysisDto` Zod schema in...'  no-warning-comments
+  2864:7  warning  Unexpected 'todo' comment: 'TODO: Add `BingSettingsDto` Zod schema...'    no-warning-comments
+  2891:7  warning  Unexpected 'todo' comment: 'TODO: Add `CdpEndpointConfigDto` Zod...'      no-warning-comments
+  3033:7  warning  Unexpected 'todo' comment: 'TODO: Add `NotificationTestResult` Zod...'    no-warning-comments
+  3161:7  warning  Unexpected 'todo' comment: 'TODO: Add `CdpScreenshotResultDto` Zod...'    no-warning-comments
+  3174:7  warning  Unexpected 'todo' comment: 'TODO: Add `BrowserDiffDto` Zod schema in...'  no-warning-comments
+  5339:7  warning  Unexpected 'todo' comment: 'TODO: Add `WordpressSeoStateDto` to the...'   no-warning-comments
+  5538:7  warning  Unexpected 'todo' comment: 'TODO: Add `WordpressSiteStatusDto` to...'     no-warning-comments
+  5615:7  warning  Unexpected 'todo' comment: 'TODO: Add `GaConnectResponse` Zod schema...'  no-warning-comments
+  5731:7  warning  Unexpected 'todo' comment: 'TODO: Add `GaTrafficResponse` Zod schema...'  no-warning-comments
+  5782:7  warning  Unexpected 'todo' comment: 'TODO: Add...'                                 no-warning-comments
+  5795:7  warning  Unexpected 'todo' comment: 'TODO: Add `GaAttributionTrendResponse`...'    no-warning-comments
+  5820:7  warning  Unexpected 'todo' comment: 'TODO: Add `GaCoverageResponse` Zod...'        no-warning-comments
+  5842:7  warning  Unexpected 'todo' comment: 'TODO: Add `InsightDto` Zod schema in...'      no-warning-comments
+  5857:7  warning  Unexpected 'todo' comment: 'TODO: Add `InsightDto` Zod schema in...'      no-warning-comments
+  5872:7  warning  Unexpected 'todo' comment: 'TODO: Add `InsightDto` Zod schema in...'      no-warning-comments
+  6357:7  warning  Unexpected 'todo' comment: 'TODO: Add `BacklinksCachePruneResultDto`...'  no-warning-comments
+  6809:7  warning  Unexpected 'todo' comment: 'TODO: Add `DiscoveryRunResponse` Zod...'      no-warning-comments
+  7336:7  warning  Unexpected 'todo' comment: 'TODO: Add `AgentTranscriptDto` Zod...'        no-warning-comments
+  7364:7  warning  Unexpected 'todo' comment: 'TODO: Add `AgentMemoryListResponse` Zod...'   no-warning-comments
+  7393:7  warning  Unexpected 'todo' comment: 'TODO: Add `AgentMemoryEntryDto` Zod...'       no-warning-comments
+
+✖ 28 problems (0 errors, 28 warnings)
+
+lint: passed (51 files, 47 cached, 1.35s)

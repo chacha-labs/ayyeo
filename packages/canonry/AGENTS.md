@@ -92,7 +92,7 @@ Rules for `canonry-mcp`, hosted MCP catalogs, guidance generation, MCP parity, a
 File-level rules for the MCP pieces in this package:
 
 - `src/mcp/server.ts` — `createCanonryMcpServer` registers all API tools, then disables non-core tiers unless `--eager`.
-- `src/mcp/tool-registry.ts` — all 188 API tools, including Site Health semantic graph and page-audit evidence reads, sitemap Target discovery, and revision-pinned measurement reports, each tagged with a `tier` (`core` or one of the toolkit names).
+- `src/mcp/tool-registry.ts` — all 232 API tools, including Site Health semantic graph and page-audit evidence reads, sitemap Target discovery, and revision-pinned measurement reports, each tagged with a `tier` (`core` or one of the toolkit names).
 - `src/mcp/cli.ts` — `canonry-mcp` stdio entrypoint; parses `--read-only`, `--eager`, `--scope`, plus `CANONRY_MCP_*` env. `resolveEffectiveScope()` best-effort probes `GET /keys/self` at startup and forces `read-only` when the configured key is read-only (auto-restricts the catalog to read tools; falls back to the flag scope on any probe failure).
 - `src/mcp/operations-guide.ts` — compact intent routing filtered against the connection's loaded tools; generated source is `docs/agent-operations/v1.md`. No provider calls or permission grants.
 - `src/commands/mcp.ts` — MCP client install helpers: `mcp install`, `mcp config` (writes to client config files only — separate from the `canonry-mcp` stdio bin). `src/mcp-clients.ts` is the registry of supported MCP clients (Claude Desktop, Cursor, Codex) — config-path resolvers and format hints used by `mcp install`/`mcp config`.
@@ -295,6 +295,10 @@ The command lives in `src/commands/backfill.ts` (historical recomputation for an
 ### Provider registration
 
 Providers are registered at server startup in `server.ts`. Each provider adapter (from `packages/provider-*`) is imported and added to the `ProviderRegistry`. Projects reference providers by name.
+
+### Codex subscription connection
+
+`src/codex-connection.ts` owns local opt-in connection state and non-secret config. `settings codex status|connect|refresh|disconnect` uses the typed API client; disconnect never logs out the shared CLI. `provider-codex` owns the managed runtime and source-evidence gate. Codex is excluded from implicit provider selections; preserve explicit Simple and Advanced scope. See `docs/providers/codex.md`.
 
 ### Health endpoint
 

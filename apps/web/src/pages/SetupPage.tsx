@@ -1,3 +1,4 @@
+import { isImplicitProvider } from '@ainyc/canonry-contracts'
 import { useCallback, useEffect, useRef, useState, type ReactNode, type RefCallback } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
@@ -432,7 +433,7 @@ function ReadySetupPage({
   const readyProviders = settings.providerStatuses.filter(p => p.state === 'ready')
   const projectProviders = resumeProject?.project.providers.map(normalizeProviderName) ?? []
   const runnableApiProviders = readyProviders.filter(provider => (
-    projectProviders.length === 0 || projectProviders.includes(normalizeProviderName(provider.name))
+    projectProviders.length === 0 ? isImplicitProvider(normalizeProviderName(provider.name)) : projectProviders.includes(normalizeProviderName(provider.name))
   ))
   const configuredApiProviders = readyProviders.map(provider => normalizeProviderName(provider.name))
   const selectedApiProviderReady = runnableApiProviders.length > 0

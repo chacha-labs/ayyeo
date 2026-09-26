@@ -5,7 +5,7 @@
 
 Canonry is an **agent-first (CLI, MCP, API), open-source AEO operating platform with a comprehensive web UI.** Track AI visibility over time, investigate changes across search and traffic, and measure progress after you or your agent acts.
 
-**Self-hosted, using SQLite, with your own (BYOK) provider keys.** The web UI and your agent see the same evidence.
+**Self-hosted, using SQLite, with your own provider API keys or a local Codex subscription connection.** The web UI and your agent see the same evidence.
 
 [Live UI Demo](https://custom-demo.canonry.ai/projects/summit-roofing) · [Quick start](#quick-start) · [Evidence](#explore-the-evidence) · [Actions](#act-on-the-evidence) · [Integrations](#integrations) · [Docs](#documentation) · [Support](#support)
 
@@ -129,6 +129,8 @@ For an existing project, configure a provider with your own key.
 | Claude | [Anthropic Console](https://console.anthropic.com/settings/keys) | `ANTHROPIC_API_KEY` |
 | Perplexity | [Perplexity settings](https://www.perplexity.ai/settings/api) | `PERPLEXITY_API_KEY` |
 | Local model | Any OpenAI-compatible endpoint | `LOCAL_BASE_URL` |
+
+For local Codex subscription access, sign into the Codex CLI on the server machine with `codex login`, then run `cnry settings codex connect`. Select it explicitly with `cnry run my-site --provider codex --wait`. Existing API providers remain available. See [Codex connection and compatibility](docs/providers/codex.md).
 
 Add the queries that matter to your project:
 

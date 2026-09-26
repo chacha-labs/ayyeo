@@ -1,0 +1,26 @@
+{
+  "artifactDir": "$WORKSPACE/.context/baselines/20260926T210118Z",
+  "port": 59331,
+  "commit": "ce28687c960cb27f6e173cc56510b33b44a0f0b3",
+  "createdAt": "20260926T210118Z",
+  "version": "5.20.1",
+  "nodeVersion": "v26.0.0",
+  "pnpmVersion": "10.28.2",
+  "lockfileSha256": "7a18bcdc62d2a24d5da95cdd2d8dc73a2e623b53267030a41c3b95c59ef5e985",
+  "builtFiles": {
+    "packages/canonry/dist/chunk-5FKR2K76.js": "2efae1c5a73a889c569c613519b4c03d55b4e3acbbdba5d44c64e9f2b2b94bcd",
+    "packages/canonry/dist/chunk-EM7ZNUVO.js": "497ed2609a27a629470524fbc05a71b3930919c8dbf73192ac8bd70ff2daf387",
+    "packages/canonry/dist/chunk-PAZVNFQ3.js": "8ead06159cacfd0962e145807e9b06813bf28628c1ed7a3410c0a1528391773e",
+    "packages/canonry/dist/chunk-QF7SY7AF.js": "c3175a0c678993fa9173fa2f694615ad12e4f754707ad87cfedff852a9d80382",
+    "packages/canonry/dist/chunk-RB2F4D3Z.js": "20db0df23279d2fd1acf446ca672ae45a07e07771c616e3f77ff76326e39fe28",
+    "packages/canonry/dist/chunk-S2RDUO6K.js": "7b2793a131ebbc45b1a83b048c6c54ab7623956ebfb24622aa74e57019b1856c",
+    "packages/canonry/dist/chunk-TSFKNQ5X.js": "e5331b1547401443305d9b5980ec6d37d23582f34794912234b2eb4c1f5ae941",
+    "packages/canonry/dist/chunk-XBGPHZKA.js": "3d74674c4b58804f28e4cf7a27014074cafdbbe6083b2ba8803e6f63af66e107",
+    "packages/canonry/dist/cli.js": "b309e1664d80b029398edcdbad67cf3671f2c6e13e5c221fda3253b728c8ee33",
+    "packages/canonry/dist/demo-server-UOIOPFAV.js": "a28afa29429a527f4c99dfd6f2bbd0738e3e2ae20c811924d702857714cff7d2",
+    "packages/canonry/dist/index.js": "c3ecb85755b5348b50d54995fb393021f43f3bbf566e17dc5c209c1c602fb0d3",
+    "packages/canonry/dist/intelligence-service-73OEZNLJ.js": "99c69dbf12bd6970de091bf3961a48c1b2bcbd32aff818331391f87c2fdbd9e1",
+    "packages/canonry/dist/mcp.js": "4a6e43d639967d16adc77bfa6b3beef4a2e2bff49d106a6910e3e4d4b76d8ad5"
+  },
+  "workingTreeClean": true
+}

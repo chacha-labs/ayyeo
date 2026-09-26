@@ -1,0 +1,30 @@
+import json
+from pathlib import Path
+import sqlite3
+import sys
+
+session = json.loads(Path('.context/codex-acceptance-session.json').read_text())
+database = sqlite3.connect('file:' + str(Path(session['configDir']) / 'data.db') + '?mode=ro', uri=True)
+database.row_factory = sqlite3.Row
+rows = list(database.execute("SELECT s.*, q.query FROM query_snapshots s LEFT JOIN queries q ON q.id=s.query_id WHERE provider='codex' ORDER BY s.created_at,s.id"))
+manifest = json.loads((Path(session['artifactDir']) / 'manifest.json').read_text())
+keys = {item['text']: item['key'] for item in manifest['queries']}
+start = int(sys.argv[1]) if len(sys.argv) > 1 else 0
+count = int(sys.argv[2]) if len(sys.argv) > 2 else 5
+for row in rows[start:start+count]:
+    envelope = json.loads(row['raw_response'])
+    evidence = envelope['apiResponse']
+    print('\nREVIEW', rows.index(row), row['id'], keys[row['query']], row['query'])
+    print('ANSWER:', row['answer_text'])
+    print('CITED SOURCE EVIDENCE:')
+    for source in envelope['groundingSources']:
+        print('URL:', source['uri'])
+        for output in evidence.get('webToolOutputs', []):
+            index = output.find('(' + source['uri'] + ')\n')
+            if index >= 0:
+                end = output.find('--------------------------------------------------------------------------------', index)
+                block = output[index:end if end >= 0 else len(output)]
+                print(block[:int(sys.argv[3]) if len(sys.argv) > 3 else 850].replace('\n', ' '))
+                break
+    print('END REVIEW')
+print('\nSAVED CODEX OBSERVATIONS:', len(rows))

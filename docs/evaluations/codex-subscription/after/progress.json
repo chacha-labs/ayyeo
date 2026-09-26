@@ -1,0 +1,63 @@
+[
+  {
+    "runId": "c17740e4-4d7d-4807-83fe-0f014924ec36",
+    "label": "pass-1",
+    "providers": [
+      "gemini",
+      "claude",
+      "codex"
+    ],
+    "status": "partial",
+    "expectedSnapshots": 60,
+    "savedSnapshots": 59,
+    "elapsedSeconds": 725.24,
+    "counts": {
+      "gemini": 20,
+      "claude": 20,
+      "codex": 19
+    },
+    "error": {
+      "providers": {
+        "codex": {
+          "message": "Codex returned a source link without captured attribution. No observation was recorded."
+        }
+      }
+    }
+  },
+  {
+    "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+    "label": "pass-2",
+    "providers": [
+      "codex"
+    ],
+    "status": "partial",
+    "expectedSnapshots": 20,
+    "savedSnapshots": 19,
+    "elapsedSeconds": 430.7,
+    "counts": {
+      "codex": 19
+    },
+    "error": {
+      "providers": {
+        "codex": {
+          "message": "Codex returned a source link without captured attribution. No observation was recorded."
+        }
+      }
+    }
+  },
+  {
+    "runId": "71e25394-8285-487f-951c-0ffcdd0f0b88",
+    "label": "pass-3",
+    "providers": [
+      "codex"
+    ],
+    "status": "completed",
+    "expectedSnapshots": 20,
+    "savedSnapshots": 20,
+    "elapsedSeconds": 402.45,
+    "counts": {
+      "codex": 20
+    },
+    "error": null
+  }
+]

@@ -24,6 +24,7 @@ flowchart LR
     Registry --> Gemini["provider-gemini"]
     Registry --> OpenAI["provider-openai"]
     Registry --> Claude["provider-claude"]
+    Registry --> Codex["provider-codex: local App Server"]
     Registry --> Perplexity["provider-perplexity"]
     Registry --> CDP["provider-cdp"]
     JobRunner --> SQLite

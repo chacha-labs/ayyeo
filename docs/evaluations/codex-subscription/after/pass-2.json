@@ -1,0 +1,1224 @@
+{
+  "id": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+  "projectId": "702ab87a-1808-43d9-80f8-c63bad61287d",
+  "kind": "answer-visibility",
+  "status": "partial",
+  "trigger": "probe",
+  "location": null,
+  "queries": null,
+  "startedAt": "2026-09-26T22:30:29.964Z",
+  "finishedAt": "2026-09-26T22:37:28.134Z",
+  "error": {
+    "providers": {
+      "codex": {
+        "message": "Codex returned a source link without captured attribution. No observation was recorded."
+      }
+    }
+  },
+  "createdAt": "2026-09-26T22:30:29.962Z",
+  "snapshots": [
+    {
+      "id": "4870fb87-a8d1-4267-aaad-32dd6d65f79d",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "1cbe6932-da42-4356-9c13-37303f59b63e",
+      "query": "Aurora Solar website",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Aurora Solar’s official website — solar design and sales software.",
+      "citedDomains": [
+        "aurorasolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 1,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar official website"
+      ],
+      "createdAt": "2026-09-26T22:30:55.815Z"
+    },
+    {
+      "id": "b2a4f855-ea95-4018-9614-505dde214445",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "6abe6e6d-00bb-4bbf-ac47-cf7b321ed0ea",
+      "query": "Enact Systems vs Solo for solar proposals",
+      "provider": "codex",
+      "citationState": "not-cited",
+      "answerMentioned": false,
+      "visibilityState": "not-visible",
+      "mentionState": "not-mentioned",
+      "answerText": "For residential sales presentations, I’d lean Solo. For an installer-led design-and-proposal workflow, I’d lean Enact. That’s my assessment of their current offerings—not a hands-on benchmark.\n\nKey differences\n\n| Area | Enact Systems | Solo |\n|---|---|---|\n| Main emphasis | Solar/storage design, financial analysis, and customized proposals. | Interactive sales presentations, live pricing changes, financing, and closing. |\n| Proposal workflow | Build the system, model economics, then generate a branded proposal with customized graphs, imagery, and pricing. | Guide the homeowner through an interactive presentation; adjust equipment, pricing, and financing during the appointment. |\n| Design support | 3D roof modeling, shading analysis, and battery sizing within the platform. | Self-service design plus an optional concierge team that builds designs and proposals for you. |\n| Financing and signing | Loan, lease, and PPA modeling; DocuSign support. | Embedded lender applications and e-signatures within the sales flow. |\n| Likely best fit | Teams that want to control design and economics themselves. | Sales organizations prioritizing consistent presentations and reducing proposal-preparation work. |\n\nFeature sources: Enact’s platform, Solo Solar Studio, and Solo’s concierge service.\n\nPricing\n\nEnact: Lists $279/month billed annually, or $299 month-to-month for two users, with unlimited residential projects/proposals and 10 new commercial projects monthly. Engineering and asset management are separately priced. Enact pricing\n\nSolo: Its current pricing page doesn’t publish dollar amounts. Plans vary by usage, support, and scale; unlimited users and onboarding are included. Get a written quote covering self-service, concierge designs, revisions, and integrations. Solo pricing\n\nMy recommendation\n\nChoose Solo if:\n\nReps present live and need to change pricing or financing immediately.\n\nYou want outsourced proposal/design capacity.\n\nStandardizing the sales process across multiple reps matters most.\n\nChoose Enact if:\n\nYour team does its own design and financial modeling.\n\nYou handle a mix of residential and commercial projects.\n\nYou prefer a published subscription price with unlimited residential proposals.\n\nDon’t decide on proposal appearance alone. Have both vendors model the same three real jobs and compare production estimates, utility assumptions, battery savings, revision speed, and total cost—including staff time. Their marketing doesn’t establish which is more accurate.\n\nAre you selling in Canada or the U.S., and roughly how many proposals per month? Those details could change the recommendation substantially.",
+      "citedDomains": [
+        "enact.solar",
+        "gosolo.io"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://enact.solar/providers/",
+          "title": "For Providers | ENACT"
+        },
+        {
+          "uri": "https://gosolo.io/solar-studio/",
+          "title": "Solar Sales Software | Interactive Proposals & Financing"
+        },
+        {
+          "uri": "https://gosolo.io/solar-studio/solar-concierge/",
+          "title": "Done For You Solar Proposal Service | Solo Concierge"
+        },
+        {
+          "uri": "https://enact.solar/providers/provider-pricing/",
+          "title": "Installer Solar Software Pricing | ENACT"
+        },
+        {
+          "uri": "https://gosolo.io/pricing/",
+          "title": "Pricing - New 2026 - Solar Proposal and Growth Software | Solo"
+        }
+      ],
+      "searchQueries": [
+        "Enact Systems solar proposal software features pricing",
+        "Solo solar proposal software gosolo pricing features",
+        "site.gosolo.io \"Solar Studio\" \"On Demand\"",
+        "site.enact.solar pricing $279",
+        "site.enact.solar \"279\" \"299\"",
+        "site.gosolo.io \"On Demand Proposals\" \"minutes\""
+      ],
+      "createdAt": "2026-09-26T22:31:20.537Z"
+    },
+    {
+      "id": "196db7d6-2101-4208-9b3a-cb38b5d790a4",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "562110ea-8d6a-4234-926b-6579c21e2367",
+      "query": "benefits of digital solar sales tools for large teams",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": false,
+      "visibilityState": "not-visible",
+      "mentionState": "not-mentioned",
+      "answerText": "Benefits of digital solar sales tools for large teams\n\nFor large solar sales organizations, the biggest potential benefit is handling more opportunities without multiplying administrative work or losing consistency across reps and branches.\n\n| Benefit | Why it matters for large teams |\n|---|---|\n| Faster proposals | Automated designs, production estimates, and proposal generation reduce repetitive preparation, giving reps more time with customers. Aurora sales tools |\n| Consistent sales materials | Centrally managed proposal templates help keep branding and content consistent across offices and dealer partners. Aurora proposal documentation |\n| Clearer accountability | Shared customer records, assigned actions, due dates, and project stages help managers identify overdue work and clarify ownership. OpenSolar CRM |\n| Smoother departmental handoffs | Centralized documents and CRM integrations can reduce duplicate data entry and information gaps between sales, design, and installation teams. OpenSolar CRM |\n| Easier customer decisions and follow-up | Interactive proposals let customers compare system and payment options, sign digitally, and engage remotely. Proposal-view notifications help reps time follow-ups. OpenSolar proposals |\n| Stronger control as teams grow | Role-based permissions, team-specific project visibility, and controls over pricing access help manage distributed sales teams and external dealers. Aurora enterprise features |\n| Easier onboarding | Guided sales workflows can reduce the amount of software and design expertise new reps need before preparing proposals. Aurora sales tools |\n\nMeasure the payoff: Track proposal turnaround time, administrative hours per rep, overdue follow-ups, conversion rates, and post-sale revisions before and after rollout.\n\nThese are potential operational benefits—not guaranteed sales improvements. Results depend on adoption, integration quality, and accurate design and pricing inputs.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/aurora-for-sales/",
+          "title": "Aurora for Sales Teams | Aurora Solar"
+        },
+        {
+          "uri": "https://docs.aurorasolar.com/reference/proposals",
+          "title": "Proposals"
+        },
+        {
+          "uri": "https://www.opensolar.com/project-management-crm/",
+          "title": "Project Management CRM | Streamline Solar Business Operations | OpenSolar"
+        },
+        {
+          "uri": "https://www.opensolar.com/proposals/",
+          "title": "OpenSolar Proposals: Customizable, Interactive Solar Sales"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        }
+      ],
+      "searchQueries": [
+        "site.aurorasolar.com enterprise solar sales tools teams proposals CRM",
+        "site.opensolar.com teams permissions CRM solar sales proposals",
+        "site.opensolar.com CRM automated workflows proposal tracking solar"
+      ],
+      "createdAt": "2026-09-26T22:31:42.829Z"
+    },
+    {
+      "id": "b0b8a089-2e2a-4706-9eb5-d340595ad57f",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "b05439a4-6d56-402a-96a4-7b3a47df4a01",
+      "query": "best solar proposal solution: local install vs cloud",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Assuming you mean software for creating solar sales proposals: I’d choose cloud for most installers, and local software for engineering-heavy work.\n\nMy shortlist\n\n| Best fit | Recommendation | Why |\n|---|---|---|\n| Best starting point / value | OpenSolar — cloud | Combines design, branded interactive proposals, CRM, e-signatures and payments. The core platform is free; API access and supported external connectors now carry charges. Features, pricing caveat |\n| Paid residential sales platform | Aurora Solar — cloud | Worth evaluating when advanced roof/shading modeling and structured sales workflows matter. Basic is listed at $159/user/month, Premium at $259, with annual discounts. Plans and features |\n| Best local-install candidate | PV*SOL premium — Windows | Detailed 3D design and simulation, with customizable customer presentations exported to PDF or Word. Better suited to technical proposals than an interactive sales workflow. Product, presentation capabilities |\n| Commercial projects | HelioScope Pro — cloud | Combines commercial design, financial modeling and sales proposals; the listed Pro plan supports designs up to 5 MW DC. Features and pricing |\n\nLocal install vs cloud\n\nChoose cloud when: multiple people prepare quotes, you sell remotely or on tablets, and customers need interactive proposals and online acceptance. OpenSolar’s integrated workflow is a good example. OpenSolar\n\nChoose local when: desktop modeling and editable technical deliverables matter more than integrated sales tools. You’ll need to manage your own file-sharing and backup process. Local does not automatically mean fully offline: PV*SOL lists internet access as a requirement. PV*SOL requirements\n\nMy recommendation: trial OpenSolar first, using three real projects. Compare proposal quality, preparation time and savings assumptions against Aurora before paying for an upgrade. Choose PV*SOL premium if local installation is a firm requirement.\n\nWhat country are you quoting in, and is this residential or commercial? Those two details would narrow the recommendation substantially.",
+      "citedDomains": [
+        "opensolar.com",
+        "aurorasolar.com",
+        "valentin-software.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 6,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        },
+        {
+          "uri": "https://www.opensolar.com/post/free-platform-data-export-pricing/",
+          "title": "OpenSolar Stays Free. Pay Only for API Access and App Connectors | OpenSolar"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://valentin-software.com/produkte/pvsol-premium/",
+          "title": "PV*SOL premium | Planungssoftware für Photovoltaikanlagen"
+        },
+        {
+          "uri": "https://help.valentin-software.com/pvsol/en/pages/presentation/",
+          "title": "Presentation :: PV*SOL® help"
+        },
+        {
+          "uri": "https://helioscope.aurorasolar.com/pricing/",
+          "title": "Pricing | HelioScope"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software desktop local installation cloud OpenSolar Aurora Solar PVsyst proposal",
+        "site.valentin-software.com PV SOL premium customer presentations Windows internet",
+        "site.aurorasolar.com pricing cloud software",
+        "site.opensolar.com free how make money cloud"
+      ],
+      "createdAt": "2026-09-26T22:32:04.362Z"
+    },
+    {
+      "id": "dc17f490-daf3-45be-b2a2-73c29716fe47",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "9a1535aa-e7fb-4061-a5e2-b41536ec5e93",
+      "query": "best solar quoting software for 20-person sales team",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "For a 20-person sales team, I’d shortlist Aurora Solar and Solo first—assuming residential solar. My default pick is Aurora Enterprise for combined design and sales; Solo if your priority is helping reps quote and close using an existing CRM.\n\nBased on current vendor documentation:\n\n| Software | When I’d choose it | Pricing / main consideration |\n|---|---|---|\n| Aurora Solar Enterprise | You need design, interactive proposals, centralized permissions, and CRM/API integrations. | Custom, per-project pricing with unlimited users. For 20 reps, request Enterprise pricing rather than assuming 20 individual subscriptions. Features and pricing |\n| Solo | Your reps need a standardized in-home presentation, pricing guardrails, integrated financing, and optional expert design support. | Custom pricing based on usage, support, and scale; unlimited users included. Confirm your specific CRM and lender integrations. Sales features · Pricing |\n| Solargraf Enterprise | You want a paid option with transparent team pricing, proposals, design, and CRM functionality. | Published price: US$12,999/year, unlimited users, 1,500 projects/year, then $9/additional project; public API included. That allowance averages only 125 projects/month across your team, so model overages carefully. Pricing |\n| OpenSolar | Keeping software costs low is the priority. | Core platform is free. API access and supported external connectors are paid, so don’t assume a CRM-connected deployment is free. Pricing explanation |\n| Enerflo | You need a broader sales-to-installation workflow—not just quoting—particularly for U.S. residential solar. | Flat monthly subscription based on volume, rather than seats or individual proposals; implementation fee and a 12-month minimum contract. Features and terms |\n\nWhat matters most at your size\n\nBefore committing, have your top two vendors run the same 10 real opportunities through a demo or pilot. Check:\n\nPricing control: Can reps change discounts, equipment, or assumptions without approval?\n\nQuote turnaround: Include revisions—not just the first proposal.\n\nCRM handoff: Does a signed deal transfer without retyping?\n\nTrue annual cost: Include all 20 reps, managers, project overages, integrations, and design services.\n\nLocal coverage: Verify your utilities, tariffs, financing partners, and battery scenarios.\n\nMy buying recommendation: Demo Aurora Enterprise and Solo, and use Solargraf Enterprise as the published-price benchmark.\n\nAre you selling residential or commercial, in which country, and what CRM do you currently use? Those details could change the winner.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "gosolo.io",
+        "solargraf.com",
+        "opensolar.com",
+        "enerflo.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 6,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://gosolo.io/solar-studio/",
+          "title": "Solar Sales Software | Interactive Proposals & Financing"
+        },
+        {
+          "uri": "https://gosolo.io/pricing/",
+          "title": "Pricing - New 2026 - Solar Proposal and Growth Software | Solo"
+        },
+        {
+          "uri": "https://www.solargraf.com/pricing",
+          "title": "Solargraf Pricing Plans: Compare Features & Choose the Best Option"
+        },
+        {
+          "uri": "https://www.opensolar.com/post/free-platform-data-export-pricing/",
+          "title": "OpenSolar Stays Free. Pay Only for API Access and App Connectors | OpenSolar"
+        },
+        {
+          "uri": "https://enerflo.com/about/faq",
+          "title": "Enerflo | Enerflo FAQ | Solar Platform Features, Pricing & Integrations"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar sales software pricing proposals CRM teams",
+        "OpenSolar pricing teams sales CRM proposal software",
+        "Solo solar proposal software pricing sales teams",
+        "Enerflo solar software sales teams proposal integrations pricing",
+        "site.opensolar.com free unlimited users CRM proposals pricing",
+        "site.gosolo.io on demand proposals solar studio CRM integrations",
+        "site.solargraf.com pricing team solar proposal software Canada",
+        "site.opensolar.com \"OpenSolar remains free\" \"API\""
+      ],
+      "createdAt": "2026-09-26T22:32:33.860Z"
+    },
+    {
+      "id": "cc5d7d4b-d785-44cf-8c30-120d8235404d",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "39a3054e-7ced-4782-960a-a9aacf12cde2",
+      "query": "challenges of manual solar quoting for growing businesses",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Challenges of manual solar quoting for growing businesses\n\nManual quoting—using spreadsheets, separate design tools, and individually assembled proposals—can become a bottleneck as lead volume grows. The main challenges are:\n\nSlower sales turnaround. Gathering customer data, designing systems, calculating prices, and preparing proposals takes staff time. Delays give competitors more opportunity to win the customer, a risk highlighted in Aurora Solar’s industry playbook.\n\nErrors and costly rework. Copying information between tools increases opportunities for mismatched designs, missing details, and outdated proposal versions. Aurora identifies disconnected sales and design workflows as sources of redesigns and change orders. Source\n\nComplex savings calculations. Credible estimates depend on electricity consumption, system size, roof orientation, sunlight, financing, utility rates, and export compensation. Manually maintaining these inputs makes consistent, customer-specific quoting harder. U.S. Department of Energy\n\nDifficulty expanding into new markets. Local permitting and utility requirements vary. Teams must account for those differences rather than reuse assumptions that may underestimate costs or timelines. National Laboratory of the Rockies\n\nInconsistent pricing and margins. Without shared pricing rules and approval controls, different employees may use different equipment costs, discounts, or installation allowances. The practical risk is winning work that delivers less profit than expected.\n\nGrowth tied to headcount. If each quote requires substantial manual effort, more leads mean more staffing—or longer queues. Reliance on a few experienced estimators also creates a capacity bottleneck.\n\nBottom line: The scaling problem is not just producing quotes faster. It is maintaining accuracy, consistent margins, and reliable sales-to-installation handoffs as volume increases.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "energy.gov",
+        "nlr.gov"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 3,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/wp-content/uploads/2025/09/AuroraSolar_ROIWhitepaper_Final.pdf",
+          "title": "The ROI Playbook"
+        },
+        {
+          "uri": "https://www.energy.gov/cmei/systems/homeowners-guide-solar",
+          "title": "Homeowner’s Guide to Solar | Department of Energy"
+        },
+        {
+          "uri": "https://www.nlr.gov/solar/market-research-analysis/permitting-inspection-interconnection-timelines",
+          "title": "Solar Permitting, Inspection, and Interconnection Timelines | Solar Market Research and Analysis | NLR"
+        }
+      ],
+      "searchQueries": [
+        "site.nrel.gov solar customer acquisition permitting inspection interconnection soft costs design",
+        "site.aurorasolar.com manual solar design quoting proposals errors scaling",
+        "site.energy.gov homeowners guide going solar savings electricity rates financing shading"
+      ],
+      "createdAt": "2026-09-26T22:32:52.613Z"
+    },
+    {
+      "id": "aed50832-282b-4d7f-8e9a-5f6cf06e6732",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "f072463f-af05-4b43-87b5-8344dff344d1",
+      "query": "cloud-based solar proposal solutions for sales managers",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Cloud-based solar proposal software to shortlist\n\nFor a sales manager, I’d compare these four options. The fit assessments below are my recommendations based on their published features—not hands-on testing.\n\n| Solution | Strongest fit | Relevant sales features | Pricing / caveats |\n|---|---|---|---|\n| Aurora Solar | Growing teams needing standardized proposals and controlled workflows | Interactive, tablet-friendly proposals, financing comparisons, and contract tools. Enterprise adds advanced permissions, team/dealer configurations, and integrations. | Basic starts at $159/user/month, or $135/month billed annually. Enterprise is custom-priced. Features · Pricing |\n| OpenSolar | Budget-conscious teams wanting design-to-sale functionality | Branded proposals, multiple system/payment options, proposal-view notifications, digital signing, and payment processing. | Core platform is free; confirm costs for any connected services or integrations. Proposal tools · Free-platform details |\n| Solargraf | Teams wanting proposals, financing, and permitting together | Live proposal editing, side-by-side design comparisons, integrated financing, and e-signatures. | Starter lists US$2,799/year for 2 users and 240 projects. Additional users/projects cost extra; API access costs extra below Enterprise. Features · Pricing |\n| Solo | Managers prioritizing proposal operations and reporting | Dashboards track proposal volume, turnaround performance, lender mix, and redesign rates, with configurable visibility across teams. | Request a demo and written quote covering your proposal volume and required services. Management analytics |\n\nMy starting recommendation\n\nLowest software budget: OpenSolar.\n\nScaling a structured sales organization: Aurora.\n\nCombining sales with downstream permitting: Solargraf.\n\nImproving management visibility: Include Solo in your demos.\n\nBefore buying, have each vendor demonstrate pricing permissions, rep-level reporting, CRM synchronization, proposal engagement tracking, and local utility/financing coverage using one of your actual projects.\n\nWhich country do you sell in, how many reps do you manage, and are your projects residential or commercial?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com",
+        "solargraf.com",
+        "gosolo.io"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 7,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/aurora-for-sales/",
+          "title": "Aurora for Sales Teams | Aurora Solar"
+        },
+        {
+          "uri": "https://aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/proposals/",
+          "title": "OpenSolar Proposals: Customizable, Interactive Solar Sales"
+        },
+        {
+          "uri": "https://www.opensolar.com/post/is-opensolar-really-free/",
+          "title": "Is OpenSolar Really Free?! | OpenSolar"
+        },
+        {
+          "uri": "https://www.solargraf.com/solar-proposal",
+          "title": "Best Solar Proposal Software for Installers | Solargraf"
+        },
+        {
+          "uri": "https://www.solargraf.com/pricing",
+          "title": "Solargraf Pricing Plans: Compare Features & Choose the Best Option"
+        },
+        {
+          "uri": "https://gosolo.io/solo-analytics/",
+          "title": "Solar Sales Analytics in a Single Dashboard | Solo Analytics"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software sales managers cloud Aurora Solar OpenSolar",
+        "solar proposal software Solargraf sales teams proposal CRM",
+        "site.opensolar.com free pricing CRM solar software",
+        "site.gosolo.io solar proposals sales managers analytics",
+        "site.aurorasolar.com pricing",
+        "site.solargraf.com pricing solar"
+      ],
+      "createdAt": "2026-09-26T22:33:18.042Z"
+    },
+    {
+      "id": "7e4568a1-6a07-41eb-945e-1cd0e31e3b6b",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "cf1d6793-be68-4b45-a92e-33e47e378c33",
+      "query": "how does solar CRM integration improve sales",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": false,
+      "visibilityState": "not-visible",
+      "mentionState": "not-mentioned",
+      "answerText": "Solar CRM integration can improve sales by connecting customer records with solar design, proposal, and project-management tools—so reps spend less time on admin and more time selling.\n\nHere’s how:\n\nFaster quotes: New CRM leads can automatically create solar projects with contact, property, and utility information, removing manual re-entry. OpenSolar integration guide\n\nMore timely follow-ups: Proposal views or acceptance can trigger outreach, helping reps respond when a customer is engaged. OpenSolar integration guide\n\nFewer errors: Syncing design data and updates keeps teams working from consistent information, reducing discrepancies that can delay a deal. Aurora API overview\n\nBetter sales visibility: Integrated project statuses and reporting data help managers spot stalled opportunities and identify where the sales process needs attention. OpenSolar API overview\n\nSmoother handoffs after signing: Sold-job details can move into ordering and operations tools without sales staff copying everything across. OpenSolar API overview\n\nBottom line: These capabilities can shorten the sales cycle and reduce missed opportunities, but they don’t guarantee higher sales. Measure the impact through lead-response time, quote turnaround, close rate, and admin hours per deal.",
+      "citedDomains": [
+        "opensolar.com",
+        "aurorasolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 3,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://support.opensolar.com/hc/en-us/articles/4407230526745-Using-the-OpenSolar-API",
+          "title": "Using the OpenSolar API – OpenSolar"
+        },
+        {
+          "uri": "https://aurorasolar.com/api/",
+          "title": "Product - API | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/api/",
+          "title": "OpenSolar API: One API to Run Your Whole Solar Stack | OpenSolar"
+        }
+      ],
+      "searchQueries": [
+        "site.opensolar.com CRM integrations solar sales proposal automate",
+        "site.aurorasolar.com CRM integration sales solar Salesforce HubSpot"
+      ],
+      "createdAt": "2026-09-26T22:33:32.748Z"
+    },
+    {
+      "id": "0d87cfbc-f696-49ec-9780-143d4f0ac0c3",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "e5ef470f-c271-4c64-a046-2fe203120015",
+      "query": "leading solar design and proposal software",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Leading solar design and proposal software\n\nFor a practical shortlist, I’d compare these five platforms. The best fit depends on whether you sell residential or commercial systems.\n\n| Platform | Strong fit for | Key capabilities |\n|---|---|---|\n| Aurora Solar | Residential installers needing detailed design and integrated sales | 3D roof modeling, shading analysis, solar-plus-storage design, interactive proposals, and financing integrations. Aurora reports serving 7,000+ solar organizations. |\n| OpenSolar | Cost-conscious installers and smaller teams | Free core design, sales, and project-management software, with AI-assisted layouts and interactive customer proposals. |\n| Solargraf | Installers wanting design through permitting | Solar and battery design, customized proposals, financing integrations, and automated permit packages; supports residential and commercial projects. |\n| Solo | Sales-focused teams | Proposal-focused platform with 3D modeling, per-panel shading analysis, automated roof measurements, and production simulation. |\n| HelioScope | Commercial and industrial solar | Rooftop, carport, and ground-mount design, storage modeling, production simulation, and project financials. |\n\nMy starting recommendation: Compare Aurora, OpenSolar, and Solargraf for residential work; prioritize HelioScope for commercial projects.\n\nFor engineering-heavy commercial or utility-scale projects, also consider PVcase—its emphasis is site selection, detailed engineering, and yield modeling rather than homeowner proposals.\n\nAre you looking for residential or commercial software, and in which country?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com",
+        "solargraf.com",
+        "gosolo.io",
+        "pvcase.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 6,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        },
+        {
+          "uri": "https://www.solargraf.com/",
+          "title": "Solargraf: World's #1 Solar Design, Proposal & Permitting Software"
+        },
+        {
+          "uri": "https://gosolo.io/gemini/",
+          "title": "Gemini - Solar Proposal and Growth Software | Solo"
+        },
+        {
+          "uri": "https://helioscope.aurorasolar.com/",
+          "title": "HelioScope | Commercial Solar Software"
+        },
+        {
+          "uri": "https://pvcase.com/",
+          "title": "Homepage | PVcase"
+        }
+      ],
+      "searchQueries": [
+        "solar design proposal software Aurora Solar OpenSolar Solargraf",
+        "solar commercial design proposal software HelioScope PVcase",
+        "site.opensolar.com solar design proposal free software",
+        "site.gosolo.io solar proposals design software",
+        "site.aurorasolar.com design software shading lidar sales mode"
+      ],
+      "createdAt": "2026-09-26T22:33:51.560Z"
+    },
+    {
+      "id": "b58cd71f-e84d-4b25-b0c5-27a25236780b",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "465c634e-a0c7-452d-b728-e3e2a0cc21b7",
+      "query": "reputable solar sales quoting platforms",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Assuming you mean software for solar companies to create customer quotes and proposals, these are established options worth shortlisting:\n\n| Platform | Best fit in my assessment | Key capabilities |\n|---|---|---|\n| Aurora Solar | Teams needing detailed design and polished sales proposals | 3D design, shading analysis, configurable pricing, financing comparisons, interactive proposals and e-signatures. Features and pricing |\n| OpenSolar | Smaller installers or budget-conscious teams | Free core design, sales and project-management software with interactive proposals. Premium imagery is available separately. Platform overview |\n| Solargraf | Installers wanting design, quoting and permitting together | Solar and battery design, customizable proposals, financing integrations and permit-plan workflows. Supports residential and commercial projects. Platform overview |\n| Solo | Sales teams wanting managed proposal/design support | Combines software with managed services, branded proposals, integrated financing and e-signature documents. Platform overview |\n| Enerflo | Larger U.S. residential sales organizations | Connects proposals, design tools, financing, contracts and installation tracking. Currently U.S.-only. Platform overview |\n\nMy starting shortlist: OpenSolar for low-cost entry, Aurora for design-heavy selling, and Solargraf for an integrated installer workflow.\n\nBefore committing, have each vendor quote the same real project and compare production estimates, proposal quality, local utility-rate support, CRM integration costs and total fees.\n\nAre you selling in Canada or the U.S., and residential or commercial? That would narrow the recommendations considerably.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com",
+        "solargraf.com",
+        "gosolo.io",
+        "enerflo.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        },
+        {
+          "uri": "https://www.solargraf.com/",
+          "title": "Solargraf: World's #1 Solar Design, Proposal & Permitting Software"
+        },
+        {
+          "uri": "https://gosolo.io/overview/",
+          "title": "Growth-Enabled Solar Growth Platform | Solo"
+        },
+        {
+          "uri": "https://enerflo.com/",
+          "title": "Enerflo | The Operating System for Residential Solar"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar proposal sales design software Canada pricing",
+        "OpenSolar solar sales proposal software free",
+        "Solargraf solar proposal software Canada",
+        "Scanifly solar sales proposal software",
+        "site.opensolar.com solar design sales free proposals pricing",
+        "site.gosolo.io solar proposals sales platform",
+        "site.enerflo.com solar proposals platform"
+      ],
+      "createdAt": "2026-09-26T22:34:11.590Z"
+    },
+    {
+      "id": "b56abeb0-8ea1-4e33-9de3-cdfd51045876",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "795708ff-3990-4d05-b308-b236e44bb6e5",
+      "query": "solar proposal software comparison sites",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Here are useful sites for comparing solar proposal software:\n\n| Site | Useful for |\n|---|---|\n| Capterra — Solar software | Comparing features, customer reviews, and tools with proposal generation and quoting capabilities. |\n| G2 — Aurora Solar alternatives | User ratings and competitor comparisons. Includes broader solar engineering tools, so not every alternative is proposal-focused. |\n| Software Advice — Solar software | Browsing solar software reviews and pricing information. |\n| Kurums — Solar proposal software comparison | A proposal-focused overview covering OpenSolar, Solargraf, Enact, Pylon, Solo, and Aurora/HelioScope. |\n| Aurora — Proposal software comparison | Aurora’s comparison against OpenSolar, Solargraf, and Solo. Vendor-written, not independent. |\n\nStart with Capterra and G2 for customer feedback, then use proposal-specific guides to build your shortlist. Confirm pricing and included features directly with vendors before buying.",
+      "citedDomains": [
+        "capterra.com",
+        "g2.com",
+        "softwareadvice.com",
+        "kurums.com",
+        "aurorasolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://www.capterra.com/solar-software/s/small-businesses/",
+          "title": "Best Solar Software 2025 | Capterra"
+        },
+        {
+          "uri": "https://www.g2.com/products/aurora-solar/competitors/alternatives",
+          "title": "Top 10 Aurora Solar Alternatives & Competitors in 2026 | G2"
+        },
+        {
+          "uri": "https://www.softwareadvice.com/construction/solar-comparison/",
+          "title": "Best Solar Software - 2026 Reviews & Pricing"
+        },
+        {
+          "uri": "https://kurums.com/solar-proposal-software/",
+          "title": "Best Solar Proposal Software 2026: OpenSolar, Solargraf - Kurums | Business Intelligence"
+        },
+        {
+          "uri": "https://aurorasolar.com/aurora-vs-solar-proposal-software/",
+          "title": "Aurora vs. Solar Proposal Software | Aurora Solar"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software comparison Capterra G2",
+        "solar proposal software comparison Aurora OpenSolar Solargraf SolarQuotes",
+        "site.capterra.com solar software Solargraf compare",
+        "site.g2.com Aurora Solar alternatives",
+        "site.getapp.com solar software",
+        "site.softwareadvice.com solar software"
+      ],
+      "createdAt": "2026-09-26T22:34:47.224Z"
+    },
+    {
+      "id": "864516af-07cd-4896-b095-497761233159",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "1e3cbca0-b407-44a6-8a3e-44f7d1d0e798",
+      "query": "solar proposal software pricing for enterprise",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Enterprise solar proposal software pricing\n\nMost enterprise plans require a custom quote. Solargraf publishes a clear benchmark: US$12,999/year. Here’s the current comparison, checked September 26, 2026:\n\n| Software | Enterprise pricing | Key inclusions and cost considerations |\n|---|---|---|\n| Solargraf | US$12,999/year—about $1,083/month, billed annually | 1,500 projects/year, unlimited users and public API access. Additional projects: $9 each. Includes interactive proposals, design, shading, financing and CRM. Official pricing |\n| Aurora Solar | Custom, per-project pricing | Unlimited users, APIs/integrations, advanced permissions and dealer configurations. Design services, plan sets, engineering stamps and certain support services are add-ons. Enterprise minimum commitment requires a sales quote. Official pricing |\n| Enerflo | Custom flat monthly subscription, based on average monthly volume | No per-seat, design, proposal, contract or job charges. One-time implementation fee; 12-month minimum contract. Custom integrations and advanced services can cost extra. Official pricing FAQ |\n| OpenSolar | Free core platform; paid integrations and optional enterprise services | API access is charged per project; connectors carry monthly subscriptions, with region-specific pricing. Tailored enterprise services require discussion with sales. Free core software does not mean free enterprise integrations. Official pricing details |\n| Solo | Quote required; pricing varies by usage, support and scale | Current pricing page includes unlimited users and concierge onboarding but does not publish dollar rates. Official pricing |\n\nHow to compare quotes\n\nAsk each vendor to price the same annual project volume, including:\n\nAPI/CRM integration and data-export access.\n\nImplementation, training and premium support.\n\nDesign services, permit packages and overages.\n\nMinimum commitments and renewal increases.\n\nMy starting shortlist: Solargraf for transparent pricing; Aurora for enterprise design and dealer controls; Enerflo for broader sales-to-install operations; OpenSolar for minimizing core software fees.\n\nWhat country are you operating in, and roughly how many proposals per month will your team create?",
+      "citedDomains": [
+        "solargraf.com",
+        "aurorasolar.com",
+        "enerflo.com",
+        "opensolar.com",
+        "gosolo.io"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://www.solargraf.com/pricing",
+          "title": "Solargraf Pricing Plans: Compare Features & Choose the Best Option"
+        },
+        {
+          "uri": "https://aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://enerflo.com/about/faq",
+          "title": "Enerflo | Enerflo FAQ | Solar Platform Features, Pricing & Integrations"
+        },
+        {
+          "uri": "https://www.opensolar.com/api/",
+          "title": "OpenSolar API: One API to Run Your Whole Solar Stack | OpenSolar"
+        },
+        {
+          "uri": "https://gosolo.io/pricing/",
+          "title": "Pricing - New 2026 - Solar Proposal and Growth Software | Solo"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software enterprise pricing Aurora Solar OpenSolar",
+        "Solargraf enterprise pricing solar proposal software",
+        "Enerflo pricing enterprise solar software",
+        "site.opensolar.com pricing API enterprise",
+        "site.opensolar.com \"free\" \"pricing\"",
+        "site.gosolo.io pricing enterprise proposals"
+      ],
+      "createdAt": "2026-09-26T22:35:11.637Z"
+    },
+    {
+      "id": "094cbca1-1484-46f7-8ad6-becb6b01c0f4",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "117e2874-3739-44d1-8eb5-57e44a57e0bc",
+      "query": "solar sales software for large residential installers",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "For large residential solar installers, I’d start with Aurora Solar, Enerflo, and Solo. They address different needs: design-led selling, sales-to-install workflow, and proposal-focused sales enablement.\n\nRecommended shortlist\n\n| Software | My assessment of best fit | Relevant capabilities and caveats |\n|---|---|---|\n| Aurora Solar Enterprise | Large installers prioritizing design accuracy and centralized sales controls | Combines design, interactive proposals, and financing. Enterprise adds unlimited users, advanced permissions, dealer configurations, APIs, and integrations. Custom per-project pricing. Platform · Enterprise pricing |\n| Enerflo | Installers coordinating sales teams, dealers, financing, and installation workflows | Connects proposals, financing, contracting, project handoff, and customer communication. Integrates with design tools including Aurora and OpenSolar, so it can complement—not necessarily replace—your design platform. Its published offering targets U.S. residential solar businesses. Features · FAQ |\n| Solo | High-volume sales organizations prioritizing proposal workflows | Enterprise offering supports internal and external teams, real-time proposal editing, integrations, and custom solutions through an open API. Ask for a demonstration of your specific financing and CRM workflow. Enterprise offering |\n| OpenSolar | Cost-conscious installers willing to evaluate enterprise fit closely | Free core design, sales, and project-management platform, with optional enterprise services. API access and supported connectors are paid extras—important when calculating costs for a large integrated operation. Platform · API and enterprise services |\n\nHow I’d choose\n\nKeeping an established CRM: Start by evaluating Aurora Enterprise as the design-and-sales layer.\n\nFixing fragmented sales-to-operations handoffs: Evaluate Enerflo, potentially alongside Aurora.\n\nImproving a high-volume proposal process: Include Solo.\n\nReducing core software licensing costs: Benchmark OpenSolar, including integration and support charges.\n\nFor enterprise procurement, require a pilot using your own projects. Test dealer/branch permissions, pricing approvals, lender coverage, battery proposals, CRM synchronization, and signed-contract handoff—not just how good the proposal looks.\n\nWhich country do you operate in, roughly how many sales reps or installations per month, and what CRM do you use?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "enerflo.com",
+        "gosolo.io",
+        "opensolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 7,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://enerflo.com/features",
+          "title": "Enerflo | Enerflo Solar Software Platform | Features & Benefits"
+        },
+        {
+          "uri": "https://enerflo.com/about/faq",
+          "title": "Enerflo | Enerflo FAQ | Solar Platform Features, Pricing & Integrations"
+        },
+        {
+          "uri": "https://gosolo.io/enterprise/",
+          "title": "Enterprise - Solar Proposal and Growth Software | Solo"
+        },
+        {
+          "uri": "https://www.opensolar.com/",
+          "title": "OpenSolar | Accelerating Solar Adoption with Free Software"
+        },
+        {
+          "uri": "https://www.opensolar.com/api/",
+          "title": "OpenSolar API: One API to Run Your Whole Solar Stack | OpenSolar"
+        }
+      ],
+      "searchQueries": [
+        "solar sales software enterprise residential installers Aurora Solar",
+        "solar sales software large residential installers Enerflo OpenSolar Solo",
+        "site.gosolo.io enterprise solar proposal software integrations pricing",
+        "site.solargraf.com enterprise solar software API multi office",
+        "site.opensolar.com enterprise API permissions pricing"
+      ],
+      "createdAt": "2026-09-26T22:35:33.081Z"
+    },
+    {
+      "id": "e865e340-f0db-480a-a0c8-4168be22cb05",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "91111558-03f5-4df5-891f-afbeeca70f6e",
+      "query": "top residential solar proposal tools for enterprise",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Top residential solar proposal tools for enterprise\n\nMy shortlist: Aurora Solar, Solo, Enerflo, Solargraf, and OpenSolar. Assuming a large installer or dealer network—primarily in North America—I’d start with Aurora for design-led proposals, Solo for sales-focused workflows, and Enerflo for connecting sales to operations.\n\nThese are my fit-based recommendations, not an independently benchmarked ranking.\n\n| Tool | Best fit | Enterprise strengths | Pricing / buying consideration |\n|---|---|---|---|\n| 1. Aurora Solar | Best overall enterprise starting point | Combines design, shading, battery modeling, and interactive proposals. Enterprise adds unlimited users, advanced permissions, dealer/team configurations, APIs, and SSO support. | Custom, per-project enterprise pricing. Some services and customization are add-ons. Features and pricing |\n| 2. Solo | Large sales organizations and dealer networks | Proposal-focused platform with real-time editing, internal/external team management, open API connectivity, and custom integration options. | Request enterprise pricing. In the demo, test proposal turnaround, revision handling, and your exact financing integrations. Enterprise offering |\n| 3. Enerflo | Enterprises needing proposals plus sales-to-install coordination | Native Optimus proposals include savings calculations, battery sizing, financing, and custom content. Supports multiple organizations and integrates with existing CRMs and design tools. | Volume-based, flat-rate monthly subscription rather than per-seat or per-proposal fees. Broader operational scope than a standalone proposal tool. Platform and pricing model |\n| 4. Solargraf | Teams wanting an integrated platform with published enterprise pricing | Interactive proposals, shading, design, financing, CRM, and permitting; public API included in Enterprise. | Published Enterprise plan: US$12,999/year, 1,500 projects, unlimited users; $9/additional project. Confirm your required services are included. Pricing |\n| 5. OpenSolar | Cost-conscious enterprises comfortable evaluating integration costs separately | Free core design/sales/project workflow, with an API covering designs, pricing, contacts, and workflows; optional enterprise services. | Free core does not mean free enterprise integration: API access is charged per project, connectors separately, with geography-specific pricing. Platform · API and enterprise services |\n\nWhat I’d actually shortlist\n\nReplacing your design and proposal platform: Aurora vs. Solo vs. Solargraf.\n\nKeeping existing design tools but fixing fragmented workflows: Enerflo. It can complement—not necessarily replace—Aurora or Solo. Design integrations\n\nPrioritizing low core software cost: OpenSolar, with a full integration-cost model.\n\nEnterprise requirements to validate before signing\n\nRun the same sample homes through each finalist and check:\n\nProposal accuracy: shading, utility tariffs, batteries, and savings assumptions.\n\nCommercial controls: regional pricing, discount approvals, dealer permissions, and template governance.\n\nIntegrations: your specific CRM, lenders, e-signature, and downstream operations.\n\nIT requirements: SSO, audit logs, data export, security documentation, and support SLAs.\n\nTrue cost: projects, revisions, API usage, imagery, onboarding, and support.\n\nWhich country, approximate monthly proposal volume, and CRM are you targeting? Those three details would narrow this considerably.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "gosolo.io",
+        "enerflo.com",
+        "solargraf.com",
+        "opensolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 7,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        },
+        {
+          "uri": "https://gosolo.io/enterprise/",
+          "title": "Enterprise - Solar Proposal and Growth Software | Solo"
+        },
+        {
+          "uri": "https://enerflo.com/about/faq",
+          "title": "Enerflo | Enerflo FAQ | Solar Platform Features, Pricing & Integrations"
+        },
+        {
+          "uri": "https://www.solargraf.com/pricing",
+          "title": "Solargraf Pricing Plans: Compare Features & Choose the Best Option"
+        },
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        },
+        {
+          "uri": "https://www.opensolar.com/api/",
+          "title": "OpenSolar API: One API to Run Your Whole Solar Stack | OpenSolar"
+        },
+        {
+          "uri": "https://enerflo.com/",
+          "title": "Enerflo | The Operating System for Residential Solar"
+        }
+      ],
+      "searchQueries": [
+        "enterprise residential solar proposal software Aurora Solar OpenSolar Enerflo Solo",
+        "site.solargraf.com enterprise solar proposal API pricing",
+        "site.opensolar.com enterprise permissions API pricing free",
+        "site.aurorasolar.com pricing enterprise SSO"
+      ],
+      "createdAt": "2026-09-26T22:35:59.714Z"
+    },
+    {
+      "id": "fe5e25cd-8234-4942-9748-a17039418bde",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "3cd2fd7d-86d7-46ab-a348-b87243231480",
+      "query": "understanding ROI of solar proposal software",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": false,
+      "visibilityState": "not-visible",
+      "mentionState": "not-mentioned",
+      "answerText": "Assuming you mean the return on buying solar proposal software for a solar business, rather than the homeowner’s return on solar panels:\n\nThe software pays off when it reduces quoting costs, generates more profitable installations, or prevents costly mistakes—not simply when proposals look better.\n\n1. Where the value comes from\n\n| ROI driver | What to measure |\n|---|---|\n| Faster proposals | Minutes saved on design, pricing, revisions, and sending |\n| More completed sales | Change in proposal-to-completed-install conversion |\n| Fewer errors | Avoided redesigns, repeat surveys, and pricing mistakes |\n| Less administration | Reduced duplicate entry between proposals, contracts, and CRM |\n\nThese are plausible benefits, not guaranteed outcomes. For example, Aurora publishes customer reports of faster proposals and fewer change orders, but these are vendor-selected case studies—not forecasts for your business. Aurora customer examples\n\n2. Calculate ROI against your current workflow\n\nROI = (incremental benefits − incremental costs) ÷ incremental costs × 100\n\nUse the same period for both, typically one year.\n\nBenefits can include:\n\nLabour value: proposals × hours saved per proposal × fully loaded hourly cost.\n\nAdditional contribution profit: extra completed installations × profit per installation after variable costs.\n\nAvoided costs: fewer errors, outsourced designs, or unnecessary visits.\n\nCosts should include subscriptions, usage charges, onboarding, training time, integrations, and migration—minus any existing expenses you eliminate.\n\nImportant: Saved employee time is capacity, not automatically cash savings. Count its financial value only if it reduces spending or gets productively redeployed. Don’t count the same time twice as both labour savings and extra sales.\n\n3. Illustrative example\n\nThese are assumptions, not industry benchmarks; all amounts use the same currency.\n\n| Monthly input | Amount |\n|---|---:|\n| Proposals produced | 80 |\n| Time saved per proposal | 30 minutes |\n| Loaded labour cost | $40/hour |\n| Value of capacity freed | $1,600 |\n| Recurring software cost | $600 |\n\nIf you fully realize that labour value:\n\nMonthly net benefit: $1,000.\n\nRecurring-cost ROI: 167%, before setup costs.\n\nLabour-only break-even: 30 proposals per month.\n\nIf the time remains unused and payroll stays unchanged, the cash return could instead be negative. Additional profitable installations could change that—but should be measured, not assumed.\n\n4. Compare against a realistic alternative\n\nThe baseline shouldn’t necessarily be manual spreadsheets. OpenSolar offers its core design, sales, and management platform free, with paid enterprise services. That means a paid product must justify its incremental value over a suitable free option, including differences in training, accuracy, and workflow fit. OpenSolar services and pricing\n\n5. Validate before committing\n\nRun a pilot using comparable leads and track:\n\nTotal staff time per proposal, including revisions.\n\nProposal turnaround time.\n\nCompleted-install conversion and cancellations.\n\nContribution profit and rework costs.\n\nStart with zero assumed conversion improvement in your conservative case, then update it when enough installations have completed.\n\nAre you evaluating a particular platform, and roughly how many proposals does your team produce per month?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 2,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/make-the-switch/",
+          "title": "Make the Switch | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/enterprise-services/",
+          "title": "Enterprise Services | Paid Support, Customization & Services | OpenSolar"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software pricing OpenSolar Aurora Solar proposal software time savings"
+      ],
+      "createdAt": "2026-09-26T22:36:19.380Z"
+    },
+    {
+      "id": "51d11be5-961f-450f-b5fb-1842cfa65459",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "8190d027-b4c6-41cf-86d8-a318ea26b17e",
+      "query": "what are alternatives to manual solar quoting",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Assuming you mean creating quotes as a solar installer, the main alternatives are:\n\n| Alternative | What it replaces | Examples |\n|---|---|---|\n| Solar design and proposal software | Manually drawing layouts, calculating production, pricing systems, and assembling proposals. | Aurora Solar and Solargraf. |\n| Free-core quoting software | Spreadsheet-based quoting without a core software subscription. | OpenSolar offers design, proposals, and project management. Its core app is free; API access and supported external connectors cost extra. Pricing details |\n| Integrated sales platforms | Re-entering customer and project information across sales, proposals, contracts, and installation workflows. | Enerflo connects the residential solar sales-to-installation process. |\n| Website instant estimators | Preparing a custom preliminary estimate for every inbound lead. | Aurora Lead Capture AI generates homeowner-facing estimates using an address and estimated electricity bill. |\n| Outsourced proposal services | Your team doing the design and proposal preparation themselves. | Solargraf’s proposal service provides designs and proposals through its design team. |\n\nMy starting recommendation: Trial OpenSolar if cost is the main concern; compare Aurora and Solargraf if design automation is the priority; consider outsourcing if staff capacity is the bottleneck.\n\nTreat instant estimates as preliminary, and retain human review of site conditions, equipment pricing, and utility assumptions before issuing a final quote.\n\nAre you quoting residential or commercial projects, and in which country?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "solargraf.com",
+        "opensolar.com",
+        "enerflo.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 7,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        },
+        {
+          "uri": "https://www.solargraf.com/solar-proposal",
+          "title": "Best Solar Proposal Software for Installers | Solargraf"
+        },
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        },
+        {
+          "uri": "https://www.opensolar.com/post/free-platform-data-export-pricing/",
+          "title": "OpenSolar Stays Free. Pay Only for API Access and App Connectors | OpenSolar"
+        },
+        {
+          "uri": "https://enerflo.com/",
+          "title": "Enerflo | The Operating System for Residential Solar"
+        },
+        {
+          "uri": "https://aurorasolar.com/blog/how-to-use-ai-to-speed-up-your-solar-sales-marketing-and-design/",
+          "title": "How to use AI to speed up your solar sales, marketing, and design | Aurora Solar"
+        },
+        {
+          "uri": "https://www.solargraf.com/blog/the-benefits-of-using-solargrafs-solar-proposal-service",
+          "title": "The Benefits of Using Solargraf’s Solar Proposal Service"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar solar proposal automated design quoting pricing",
+        "OpenSolar free solar design proposal software",
+        "Solargraf solar proposal design financing software",
+        "Enerflo solar proposal platform quoting",
+        "site.aurorasolar.com Lead Capture AI instant solar estimate",
+        "site.solargraf.com proposal services outsourced",
+        "site.opensolar.com pro free optional paid services"
+      ],
+      "createdAt": "2026-09-26T22:36:42.950Z"
+    },
+    {
+      "id": "42251b34-ac3e-4d0d-abbc-50e4c0e205f4",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "21c06055-1e3f-4e99-8e15-c1ef5235ff8a",
+      "query": "what is automated solar proposal software",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Automated solar proposal software helps solar installers and sales teams create customer-ready quotes without manually assembling designs, calculations, and sales documents.\n\nDepending on the platform, it can:\n\nDesign a solar system: use an address and roof imagery to suggest panel placement.\n\nEstimate electricity generation: account for sunlight and shading.\n\nCalculate pricing and projected savings: present system costs and financing options.\n\nGenerate a branded proposal: combine the design and estimates into a digital presentation or PDF.\n\nHelp close the sale: offer contracts and electronic signatures. Aurora Solar, proposal documentation\n\nIn plain English: you enter the customer’s property and energy-use information, and the software does much of the work needed to show them what solar could look like and cost.\n\nExamples include Aurora Solar and OpenSolar, which combine design automation with customer proposals. Aurora Solar, OpenSolar\n\n“Automated” doesn’t mean guaranteed—generation and savings are estimates, and the installer still needs to verify the inputs and installation feasibility.",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 4,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/sales-mode/",
+          "title": "Sales Mode | Aurora Solar"
+        },
+        {
+          "uri": "https://docs.aurorasolar.com/reference/proposals",
+          "title": "Proposals"
+        },
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        },
+        {
+          "uri": "https://www.opensolar.com/pro/",
+          "title": "Pro | Free AI-Powered Solar Software by OpenSolar"
+        }
+      ],
+      "searchQueries": [
+        "solar proposal software automated proposals shading financing design Aurora OpenSolar"
+      ],
+      "createdAt": "2026-09-26T22:36:54.553Z"
+    },
+    {
+      "id": "35b05e4f-63f9-4350-a604-f05d55738131",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "00f35203-ddb6-4027-93ed-4d6ed6c0d17d",
+      "query": "which solar design software integrates best with CRM",
+      "provider": "codex",
+      "citationState": "cited",
+      "answerMentioned": true,
+      "visibilityState": "visible",
+      "mentionState": "mentioned",
+      "answerText": "Aurora Solar would be my first shortlist choice for deep CRM integration—but the best fit depends on which CRM you use. Based on current vendor documentation:\n\n| Software | Best fit | Integration strengths and caveats |\n|---|---|---|\n| Aurora Solar | Custom, automated sales-to-design workflows | Its API supports project creation, design results, pricing, financing and agreement metadata, plus post-signature workflow triggers. Strong integration depth, but setup requires field mapping and compatible CRM capabilities—not simply a one-click connection. Integration checklist |\n| OpenSolar | Businesses wanting a partner to implement the connection | Lists integration partners for Salesforce, HubSpot and Zapier, avoiding the need for an in-house developer. Its core platform is free, but API access is paid per project, with regional pricing. Partners · API and pricing |\n| Solargraf | Teams already using Solargraf with developer support | Offers a self-service API for custom CRM integrations; requires an Enterprise subscription and a developer/IT lead. Integration requirements |\n\nMy recommendation: Start with Aurora if integration depth matters most; compare OpenSolar plus an integration partner if ease of implementation matters more. For HubSpot specifically, Aurora publishes a setup tutorial, but it uses custom code and specifies an API-enabled Enterprise plan—not a plug-and-play connector. HubSpot tutorial\n\nBefore buying, ask for a demonstration of CRM lead → solar design → design/pricing back to CRM → signed-sale handoff.\n\nWhich CRM are you using—HubSpot, Salesforce, Zoho, GoHighLevel, or something else?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "opensolar.com",
+        "solargraf.com"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 5,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [
+        "Aurora Solar",
+        "aurorasolar"
+      ],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://help.aurorasolar.com/hc/en-us/articles/17426531448083-CRM-Checklist-for-Aurora-API-Integrations",
+          "title": "CRM Checklist for Aurora API Integrations – Aurora Solar Help Center"
+        },
+        {
+          "uri": "https://developers.opensolar.com/partners/",
+          "title": "Partners | OpenSolar"
+        },
+        {
+          "uri": "https://www.opensolar.com/api/",
+          "title": "OpenSolar API: One API to Run Your Whole Solar Stack | OpenSolar"
+        },
+        {
+          "uri": "https://www.solargraf.com/help-center/article/solargraf-api-integration-guide",
+          "title": "Solargraf"
+        },
+        {
+          "uri": "https://help.aurorasolar.com/hc/en-us/articles/34506858304531-Tutorial-Create-an-Aurora-Project-from-HubSpot",
+          "title": "Tutorial: Create an Aurora Project from HubSpot – Aurora Solar Help Center"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar CRM integrations Salesforce HubSpot API solar design",
+        "OpenSolar CRM integrations HubSpot Salesforce API",
+        "Solargraf CRM integration API Enerflo",
+        "site.help.aurorasolar.com \"Tutorial: Create an Aurora Project from HubSpot\"",
+        "site:help.aurorasolar.com \"CRM Checklist\" API",
+        "site:help.aurorasolar.com \"HubSpot\" \"Build\""
+      ],
+      "createdAt": "2026-09-26T22:37:13.122Z"
+    },
+    {
+      "id": "41a7153e-2641-481f-9e1f-faa8612013e5",
+      "runId": "faa0899a-2715-4a7c-a051-8e78f6eeb7d9",
+      "queryId": "e363950d-b256-4ac4-82f4-b5102ded11cf",
+      "query": "why is accurate solar system design crucial for proposals",
+      "provider": "codex",
+      "citationState": "not-cited",
+      "answerMentioned": false,
+      "visibilityState": "not-visible",
+      "mentionState": "not-mentioned",
+      "answerText": "Accurate solar system design is crucial because a proposal’s price, energy forecast, and savings estimates all depend on it.\n\nRealistic production: Accounting for shading, panel orientation, system size, and losses helps avoid overstating electricity generation. PVWatts design guidance\n\nCredible savings: Production must be matched with the customer’s electricity use, utility rates, and export compensation to estimate savings realistically. DOE homeowner’s guide\n\nA buildable, properly scoped system: Selecting suitable mounting, inverters, and any batteries helps ensure the proposal covers more than just panels. DOE design basics\n\nFewer surprises: In practical terms, getting these details right reduces the risk of redesigns, unexpected costs, and disappointed customers.\n\nBottom line: Accurate design makes a proposal a credible delivery plan—not just a sales pitch.",
+      "citedDomains": [
+        "nlr.gov",
+        "energy.gov"
+      ],
+      "citedUrls": null,
+      "captureStatus": "unsupported",
+      "sourceCount": 3,
+      "resolvedCount": 0,
+      "captureVersion": 1,
+      "citedCompetitorDomains": [],
+      "mentionedCompetitorDomains": [],
+      "competitorOverlap": [],
+      "recommendedCompetitors": [],
+      "matchedTerms": [],
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "location": null,
+      "requestedContext": null,
+      "supportedContext": null,
+      "groundingSources": [
+        {
+          "uri": "https://samrepo.nlr.gov/help/pvwatts_system_design.html",
+          "title": "System Design"
+        },
+        {
+          "uri": "https://www.energy.gov/cmei/systems/homeowners-guide-solar",
+          "title": "Homeowner’s Guide to Solar | Department of Energy"
+        },
+        {
+          "uri": "https://www.energy.gov/cmei/systems/solar-photovoltaic-system-design-basics",
+          "title": "Solar Photovoltaic System Design Basics | Department of Energy"
+        }
+      ],
+      "searchQueries": [
+        "site.energy.gov solar homeowners guide shading system size electricity needs",
+        "site.nrel.gov PVWatts estimates assumptions solar energy production accuracy"
+      ],
+      "createdAt": "2026-09-26T22:37:28.133Z"
+    }
+  ]
+}

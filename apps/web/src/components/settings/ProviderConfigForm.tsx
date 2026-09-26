@@ -1,3 +1,5 @@
+import { ProviderNames } from '@ainyc/canonry-contracts'
+import { CodexConnectionForm } from './CodexConnectionForm.js'
 import { useState, type ReactNode } from 'react'
 
 import { Button } from '../ui/button.js'
@@ -5,7 +7,7 @@ import { updateProviderConfig } from '../../api.js'
 import { addToast } from '../../lib/toast-store.js'
 import { asyncHandler } from '../../lib/async-handler.js'
 
-export function ProviderConfigForm({ providerName, keyUrl, modelHint, compact = false, leadingField, secondaryActions, onSaved }: {
+export type ProviderConfigFormProps = {
   providerName: string
   keyUrl?: string
   modelHint?: string
@@ -16,7 +18,13 @@ export function ProviderConfigForm({ providerName, keyUrl, modelHint, compact = 
   /** Keep connection actions together in the compact form footer. */
   secondaryActions?: ReactNode
   onSaved: () => void
-}) {
+}
+
+export function ProviderConfigForm(props: ProviderConfigFormProps) {
+  return props.providerName === ProviderNames.codex ? <CodexConnectionForm {...props} /> : <ApiProviderConfigForm {...props} />
+}
+
+function ApiProviderConfigForm({ providerName, keyUrl, modelHint, compact = false, leadingField, secondaryActions, onSaved }: ProviderConfigFormProps) {
   const isLocal = providerName.toLowerCase() === 'local'
   const showGeminiFreeTier = compact && providerName.toLowerCase() === 'gemini' && !!keyUrl
   const [apiKey, setApiKey] = useState('')

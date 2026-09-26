@@ -1,0 +1,355 @@
+{
+  "numTotalTestSuites": 6,
+  "numPassedTestSuites": 6,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 25,
+  "numPassedTests": 25,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1790456740438,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "JobRunner persists the retrieval contract on the plain insert branch",
+          "status": "passed",
+          "title": "JobRunner persists the retrieval contract on the plain insert branch",
+          "duration": 198.36558400000013,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "JobRunner persists the retrieval contract on the screenshot insert branch too",
+          "status": "passed",
+          "title": "JobRunner persists the retrieval contract on the screenshot insert branch too",
+          "duration": 170.93804200000022,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "an answer written without retrieval is distinguishable at rest from one that cited nothing",
+          "status": "passed",
+          "title": "an answer written without retrieval is distinguishable at rest from one that cited nothing",
+          "duration": 297.29529099999945,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "a provider without retrieval detection records unknown rather than a fabricated status",
+          "status": "passed",
+          "title": "a provider without retrieval detection records unknown rather than a fabricated status",
+          "duration": 144.56379199999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "rows written before the contract existed stay null rather than being assumed",
+          "status": "passed",
+          "title": "rows written before the contract existed stay null rather than being assumed",
+          "duration": 140.36166700000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1790456744305,
+      "endTime": 1790456745256.3616,
+      "status": "passed",
+      "message": "",
+      "name": "$WORKSPACE/packages/canonry/test/job-runner-retrieval-contract.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "two concurrent runs for different projects share one concurrency budget for the same provider",
+          "status": "passed",
+          "title": "two concurrent runs for different projects share one concurrency budget for the same provider",
+          "duration": 332.8858749999995,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1790456744305,
+      "endTime": 1790456744637.886,
+      "status": "passed",
+      "message": "",
+      "name": "$WORKSPACE/packages/canonry/test/job-runner-shared-provider-gate.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI has no generic connection config or per-project research default",
+          "status": "passed",
+          "title": "has no generic connection config or per-project research default",
+          "duration": 2.3407079999997222,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI does not adopt generic route IDs into Aero from unknown config fields",
+          "status": "passed",
+          "title": "does not adopt generic route IDs into Aero from unknown config fields",
+          "duration": 1.428791999999703,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI does not expose settings engine-routes",
+          "status": "passed",
+          "title": "does not expose settings engine-routes",
+          "duration": 2.2754580000000715,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI does not expose settings engine-connection",
+          "status": "passed",
+          "title": "does not expose settings engine-connection",
+          "duration": 0.6410420000001977,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI does not expose settings engine-models",
+          "status": "passed",
+          "title": "does not expose settings engine-models",
+          "duration": 0.4802499999996144,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "native provider configuration and CLI"
+          ],
+          "fullName": "native provider configuration and CLI does not expose settings engine-route",
+          "status": "passed",
+          "title": "does not expose settings engine-route",
+          "duration": 0.43058300000029703,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1790456745779,
+      "endTime": 1790456745786.4307,
+      "status": "passed",
+      "message": "",
+      "name": "$WORKSPACE/packages/canonry/test/native-provider-surface.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'openai' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'openai' declares whether the location reaches the request",
+          "duration": 1.541791000000103,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'claude' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'claude' declares whether the location reaches the request",
+          "duration": 0.1794999999999618,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'gemini' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'gemini' declares whether the location reaches the request",
+          "duration": 0.11245900000017173,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'perplexity' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'perplexity' declares whether the location reaches the request",
+          "duration": 0.06870800000001509,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'local' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'local' declares whether the location reaches the request",
+          "duration": 0.07829100000003564,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'cdp:chatgpt' declares whether the location reaches the request",
+          "status": "passed",
+          "title": "'cdp:chatgpt' declares whether the location reaches the request",
+          "duration": 0.060541999999941254,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'openai' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'openai' agrees with the published location-handling table",
+          "duration": 0.10208399999987705,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'claude' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'claude' agrees with the published location-handling table",
+          "duration": 0.05737500000009277,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'gemini' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'gemini' agrees with the published location-handling table",
+          "duration": 0.07229100000017752,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'perplexity' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'perplexity' agrees with the published location-handling table",
+          "duration": 0.07745799999997871,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'local' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'local' agrees with the published location-handling table",
+          "duration": 0.05083300000001145,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability 'cdp:chatgpt' agrees with the published location-handling table",
+          "status": "passed",
+          "title": "'cdp:chatgpt' agrees with the published location-handling table",
+          "duration": 0.039625000000114596,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "provider location capability"
+          ],
+          "fullName": "provider location capability treats an adapter that declares nothing as location-blind",
+          "status": "passed",
+          "title": "treats an adapter that declares nothing as location-blind",
+          "duration": 0.06616699999995035,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1790456742478,
+      "endTime": 1790456742481.0662,
+      "status": "passed",
+      "message": "",
+      "name": "$WORKSPACE/packages/canonry/test/provider-location-capability.test.ts"
+    }
+  ]
+}

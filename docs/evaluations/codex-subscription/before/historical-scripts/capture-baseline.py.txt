@@ -1,0 +1,181 @@
+"""Bounded live capture through this checkout's built CLI; no credentials in artifacts."""
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import signal
+import sqlite3
+import subprocess
+import threading
+import time
+import urllib.request
+
+ROOT = Path(__file__).resolve().parent.parent
+SESSION = json.loads((ROOT / '.context/baseline-session.json').read_text())
+OUT = Path(SESSION['artifactDir'])
+PRIVATE = Path(SESSION['configDir'])
+CONFIG = json.loads((PRIVATE / 'config.yaml').read_text())
+SECRETS = [CONFIG['apiKey'], *(p['apiKey'] for p in CONFIG['providers'].values())]
+ENV = {k: v for k, v in os.environ.items() if k in ['PATH', 'HOME', 'TMPDIR', 'LANG', 'LC_ALL']}
+ENV.update(CANONRY_CONFIG_DIR=str(PRIVATE), CANONRY_PORT=str(SESSION['port']),
+           CANONRY_HOST='127.0.0.1', CANONRY_AGENT_DISABLED='1',
+           CANONRY_DISABLE_UPDATE_CHECK='1', DO_NOT_TRACK='1', NO_COLOR='1')
+CLI = ['node', str(ROOT / 'packages/canonry/dist/cli.js')]
+PROJECT = 'baseline-aurora-solar'
+
+
+def redact(text):
+    for secret in SECRETS:
+        text = text.replace(secret, '[REDACTED]')
+    return text
+
+
+def save(name, value):
+    text = json.dumps(value, indent=2, ensure_ascii=False) + '\n'
+    (OUT / name).write_text(redact(text))
+
+
+def cli(args, filename=None, required=True):
+    result = subprocess.run(CLI + args + ['--format', 'json'], cwd=ROOT, env=ENV,
+                            text=True, capture_output=True, timeout=90)
+    if result.stderr:
+        with (OUT / 'cli.log').open('a') as log:
+            log.write(redact(result.stderr))
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        data = {'stdout': redact(result.stdout), 'stderr': redact(result.stderr), 'exitCode': result.returncode}
+    if filename:
+        save(filename, data)
+    if required and result.returncode:
+        raise RuntimeError(redact(f'CLI {args[:2]} failed: {result.stderr}'))
+    return data
+
+
+def capture_run(provider, query_list, phase):
+    args = ['run', PROJECT, '--provider', provider, '--probe', '--no-location']
+    for query in query_list:
+        args += ['--query', query]
+    started = time.monotonic()
+    created = cli(args, f'{provider}-{phase}-created.json')
+    run_id = created['id']
+    deadline = time.monotonic() + 1200
+    while True:
+        detail = cli(['run', 'show', run_id])
+        save(f'{provider}-{phase}.json', detail)
+        if detail['status'] in ['completed', 'partial', 'failed', 'cancelled']:
+            break
+        if time.monotonic() > deadline:
+            cli(['run', 'cancel', PROJECT, run_id], required=False)
+            detail = cli(['run', 'show', run_id])
+            save(f'{provider}-{phase}.json', detail)
+            break
+        time.sleep(5)
+    result = {'provider': provider, 'phase': phase, 'runId': run_id,
+              'status': detail['status'], 'expectedSnapshots': len(query_list),
+              'savedSnapshots': len(detail.get('snapshots', [])),
+              'elapsedSeconds': round(time.monotonic() - started, 2),
+              'error': detail.get('error')}
+    print(json.dumps(result), flush=True)
+    return result
+
+
+def main():
+    if (OUT / 'manifest.json').exists():
+        raise RuntimeError('Capture already initialized; do not accidentally spend on a duplicate baseline.')
+    fixture_path = 'packages/api-routes/test/fixtures/discovery-replay/b2b-saas.json'
+    fixture = json.loads((ROOT / fixture_path).read_text())
+    selected_indices = list(range(12)) + [14, 17, 18, 20, 21, 22, 23, 24]
+    basket = [fixture['seedRawCandidates'][i] for i in selected_indices]
+    assert len(basket) == len(set(basket)) == 20
+    manifest = {'schemaVersion': 1, 'project': PROJECT, 'displayName': 'Aurora Solar',
+                'canonicalDomain': 'aurorasolar.com', 'aliases': ['Aurora Solar'],
+                'country': 'US', 'language': 'en', 'location': None,
+                'providers': {p: {'model': c['model'], 'quota': c['quota']} for p, c in CONFIG['providers'].items()},
+                'queries': [{'key': f'q{i+1:02d}', 'text': q, 'sourceIndex': selected_indices[i]} for i, q in enumerate(basket)],
+                'querySource': fixture_path, 'sourceSha256': hashlib.sha256((ROOT / fixture_path).read_bytes()).hexdigest(),
+                'repetitions': 1, 'maxLogicalQueriesPerProvider': 20,
+                'execution': 'one-query pilot, then remaining 19 only if pilot completes; native SDK/adapter retries unchanged',
+                'trigger': 'probe', 'commit': SESSION['commit'],
+                'limitations': ['One pass is not a repeatability estimate.', 'Simple portfolio only; Advanced parity remains future work.',
+                                'Live provider differences are not deterministic regression failures.']}
+    encoded = json.dumps(manifest, sort_keys=True, separators=(',', ':')).encode()
+    manifest['sha256'] = hashlib.sha256(encoded).hexdigest()
+    save('manifest.json', manifest)
+    save('bootstrap.json', cli(['bootstrap']))
+    process = subprocess.Popen(CLI + ['serve'], cwd=ROOT, env=ENV, stdout=subprocess.PIPE,
+                               stderr=subprocess.STDOUT, text=True, start_new_session=True)
+    def logs():
+        with (OUT / 'server.log').open('a') as output:
+            for line in process.stdout:
+                output.write(redact(line))
+                output.flush()
+    thread = threading.Thread(target=logs, daemon=True)
+    thread.start()
+    results = []
+    failure = None
+    try:
+        for _ in range(60):
+            if process.poll() is not None:
+                raise RuntimeError('Isolated server exited; see sanitized server.log.')
+            try:
+                with urllib.request.urlopen(CONFIG['apiUrl'] + '/health', timeout=2) as response:
+                    health = json.load(response)
+                break
+            except (OSError, ValueError):
+                time.sleep(1)
+        else:
+            raise RuntimeError('Isolated server did not become ready.')
+        save('health.json', health)
+        assert health.get('commit') == SESSION['commit'], 'Server revision mismatch'
+        create = ['project', 'create', PROJECT, '--domain', manifest['canonicalDomain'],
+                  '--display-name', manifest['displayName'], '--alias', 'Aurora Solar',
+                  '--country', 'US', '--language', 'en']
+        for provider, settings in manifest['providers'].items():
+            create += ['--provider', provider, '--provider-model', f"{provider}={settings['model']}"]
+        cli(create, 'project.json')
+        cli(['query', 'add', PROJECT, *basket], 'query-add.json')
+        cli(['query', 'list', PROJECT], 'queries.json')
+        for provider in manifest['providers']:
+            first = capture_run(provider, basket[:1], 'pilot')
+            results.append(first)
+            if first['status'] == 'completed' and first['savedSnapshots'] == 1:
+                results.append(capture_run(provider, basket[1:], 'basket'))
+            save('progress.json', results)
+        cli(['results', 'export', PROJECT, '--include-probes', '--output', '-'], 'results-export.json')
+    except Exception as error:
+        failure = redact(str(error))
+        print(json.dumps({'captureError': failure}), flush=True)
+    finally:
+        if process.poll() is None:
+            os.killpg(process.pid, signal.SIGTERM)
+            try:
+                process.wait(timeout=20)
+            except subprocess.TimeoutExpired:
+                os.killpg(process.pid, signal.SIGKILL)
+                process.wait()
+        thread.join(timeout=5)
+        database = sqlite3.connect(f"file:{CONFIG['database']}?mode=ro", uri=True)
+        database.row_factory = sqlite3.Row
+        snapshots = [dict(row) for row in database.execute('SELECT * FROM query_snapshots ORDER BY created_at, id')]
+        for row in snapshots:
+            if row.get('raw_response'):
+                row['raw_response'] = json.loads(row['raw_response'])
+        save('stored-snapshots.json', snapshots)
+        save('stored-runs.json', [dict(row) for row in database.execute('SELECT * FROM runs ORDER BY created_at, id')])
+        database.close()
+        complete = failure is None and len(snapshots) == 40 and all(r['status'] == 'completed' for r in results)
+        summary = {'complete': complete, 'expectedSnapshots': 40, 'savedSnapshots': len(snapshots),
+                   'runs': results, 'error': failure, 'serverStopped': process.poll() is not None,
+                   'completedAt': datetime.datetime.now(datetime.timezone.utc).isoformat()}
+        save('summary.json', summary)
+        for artifact in OUT.iterdir():
+            if artifact.is_file():
+                contents = artifact.read_text()
+                assert all(secret not in contents for secret in SECRETS), f'Credential leak in {artifact.name}'
+        print(json.dumps(summary), flush=True)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,87 @@
+[
+  {
+    "query": "q01",
+    "status": "completed",
+    "events": 574,
+    "methods": {
+      "thread/started": 1,
+      "thread/status/changed": 2,
+      "turn/started": 1,
+      "rawResponseItem/completed": 15,
+      "item/started": 8,
+      "item/completed": 8,
+      "thread/tokenUsage/updated": 4,
+      "account/rateLimits/updated": 4,
+      "item/agentMessage/delta": 530,
+      "turn/completed": 1
+    }
+  },
+  {
+    "query": "q07",
+    "status": "completed",
+    "events": 709,
+    "methods": {
+      "thread/started": 1,
+      "thread/status/changed": 2,
+      "turn/started": 1,
+      "rawResponseItem/completed": 17,
+      "item/started": 10,
+      "item/completed": 10,
+      "thread/tokenUsage/updated": 4,
+      "account/rateLimits/updated": 4,
+      "item/agentMessage/delta": 659,
+      "turn/completed": 1
+    }
+  },
+  {
+    "query": "q13",
+    "status": "completed",
+    "events": 53,
+    "methods": {
+      "thread/started": 1,
+      "thread/status/changed": 2,
+      "turn/started": 1,
+      "rawResponseItem/completed": 9,
+      "item/started": 4,
+      "item/completed": 4,
+      "thread/tokenUsage/updated": 2,
+      "account/rateLimits/updated": 2,
+      "item/agentMessage/delta": 27,
+      "turn/completed": 1
+    }
+  },
+  {
+    "query": "q15",
+    "status": "completed",
+    "events": 519,
+    "methods": {
+      "thread/started": 1,
+      "thread/status/changed": 2,
+      "turn/started": 1,
+      "rawResponseItem/completed": 19,
+      "item/started": 11,
+      "item/completed": 11,
+      "thread/tokenUsage/updated": 5,
+      "account/rateLimits/updated": 5,
+      "item/agentMessage/delta": 463,
+      "turn/completed": 1
+    }
+  },
+  {
+    "query": "q18",
+    "status": "completed",
+    "events": 674,
+    "methods": {
+      "thread/started": 1,
+      "thread/status/changed": 2,
+      "turn/started": 1,
+      "rawResponseItem/completed": 23,
+      "item/started": 14,
+      "item/completed": 14,
+      "thread/tokenUsage/updated": 6,
+      "account/rateLimits/updated": 6,
+      "item/agentMessage/delta": 606,
+      "turn/completed": 1
+    }
+  }
+]

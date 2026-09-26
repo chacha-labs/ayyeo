@@ -1,0 +1,242 @@
+[
+  {
+    "id": "548cb39f-f6b7-49bb-bc09-43d834ac7381",
+    "run_id": "c6dea9f7-320c-4a99-a8ee-9c9e3a147830",
+    "query_id": "21c06055-1e3f-4e99-8e15-c1ef5235ff8a",
+    "query_text": "what is automated solar proposal software",
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "citation_state": "cited",
+    "answer_mentioned": 1,
+    "answer_text": "Automated solar proposal software helps solar installers turn a system design and pricing information into a customer-ready sales proposal, rather than manually building quotes, spreadsheets, and presentations. For example, OpenSolar generates proposals using a project’s design, payment options, and a reusable template. OpenSolar documentation\n\nDepending on the platform, it can:\n\nDesign the system: show where panels would go on the property.\n\nEstimate performance: calculate expected electricity production.\n\nCalculate financials: present installation costs, estimated savings, and payment options.\n\nCreate the proposal: package everything into a branded online presentation or PDF. OpenSolar proposal features, Aurora features\n\nIn plain English: it helps a solar company answer, “What would solar look like on your property, what would it cost, and how much could you save?”\n\nExamples include Aurora Solar and OpenSolar. “Automated” doesn’t necessarily mean fully hands-off—the design, inputs, and savings assumptions still need review.",
+    "cited_domains": "[\"opensolar.com\",\"aurorasolar.com\"]",
+    "competitor_overlap": "[]",
+    "recommended_competitors": "[]",
+    "location": null,
+    "screenshot_path": null,
+    "raw_response": {
+      "model": "gpt-6-astra",
+      "servedModel": null,
+      "groundingSources": [
+        {
+          "uri": "https://support.opensolar.com/hc/en-us/articles/13440054388239-How-to-create-your-swipe-proposal",
+          "title": "How to create your swipe proposal – OpenSolar"
+        },
+        {
+          "uri": "https://developers.opensolar.com/api/proposal-data/",
+          "title": "OpenSolar"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar"
+        }
+      ],
+      "searchQueries": [
+        "site.aurorasolar.com solar proposal software automated proposals",
+        "site.opensolar.com proposal solar design software"
+      ],
+      "apiResponse": {
+        "answerText": "**Automated solar proposal software helps solar installers turn a system design and pricing information into a customer-ready sales proposal**, rather than manually building quotes, spreadsheets, and presentations. For example, OpenSolar generates proposals using a project’s design, payment options, and a reusable template. [OpenSolar documentation](https://support.opensolar.com/hc/en-us/articles/13440054388239-How-to-create-your-swipe-proposal)\n\nDepending on the platform, it can:\n- **Design the system:** show where panels would go on the property.\n- **Estimate performance:** calculate expected electricity production.\n- **Calculate financials:** present installation costs, estimated savings, and payment options.\n- **Create the proposal:** package everything into a branded online presentation or PDF. [OpenSolar proposal features](https://developers.opensolar.com/api/proposal-data/), [Aurora features](https://www.aurorasolar.com/pricing/)\n\n**In plain English:** it helps a solar company answer, “What would solar look like on your property, what would it cost, and how much could you save?”\n\nExamples include **Aurora Solar** and **OpenSolar**. “Automated” doesn’t necessarily mean fully hands-off—the design, inputs, and savings assumptions still need review.",
+        "sources": [
+          {
+            "uri": "https://docs.aurorasolar.com/reference/proposals",
+            "title": "Proposals",
+            "reference": "turn0search0"
+          },
+          {
+            "uri": "https://www.opensolar.com/pro/",
+            "title": "Pro | Free AI-Powered Solar Software by OpenSolar",
+            "reference": "turn0search1"
+          },
+          {
+            "uri": "https://docs.aurorasolar.com/reference/createproposal",
+            "title": "Create Proposal",
+            "reference": "turn0search2"
+          },
+          {
+            "uri": "https://aurorasolar.com/",
+            "title": "Homepage | Aurora Solar",
+            "reference": "turn0search3"
+          },
+          {
+            "uri": "https://aurorasolar.com/aurora-vs-solar-proposal-software/",
+            "title": "Aurora vs. Solar Proposal Software | Aurora Solar",
+            "reference": "turn0search4"
+          },
+          {
+            "uri": "https://support.opensolar.com/hc/en-us/articles/13440054388239-How-to-create-your-swipe-proposal",
+            "title": "How to create your swipe proposal – OpenSolar",
+            "reference": "turn0search5"
+          },
+          {
+            "uri": "https://www.aurorasolar.com/pricing/",
+            "title": "Pricing | Aurora Solar",
+            "reference": "turn0search6"
+          },
+          {
+            "uri": "https://support.opensolar.com/hc/en-us/articles/13211925173519-How-to-Design-Your-First-Project-in-OpenSolar",
+            "title": "How to Design Your First Project in OpenSolar – OpenSolar",
+            "reference": "turn0search7"
+          },
+          {
+            "uri": "https://support.opensolar.com/hc/en-us/articles/13211447430799-Application-Flow",
+            "title": "Application Flow – OpenSolar",
+            "reference": "turn0search8"
+          },
+          {
+            "uri": "https://helioscope.aurorasolar.com/",
+            "title": "HelioScope | Commercial Solar Software",
+            "reference": "turn0search9"
+          },
+          {
+            "uri": "https://help.aurorasolar.com/hc/en-us",
+            "title": "Aurora Solar Help Center",
+            "reference": "turn0search10"
+          },
+          {
+            "uri": "https://developers.opensolar.com/api/proposal-data/",
+            "title": "OpenSolar",
+            "reference": "turn0search11"
+          },
+          {
+            "uri": "https://aurorasolar.com/wp-content/uploads/2022/08/The-Big-Book-of-Commercial-Solar-Software-Must-Haves.pdf",
+            "title": "The Big Book of Commercial Solar Software Must-Haves",
+            "reference": "turn0search12"
+          },
+          {
+            "uri": "https://www.opensolar.com/wp-content/uploads/2023/08/NREL-OpenSolar-Report-pdf.pdf",
+            "title": "Comparing the OpenSolar Remote Shading Analysis Tool to On-Site Shading Measurements",
+            "reference": "turn0search13"
+          },
+          {
+            "uri": "https://www.aurorasolar.com/wp-content/uploads/2021/02/Aurora-Solar-Infinity-Energy-Case-Study-Automation.pdf",
+            "title": "<visual_element id=\"e1\">",
+            "reference": "turn0search14"
+          },
+          {
+            "uri": "https://help.aurorasolar.com/hc/es/article_attachments/37459551588243",
+            "title": "Welcome to Aurora Admin Configuration Checklist Re",
+            "reference": "turn0search15"
+          },
+          {
+            "uri": "https://www.opensolar.com/wp-content/uploads/2023/08/OpenSolar-PVEL-Bankability.pdf",
+            "title": "2 OpenSolar Application Overview",
+            "reference": "turn0search16"
+          },
+          {
+            "uri": "https://www.aurorasolar.com/wp-content/uploads/2021/02/Solar-Technology-Survey-Insights.pdf",
+            "title": "TECH ADOPTION",
+            "reference": "turn0search17"
+          },
+          {
+            "uri": "https://www.reddit.com/r/Solarbusiness/comments/1sze927/opensolars_free_platform_just_locked_your_data/",
+            "title": "OpenSolar's \"Free\" platform just locked your data.",
+            "reference": "turn0reddit18"
+          },
+          {
+            "uri": "https://www.reddit.com/r/SolarUK/comments/1qr35j3/fed_of_doing_solar_designs_and_proposals/",
+            "title": "Fed of doing Solar Designs and Proposals",
+            "reference": "turn0reddit19"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/16e8x4j",
+            "title": "Best platform for utility grade proposals?",
+            "reference": "turn0reddit20"
+          },
+          {
+            "uri": "https://www.reddit.com/r/Solarbusiness/comments/17vu8f5",
+            "title": "What are you using to create your final proposal?",
+            "reference": "turn0reddit21"
+          },
+          {
+            "uri": "https://www.reddit.com/r/Solarsales/comments/1uqifb0/i_got_tired_of_using_outdated_solar_software_so_i/",
+            "title": "I got tired of using outdated solar software, so I started building my own.",
+            "reference": "turn0reddit22"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/dct73i",
+            "title": "Solar proposal software",
+            "reference": "turn0reddit23"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/dp81i3",
+            "title": "Which software do you use for planning your PV projects?",
+            "reference": "turn0reddit24"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/1d82t8g",
+            "title": "New Aurora v2 - how's it working for you?",
+            "reference": "turn0reddit25"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solarenergy/comments/18xh57c/software_for_solar_companies/",
+            "title": "Software for Solar Companies",
+            "reference": "turn0reddit26"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/1d4l724",
+            "title": "Solar software",
+            "reference": "turn0reddit27"
+          },
+          {
+            "uri": "https://www.reddit.com/r/solar/comments/1n7emg2/open_solar_software_for_pv_solar_design/",
+            "title": "Open Solar & software for PV Solar Design alternatives",
+            "reference": "turn0reddit28"
+          },
+          {
+            "uri": "https://www.reddit.com/r/SolarUK/comments/1tfrrod/solar_pv_system_design/",
+            "title": "Solar PV System Design",
+            "reference": "turn0reddit29"
+          },
+          {
+            "uri": "https://en.wikipedia.org/wiki/Proposal_software",
+            "title": "Proposal software",
+            "reference": "turn0search30"
+          },
+          {
+            "uri": "https://arxiv.org/abs/1802.01478",
+            "title": "Proposal and implementation of a novel perturb and observe algorithm using embedded software",
+            "reference": "turn0academia31"
+          },
+          {
+            "uri": "https://arxiv.org/abs/2412.20009",
+            "title": "SolarDesign: An Online Photovoltaic Device Simulation and Design Platform",
+            "reference": "turn0academia32"
+          },
+          {
+            "uri": "https://arxiv.org/abs/2406.00140",
+            "title": "solar: A solar thermal power plant simulator for blackbox optimization benchmarking",
+            "reference": "turn0academia33"
+          }
+        ],
+        "searchQueries": [
+          "site.aurorasolar.com solar proposal software automated proposals",
+          "site.opensolar.com proposal solar design software"
+        ],
+        "searchObserved": true,
+        "webToolCalls": [
+          {
+            "callId": "call_6aMRU2tmQMERdILIiBKKCiVn",
+            "program": "const r = await tools.web__run({search_query:[{q:\"site.aurorasolar.com solar proposal software automated proposals\"},{\"q\":\"site.opensolar.com proposal solar design software\"}],response_length:\"short\"});text(r);\n",
+            "outputs": [
+              "[Tool status or retrieved-page body omitted from published corpus]",
+              "Proposals (https://docs.aurorasolar.com/reference/proposals)\nciteturn0search0 [wordlim: 200]\n\nPro | Free AI-Powered Solar Software by OpenSolar (https://www.opensolar.com/pro/)\nciteturn0search1 [wordlim: 200]\n\nCreate Proposal (https://docs.aurorasolar.com/reference/createproposal)\nciteturn0search2 [wordlim: 200]\n\nHomepage | Aurora Solar (https://aurorasolar.com/)\nciteturn0search3 [wordlim: 200]\n\nAurora vs. Solar Proposal Software | Aurora Solar (https://aurorasolar.com/aurora-vs-solar-proposal-software/)\nciteturn0search4 [wordlim: 200]\n\nHow to create your swipe proposal – OpenSolar (https://support.opensolar.com/hc/en-us/articles/13440054388239-How-to-create-your-swipe-proposal)\nciteturn0search5 [wordlim: 200]\n\nPricing | Aurora Solar (https://www.aurorasolar.com/pricing/)\nciteturn0search6 [wordlim: 200]\n\nHow to Design Your First Project in OpenSolar – OpenSolar (https://support.opensolar.com/hc/en-us/articles/13211925173519-How-to-Design-Your-First-Project-in-OpenSolar)\nciteturn0search7 [wordlim: 200]\n\nApplication Flow – OpenSolar (https://support.opensolar.com/hc/en-us/articles/13211447430799-Application-Flow)\nciteturn0search8 [wordlim: 200]\n\nHelioScope | Commercial Solar Software (https://helioscope.aurorasolar.com/)\nciteturn0search9 [wordlim: 200]\n\nAurora Solar Help Center (https://help.aurorasolar.com/hc/en-us)\nciteturn0search10 [wordlim: 200]\n\nOpenSolar (https://developers.opensolar.com/api/proposal-data/)\nciteturn0search11 [wordlim: 200]\n\nThe Big Book of Commercial Solar Software Must-Haves (https://aurorasolar.com/wp-content/uploads/2022/08/The-Big-Book-of-Commercial-Solar-Software-Must-Haves.pdf)\nciteturn0search12 [wordlim: 200]\n\nComparing the OpenSolar Remote Shading Analysis Tool to On-Site Shading Measurements (https://www.opensolar.com/wp-content/uploads/2023/08/NREL-OpenSolar-Report-pdf.pdf)\nciteturn0search13 [wordlim: 200]\n\n<visual_element id=\"e1\"> (https://www.aurorasolar.com/wp-content/uploads/2021/02/Aurora-Solar-Infinity-Energy-Case-Study-Automation.pdf)\nciteturn0search14 [wordlim: 200]\n\nWelcome to Aurora Admin Configuration Checklist Re (https://help.aurorasolar.com/hc/es/article_attachments/37459551588243)\nciteturn0search15 [wordlim: 200]\n\n2 OpenSolar Application Overview (https://www.opensolar.com/wp-content/uploads/2023/08/OpenSolar-PVEL-Bankability.pdf)\nciteturn0search16 [wordlim: 200]\n\nTECH ADOPTION (https://www.aurorasolar.com/wp-content/uploads/2021/02/Solar-Technology-Survey-Insights.pdf)\nciteturn0search17 [wordlim: 200]\n\nOpenSolar's \"Free\" platform just locked your data. (https://www.reddit.com/r/Solarbusiness/comments/1sze927/opensolars_free_platform_just_locked_your_data/)\nciteturn0reddit18 [wordlim: 200]\n\nFed of doing Solar Designs and Proposals (https://www.reddit.com/r/SolarUK/comments/1qr35j3/fed_of_doing_solar_designs_and_proposals/)\nciteturn0reddit19 [wordlim: 200]\n\nBest platform for utility grade proposals? (https://www.reddit.com/r/solar/comments/16e8x4j)\nciteturn0reddit20 [wordlim: 200]\n\nWhat are you using to create your final proposal? (https://www.reddit.com/r/Solarbusiness/comments/17vu8f5)\nciteturn0reddit21 [wordlim: 200]\n\nI got tired of using outdated solar software, so I started building my own. (https://www.reddit.com/r/Solarsales/comments/1uqifb0/i_got_tired_of_using_outdated_solar_software_so_i/)\nciteturn0reddit22 [wordlim: 200]\n\nSolar proposal software (https://www.reddit.com/r/solar/comments/dct73i)\nciteturn0reddit23 [wordlim: 200]\n\nWhich software do you use for planning your PV projects? (https://www.reddit.com/r/solar/comments/dp81i3)\nciteturn0reddit24 [wordlim: 200]\n\nNew Aurora v2 - how's it working for you? (https://www.reddit.com/r/solar/comments/1d82t8g)\nciteturn0reddit25 [wordlim: 200]\n\nSoftware for Solar Companies (https://www.reddit.com/r/solarenergy/comments/18xh57c/software_for_solar_companies/)\nciteturn0reddit26 [wordlim: 200]\n\nSolar software (https://www.reddit.com/r/solar/comments/1d4l724)\nciteturn0reddit27 [wordlim: 200]\n\nOpen Solar & software for PV Solar Design alternatives (https://www.reddit.com/r/solar/comments/1n7emg2/open_solar_software_for_pv_solar_design/)\nciteturn0reddit28 [wordlim: 200]\n\nSolar PV System Design (https://www.reddit.com/r/SolarUK/comments/1tfrrod/solar_pv_system_design/)\nciteturn0reddit29 [wordlim: 200]\n\nProposal software (https://en.wikipedia.org/wiki/Proposal_software)\nciteturn0search30 [wordlim: 200]\n\nProposal and implementation of a novel perturb and observe algorithm using embedded software (https://arxiv.org/abs/1802.01478)\nciteturn0academia31 [wordlim: 200]\n\nSolarDesign: An Online Photovoltaic Device Simulation and Design Platform (https://arxiv.org/abs/2412.20009)\nciteturn0academia32 [wordlim: 200]\n\nsolar: A solar thermal power plant simulator for blackbox optimization benchmarking (https://arxiv.org/abs/2406.00140)\nciteturn0academia33 [wordlim: 200]"
+            ]
+          }
+        ]
+      }
+    },
+    "created_at": "2026-09-26T22:52:15.351Z",
+    "served_model": null,
+    "cited_urls": null,
+    "capture_status": "unsupported",
+    "source_count": 3,
+    "resolved_count": 0,
+    "capture_version": 1,
+    "retrieval_status": "used",
+    "retrieval_contract": "codex-web-search-v1",
+    "measurement_execution_id": null,
+    "requested_context": null,
+    "supported_context": null
+  }
+]

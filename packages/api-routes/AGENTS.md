@@ -11,6 +11,7 @@ Shared Fastify route plugins used by both the local server (`packages/canonry`) 
 | `src/index.ts` | Plugin entry point, global error handler, `ApiRoutesOptions` interface |
 | `src/helpers.ts` | `resolveProject()`, `writeAuditLog()`, `incrementUsage()`, `notProbeRun()` Drizzle predicate (see "Probe runs") |
 | `src/auth.ts` | Auth plugin: API key and session validation, scope gates (see "Deployment posture and key authority") |
+| `src/codex.ts` | Local Codex subscription status/connect/refresh/disconnect host callbacks |
 | `src/keys.ts` | API key management routes: `/keys` list, self, mint, revoke |
 | `src/request-context.ts` / `src/runtime-logger.ts` / `src/operational-logs.ts` | Request-local actor context; shared redacting logger; `GET /operations/logs` reader |
 | `src/openapi.ts` | OpenAPI spec generation, the source of the generated SDK (see "Typed responses") |
@@ -664,3 +665,7 @@ archive/swap rows with the audit entry, then invalidate the runtime cache. Busy
 turns cannot switch. Create `id` is identity (UUID, reused on retry); history
 `offset`/`limit` are read pagination. Summaries omit message payloads. Deleting a
 conversation deletes only its own compaction summaries, retaining shared notes.
+
+### Codex subscription routes
+
+`src/codex.ts` registers cached status and connect/refresh/disconnect callbacks supplied only by local Canonry. Require instance-administrator authority before every callback. Never accept tokens, executable paths, or API keys. Hosted instances return unavailable. The optional connect `model` parameter is identity: it pins the model used by future executions, not a performance-tuning option. Refresh and disconnect accept no tuning parameters.

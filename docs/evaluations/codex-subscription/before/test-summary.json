@@ -1,0 +1,23 @@
+{
+  "provider-tests": {
+    "numTotalTests": 70,
+    "numPassedTests": 70,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "execution-tests": {
+    "numTotalTests": 25,
+    "numPassedTests": 25,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "probe-tests": {
+    "numTotalTests": 17,
+    "numPassedTests": 17,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  }
+}

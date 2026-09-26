@@ -1,6 +1,7 @@
 import type { FastifyInstance } from 'fastify'
 import type { ProviderModelRegistry, ProviderQuotaPolicy } from '@ainyc/canonry-contracts'
 import {
+  ProviderNames,
   validationError,
   notImplemented,
   internalError,
@@ -106,6 +107,7 @@ export async function settingsRoutes(app: FastifyInstance, opts: SettingsRoutesO
     requireScope(request, SETTINGS_WRITE_SCOPE)
     const { apiKey, baseUrl, model, quota } = request.body ?? {}
     const name = request.params.name
+    if (name === ProviderNames.codex) throw validationError('Use the Codex connection controls to select a subscription model; API credentials are not accepted.')
 
     const adapters = opts.providerAdapters ?? []
     const apiAdapters = adapters.filter(a => a.mode === 'api')

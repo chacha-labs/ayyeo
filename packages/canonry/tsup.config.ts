@@ -68,6 +68,7 @@ export default defineConfig({
     '@ainyc/canonry-db',
     '@ainyc/canonry-intelligence',
     '@ainyc/canonry-api-routes',
+    '@ainyc/canonry-provider-codex',
     '@ainyc/canonry-provider-gemini',
     '@ainyc/canonry-provider-openai',
     '@ainyc/canonry-provider-claude',

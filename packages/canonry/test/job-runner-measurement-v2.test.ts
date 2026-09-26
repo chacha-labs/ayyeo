@@ -1,9 +1,11 @@
+import { CodexRuntime, createCodexAdapter } from '@ainyc/canonry-provider-codex'
+import { fakeAdapter } from './fake-measurement-provider.js'
 import crypto from 'node:crypto'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { eq } from 'drizzle-orm'
-import { describe, expect, it, onTestFinished } from 'vitest'
+import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import {
   canonicalMeasurementPlanV2Json,
   measurementPlanV2ChecksumJson,
@@ -237,3 +239,43 @@ describe('executing a published v2 revision', () => {
   })
 })
 
+
+
+it('keeps Codex explicit and preserves an Advanced market, Property, query class, model and location', async () => {
+  const db = seedDb()
+  const plan = sharedNodePlan(['property-a', 'property-b'], { key: 'codex-node', providers: ['codex'], models: { codex: 'codex-model' } })
+  plan.groups = [{ stableKey: 'market-a', label: 'Market A', targetKeys: ['property-a'], competitors: [] }, { stableKey: 'market-b', label: 'Market B', targetKeys: ['property-b'], competitors: [] }]
+  plan.compiledChecksum = crypto.createHash('sha256').update(measurementPlanV2ChecksumJson(plan)).digest('hex')
+  const projectId = seedPlannedProject(db, plan)
+  const queued = queueRunIfProjectIdle(db, { projectId, measurementScope: { groups: ['market-a'] }, runnableProviders: ['codex'], effectiveProviderModels: { codex: 'codex-model' } })
+  if (queued.conflict) throw new Error('Unexpected conflict')
+  const runtime = new CodexRuntime()
+  const execute = vi.spyOn(runtime, 'execute').mockResolvedValue({ answerText: 'Planned Co [source](https://example.com/property-a/page)', sources: [{ uri: 'https://example.com/property-a/page', title: 'Property A', reference: 'turn0search0' }], searchQueries: ['widget pricing'], searchObserved: true })
+  const registry = new ProviderRegistry()
+  registry.register(createCodexAdapter(runtime), { provider: 'codex', model: 'codex-model', codexAccountId: 'identity', quotaPolicy: { maxConcurrency: 1, maxRequestsPerMinute: 600, maxRequestsPerDay: 100 } })
+  await new JobRunner(db, registry).executeRun(queued.runId, projectId)
+  expect(execute).toHaveBeenCalledTimes(1)
+  expect(execute.mock.calls[0]?.[0]).toMatchObject({ query: 'widget pricing', location: NORTH, runId: queued.runId })
+  const rows = db.select().from(querySnapshots).where(eq(querySnapshots.runId, queued.runId)).all()
+  expect(rows).toHaveLength(1)
+  expect(rows[0]).toMatchObject({ provider: 'codex', model: 'codex-model', servedModel: null, measurementExecutionId: 'codex-node', citationState: 'cited', answerMentioned: true, retrievalContract: 'codex-web-search-v1' })
+  expect(db.select().from(runs).where(eq(runs.id, queued.runId)).get()?.status).toBe('completed')
+  execute.mockRestore()
+})
+
+it('does not add Codex to an implicit Simple sweep but accepts an explicit run selection', async () => {
+  const db = seedDb()
+  const projectId = crypto.randomUUID()
+  db.insert(projects).values({ id: projectId, name: 'simple', displayName: 'Simple', canonicalDomain: 'https://EXAMPLE.com/', country: 'US', language: 'en', providers: [], createdAt: NOW, updatedAt: NOW }).run()
+  db.insert(queries).values({ id: 'simple-query', projectId, query: 'widget pricing', createdAt: NOW }).run()
+  const calls: import('./fake-measurement-provider.js').RecordedCall[] = []
+  const registry = registryFor([fakeAdapter({ name: 'gemini', calls }), fakeAdapter({ name: 'codex', calls })])
+  const first = queueRunIfProjectIdle(db, { projectId, runnableProviders: ['gemini', 'codex'], effectiveProviderModels: { gemini: 'fake-model', codex: 'fake-model' } })
+  if (first.conflict) throw new Error('Unexpected conflict')
+  await new JobRunner(db, registry).executeRun(first.runId, projectId)
+  expect(calls.map(call => call.provider)).toEqual(['gemini'])
+  const second = queueRunIfProjectIdle(db, { projectId, providers: ['codex'], runnableProviders: ['gemini', 'codex'], effectiveProviderModels: { gemini: 'fake-model', codex: 'fake-model' } })
+  if (second.conflict) throw new Error('Unexpected conflict')
+  await new JobRunner(db, registry).executeRun(second.runId, projectId, ['codex'])
+  expect(calls.map(call => call.provider)).toEqual(['gemini', 'codex'])
+})

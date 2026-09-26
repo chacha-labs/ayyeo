@@ -1,3 +1,5 @@
+import type { CodexConnectRequest, CodexStatusDto } from '@ainyc/canonry-contracts'
+import { getApiV1SettingsProvidersCodexStatus, postApiV1SettingsProvidersCodexConnect, postApiV1SettingsProvidersCodexRefresh, postApiV1SettingsProvidersCodexDisconnect } from '@ainyc/canonry-api-client'
 import type { AgentConversation, AgentConversationList, AgentConversationDelete } from '@ainyc/canonry-contracts'
 import type { RunCompletenessDto, RunFillRequest, RunFillResponseDto } from '@ainyc/canonry-contracts'
 import { getApiV1ProjectsByNameAgentConversations, getApiV1ProjectsByNameAgentConversationsById, postApiV1ProjectsByNameAgentConversations, postApiV1ProjectsByNameAgentConversationsByIdResume, deleteApiV1ProjectsByNameAgentConversationsById } from '@ainyc/canonry-api-client'
@@ -2309,6 +2311,22 @@ export class ApiClient {
   }
 
   // ── Settings / providers / snapshot / telemetry ─────────────────────────
+
+  async codexStatus(): Promise<CodexStatusDto> {
+    return this.invoke<CodexStatusDto>(() => getApiV1SettingsProvidersCodexStatus({ client: this.heyClient }))
+  }
+
+  async codexConnect(body: CodexConnectRequest = {}): Promise<CodexStatusDto> {
+    return this.invoke<CodexStatusDto>(() => postApiV1SettingsProvidersCodexConnect({ client: this.heyClient, body }))
+  }
+
+  async codexRefresh(): Promise<CodexStatusDto> {
+    return this.invoke<CodexStatusDto>(() => postApiV1SettingsProvidersCodexRefresh({ client: this.heyClient, body: {} }))
+  }
+
+  async codexDisconnect(): Promise<CodexStatusDto> {
+    return this.invoke<CodexStatusDto>(() => postApiV1SettingsProvidersCodexDisconnect({ client: this.heyClient, body: {} }))
+  }
 
   async getSettings(): Promise<SettingsDto> {
     return this.invoke<SettingsDto>(() => getApiV1Settings({ client: this.heyClient }))

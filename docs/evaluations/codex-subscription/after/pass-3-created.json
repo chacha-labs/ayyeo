@@ -1,0 +1,13 @@
+{
+  "id": "71e25394-8285-487f-951c-0ffcdd0f0b88",
+  "projectId": "702ab87a-1808-43d9-80f8-c63bad61287d",
+  "kind": "answer-visibility",
+  "status": "queued",
+  "trigger": "probe",
+  "location": null,
+  "queries": null,
+  "startedAt": null,
+  "finishedAt": null,
+  "error": null,
+  "createdAt": "2026-09-26T22:37:40.623Z"
+}

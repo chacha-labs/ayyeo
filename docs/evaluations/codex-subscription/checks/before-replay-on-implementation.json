@@ -1,0 +1,8 @@
+{
+  "snapshotCount": 40,
+  "assertionsPerSnapshot": 7,
+  "mismatches": [],
+  "replayPassed": true,
+  "completeBasket": true,
+  "note": "Round-trip self-consistency only; fixtures have not been independently human-labeled."
+}

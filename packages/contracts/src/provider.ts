@@ -18,6 +18,7 @@ export type ProviderQuotaPolicy = z.infer<typeof providerQuotaPolicySchema>
  */
 export const PROVIDER_NAMES = ['gemini', 'openai', 'claude', 'perplexity', 'local', 'cdp:chatgpt'] as const
 export const ProviderNames = {
+  codex: 'codex',
   gemini: 'gemini',
   openai: 'openai',
   claude: 'claude',
@@ -74,6 +75,8 @@ export function resolveProviderInput(input: string): string[] {
 }
 
 export interface ProviderConfig {
+  /** Non-secret identity of the subscription explicitly connected by the operator. */
+  codexAccountId?: string
   provider: string
   apiKey?: string
   baseUrl?: string
@@ -132,6 +135,11 @@ export interface ProviderLocationHandling {
 }
 
 const PROVIDER_LOCATION_HANDLING: Record<string, ProviderLocationHandling> = {
+  codex: {
+    treatment: 'prompt',
+    supportsLocationContext: true,
+    description: 'Location appended to the query text the Codex model receives.',
+  },
   gemini: {
     treatment: 'prompt',
     supportsLocationContext: true,
@@ -187,6 +195,8 @@ export function providerSupportsLocationContext(adapter: { supportsLocationConte
 }
 
 export interface TrackedQueryInput {
+  /** Execution identity for cancellation; never sent to the answer engine. */
+  runId?: string
   query: string
   canonicalDomains: string[]
   competitorDomains: string[]

@@ -20,6 +20,7 @@
  */
 
 export const ProviderIds = {
+  codex: 'codex',
   claude: 'claude',
   openai: 'openai',
   gemini: 'gemini',
@@ -36,6 +37,7 @@ export const PROVIDER_IDS: readonly ProviderId[] = Object.values(ProviderIds)
 
 /** Providers that can run answer-visibility sweeps. */
 export const SweepProviderIds = {
+  codex: ProviderIds.codex,
   claude: ProviderIds.claude,
   openai: ProviderIds.openai,
   gemini: ProviderIds.gemini,

@@ -1,3 +1,4 @@
+import { isImplicitProvider } from '@ainyc/canonry-contracts'
 import { runAeoAudit } from '@canonry/aeo-audit'
 import {
   determineAnswerMentioned,
@@ -67,7 +68,7 @@ export class SnapshotService {
     const requestedNames = input.providers === undefined ? undefined : [...new Set(input.providers)]
     const mode = input.providerMode ?? SnapshotProviderModes.all
     const providers = requestedNames === undefined
-      ? this.registry.getAll().filter(provider => mode === SnapshotProviderModes.all || provider.adapter.mode === mode)
+      ? this.registry.getAll().filter(provider => isImplicitProvider(provider.adapter.name)).filter(provider => mode === SnapshotProviderModes.all || provider.adapter.mode === mode)
       : requestedNames.map(name => {
         const provider = this.registry.get(name)
         if (!provider) throw validationError(`Snapshot provider "${name}" is not configured`)

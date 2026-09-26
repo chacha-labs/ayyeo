@@ -1,0 +1,26 @@
+
+> canonry@5.21.0 gen $WORKSPACE
+> pnpm --filter @ainyc/canonry-api-client gen
+
+
+> @ainyc/canonry-api-client@0.0.0 gen $WORKSPACE/packages/api-client-generated
+> node --import tsx codegen.ts
+
+(node:79809) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[36m888   |                           e      888~-_   888[39m
+[36m888___|  e88~~8e  Y88b  /        d8b     888   \  888[39m
+[36m888   | d888  88b  Y888/        /Y88b    888    | 888[39m
+[36m888   | 8888__888   Y8/        /  Y88b   888   /  888[39m
+[36m888   | Y888    ,    Y        /____Y88b  888_-~   888[39m
+[36m888   |  "88___/    /        /      Y88b 888      888[39m
+[36m                  _/[39m
+
+[90m@hey-api/openapi-ts v0.85.2[39m
+
+[90m[Job 1] [39m⏳ [36mGenerating from 1 input:[39m
+[90m[Job 1] [39m[36m  [1] [39m$TMP/canonry-codegen-1lEoKY/openapi.json
+✨ Running Prettier
+[90m[Job 1] [39m[32m✅ Done![39m Your output is in [96m./../../../../../..$TMP/canonry-artifact-QK7JSf/output[39m
+Generated client updated (0 files)

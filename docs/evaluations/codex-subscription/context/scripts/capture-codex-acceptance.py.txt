@@ -1,0 +1,123 @@
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import runpy
+import signal
+import sqlite3
+import subprocess
+import threading
+import time
+import urllib.request
+
+ROOT = Path(__file__).resolve().parent.parent
+S = json.loads((ROOT / '.context/codex-acceptance-session.json').read_text())
+OUT = Path(S['artifactDir'])
+PRIVATE = Path(S['configDir'])
+CONFIG = json.loads((PRIVATE / 'config.yaml').read_text())
+BASKET = json.loads((Path(S['baselineDir']) / 'manifest.json').read_text())
+helpers = runpy.run_path(str(ROOT / '.context/capture-baseline.py'))
+context = helpers['cli'].__globals__
+ENV = {k: v for k, v in os.environ.items() if k in ['PATH', 'HOME', 'TMPDIR', 'LANG', 'LC_ALL', 'CODEX_HOME']}
+ENV.update(CANONRY_CONFIG_DIR=str(PRIVATE), CANONRY_PORT=str(S['port']), CANONRY_HOST='127.0.0.1',
+           CANONRY_AGENT_DISABLED='1', CANONRY_DISABLE_UPDATE_CHECK='1', DO_NOT_TRACK='1', NO_COLOR='1')
+secrets = [CONFIG['apiKey'], *(provider['apiKey'] for provider in CONFIG['providers'].values())]
+context.update(OUT=OUT, PRIVATE=PRIVATE, CONFIG=CONFIG, ENV=ENV, PROJECT='acceptance-aurora-solar', SECRETS=secrets)
+cli, save, redact = context['cli'], context['save'], context['redact']
+CLI = context['CLI']
+
+
+def run(providers, label):
+    started = time.monotonic()
+    created = cli(['run', context['PROJECT'], '--provider', ','.join(providers), '--probe', '--no-location'], label + '-created.json')
+    run_id = created['id']
+    deadline = time.monotonic() + len(BASKET['queries']) * 180 + 120
+    while True:
+        detail = cli(['run', 'show', run_id])
+        save(label + '.json', detail)
+        if detail['status'] in ['completed', 'partial', 'failed', 'cancelled']:
+            break
+        if time.monotonic() > deadline:
+            cli(['run', 'cancel', context['PROJECT'], run_id], required=False)
+            raise RuntimeError(f'Run {run_id} exceeded its bounded deadline')
+        time.sleep(10)
+    result = {'runId': run_id, 'label': label, 'providers': providers, 'status': detail['status'],
+              'expectedSnapshots': len(BASKET['queries']) * len(providers),
+              'savedSnapshots': len(detail.get('snapshots', [])), 'elapsedSeconds': round(time.monotonic()-started, 2),
+              'counts': {provider: sum(row['provider'] == provider for row in detail.get('snapshots', [])) for provider in providers},
+              'error': detail.get('error')}
+    print(json.dumps(result), flush=True)
+    return result
+
+
+def main():
+    if (OUT / 'manifest.json').exists():
+        raise RuntimeError('This acceptance capture already exists; refusing duplicate provider spend.')
+    save('bootstrap.json', cli(['bootstrap']))
+    process = subprocess.Popen(CLI + ['serve'], cwd=ROOT, env=ENV, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, start_new_session=True)
+    def collect_logs():
+        with (OUT / 'server.log').open('w') as log:
+            for line in process.stdout:
+                log.write(redact(line)); log.flush()
+    thread = threading.Thread(target=collect_logs, daemon=True); thread.start()
+    results, failure = [], None
+    try:
+        for _ in range(60):
+            if process.poll() is not None: raise RuntimeError('Server exited; inspect server.log')
+            try:
+                with urllib.request.urlopen(CONFIG['apiUrl'] + '/health', timeout=2) as response: health = json.load(response)
+                break
+            except (OSError, ValueError): time.sleep(1)
+        else: raise RuntimeError('Server did not become ready')
+        save('health.json', health)
+        connected = cli(['settings', 'codex', 'connect'], 'codex-connected.json')
+        if connected['state'] != 'connected': raise RuntimeError('Codex subscription did not connect')
+        manifest = {**BASKET, 'phase': 'after-change', 'baselineSha256': BASKET['sha256'],
+                    'codexModel': connected['model'], 'runtimeVersion': connected['runtimeVersion'],
+                    'plannedPasses': {'gemini': 1, 'claude': 1, 'codex': 3}}
+        save('manifest.json', manifest)
+        command = ['project', 'create', context['PROJECT'], '--domain', BASKET['canonicalDomain'], '--display-name', BASKET['displayName'], '--alias', 'Aurora Solar', '--country', BASKET['country'], '--language', BASKET['language']]
+        for provider in ['gemini', 'claude', 'codex']:
+            model = connected['model'] if provider == 'codex' else BASKET['providers'][provider]['model']
+            command += ['--provider', provider, '--provider-model', provider + '=' + model]
+        cli(command, 'project.json')
+        cli(['query', 'add', context['PROJECT'], *(query['text'] for query in BASKET['queries'])], 'query-add.json')
+        cli(['query', 'list', context['PROJECT']], 'queries.json')
+        files = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard'], cwd=ROOT, text=True).splitlines()
+        provenance = {'commit': S['commit'], 'dirty': True, 'version': health['version'],
+                      'sourceSha256': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in files if (ROOT/name).is_file()},
+                      'buildSha256': {file.name: hashlib.sha256(file.read_bytes()).hexdigest() for file in (ROOT/'packages/canonry/dist').glob('*.js')}}
+        save('provenance.json', provenance)
+        print(json.dumps({'connected': True, 'model': connected['model'], 'runtimeVersion': connected['runtimeVersion'], 'expectedSnapshots': 100, 'url': CONFIG['apiUrl']}), flush=True)
+        results.append(run(['gemini', 'claude', 'codex'], 'pass-1'))
+        save('progress.json', results)
+        if results[0]['counts']['codex'] == 0: raise RuntimeError('Codex produced no usable measurements; stopping additional passes')
+        for index in [2, 3]:
+            results.append(run(['codex'], f'pass-{index}'))
+            save('progress.json', results)
+        cli(['results', 'export', context['PROJECT'], '--include-probes', '--output', '-'], 'results-export.json')
+        cli(['visibility-stats', context['PROJECT'], '--by-provider'], 'visibility-stats.json')
+    except Exception as error:
+        failure = redact(str(error)); print(json.dumps({'error': failure}), flush=True)
+    finally:
+        if process.poll() is None:
+            os.killpg(process.pid, signal.SIGTERM)
+            try: process.wait(timeout=30)
+            except subprocess.TimeoutExpired:
+                os.killpg(process.pid, signal.SIGKILL); process.wait()
+        thread.join(timeout=5)
+        db = sqlite3.connect(f"file:{CONFIG['database']}?mode=ro", uri=True); db.row_factory = sqlite3.Row
+        rows = [dict(row) for row in db.execute('SELECT * FROM query_snapshots ORDER BY created_at,id')]
+        for row in rows: row['raw_response'] = json.loads(row['raw_response'])
+        save('stored-snapshots.json', rows)
+        save('stored-runs.json', [dict(row) for row in db.execute('SELECT * FROM runs ORDER BY created_at,id')])
+        db.close()
+        summary = {'complete': len(rows) == 100 and failure is None, 'expectedSnapshots': 100, 'savedSnapshots': len(rows), 'runs': results, 'error': failure, 'serverStopped': process.poll() is not None, 'completedAt': datetime.datetime.now(datetime.timezone.utc).isoformat()}
+        save('summary.json', summary)
+        for file in OUT.iterdir():
+            if file.is_file(): assert not any(secret in file.read_text() for secret in secrets), f'Credential leak: {file.name}'
+        print(json.dumps(summary), flush=True)
+
+
+if __name__ == '__main__': main()

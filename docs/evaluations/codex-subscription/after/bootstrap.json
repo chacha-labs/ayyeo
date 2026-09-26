@@ -1,0 +1,13 @@
+{
+  "bootstrapped": true,
+  "status": "updated",
+  "changed": true,
+  "configPath": "$LOCAL_CONFIG/baselines/kolkata-codex-20260926T221739Z/config.yaml",
+  "databasePath": "$LOCAL_CONFIG/baselines/kolkata-codex-20260926T221739Z/data.db",
+  "apiUrl": "http://127.0.0.1:52777",
+  "providers": [
+    "gemini",
+    "claude"
+  ],
+  "googleConfigured": false
+}

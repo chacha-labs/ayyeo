@@ -1,0 +1,250 @@
+{
+  "benchmarkThresholdPassed": true,
+  "snapshotCount": 98,
+  "replayMismatches": [],
+  "independentlyReviewedCodexAnswers": 58,
+  "providerResults": [
+    {
+      "provider": "gemini",
+      "expected": 20,
+      "measured": 20,
+      "failed": 0,
+      "successPercent": 100,
+      "byQueryClass": [
+        {
+          "queryClass": "non-brand",
+          "expected": 18,
+          "measured": 18,
+          "missing": 0,
+          "mentioned": 12,
+          "cited": 4
+        },
+        {
+          "queryClass": "branded",
+          "expected": 2,
+          "measured": 2,
+          "missing": 0,
+          "mentioned": 2,
+          "cited": 2
+        }
+      ]
+    },
+    {
+      "provider": "claude",
+      "expected": 20,
+      "measured": 20,
+      "failed": 0,
+      "successPercent": 100,
+      "byQueryClass": [
+        {
+          "queryClass": "non-brand",
+          "expected": 18,
+          "measured": 18,
+          "missing": 0,
+          "mentioned": 14,
+          "cited": 1
+        },
+        {
+          "queryClass": "branded",
+          "expected": 2,
+          "measured": 2,
+          "missing": 0,
+          "mentioned": 2,
+          "cited": 2
+        }
+      ]
+    },
+    {
+      "provider": "codex",
+      "expected": 60,
+      "measured": 58,
+      "failed": 2,
+      "successPercent": 96.7,
+      "byQueryClass": [
+        {
+          "queryClass": "non-brand",
+          "expected": 54,
+          "measured": 53,
+          "missing": 1,
+          "mentioned": 37,
+          "cited": 47
+        },
+        {
+          "queryClass": "branded",
+          "expected": 6,
+          "measured": 5,
+          "missing": 1,
+          "mentioned": 5,
+          "cited": 5
+        }
+      ]
+    }
+  ],
+  "repeatability": [
+    {
+      "queryKey": "q01",
+      "query": "what is automated solar proposal software",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q02",
+      "query": "how does solar CRM integration improve sales",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q03",
+      "query": "why is accurate solar system design crucial for proposals",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q04",
+      "query": "benefits of digital solar sales tools for large teams",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q05",
+      "query": "understanding ROI of solar proposal software",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q06",
+      "query": "challenges of manual solar quoting for growing businesses",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": true,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q07",
+      "query": "best solar quoting software for 20-person sales team",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q08",
+      "query": "top residential solar proposal tools for enterprise",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q09",
+      "query": "leading solar design and proposal software",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q10",
+      "query": "solar sales software for large residential installers",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q11",
+      "query": "cloud-based solar proposal solutions for sales managers",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q12",
+      "query": "reputable solar sales quoting platforms",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q13",
+      "query": "Aurora Solar website",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q14",
+      "query": "solar proposal software comparison sites",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": true
+    },
+    {
+      "queryKey": "q15",
+      "query": "Aurora Solar vs EnergyLink for residential solar",
+      "completePasses": 2,
+      "allThreeMeasured": false,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q16",
+      "query": "Enact Systems vs Solo for solar proposals",
+      "completePasses": 2,
+      "allThreeMeasured": false,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q17",
+      "query": "what are alternatives to manual solar quoting",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q18",
+      "query": "which solar design software integrates best with CRM",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q19",
+      "query": "best solar proposal solution: local install vs cloud",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    },
+    {
+      "queryKey": "q20",
+      "query": "solar proposal software pricing for enterprise",
+      "completePasses": 3,
+      "allThreeMeasured": true,
+      "mentionChanged": false,
+      "citationChanged": false
+    }
+  ],
+  "limits": [
+    "Source review is assistant review of captured evidence, not an external human audit or exhaustive verification of vendor claims.",
+    "The 100-attempt capture precedes the final verbatim-program AST hardening; that guard was checked against all 16 pilot programs and a separate live final-build smoke query.",
+    "Two Codex outputs failed source attribution and were not saved as negative observations."
+  ]
+}

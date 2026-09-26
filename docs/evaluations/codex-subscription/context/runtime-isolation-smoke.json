@@ -1,0 +1,176 @@
+{
+  "model": "gpt-6-astra",
+  "runtimeVersion": "0.157.1",
+  "result": {
+    "answerText": "**Automated solar proposal software helps solar installers create customer quotes and sales proposals without building everything manually.** It combines a proposed solar-panel system, pricing, and estimated savings into a customer-ready presentation. [Aurora Solar](https://aurorasolar.com/)\n\nTypically, it helps teams:\n- **Show the system design:** panel placement and system size.\n- **Estimate electricity production** and potential bill savings.\n- **Calculate pricing:** equipment, installation, incentives, and payment options.\n- **Generate a proposal:** an interactive web page or PDF explaining the offer. [OpenSolar](https://developers.opensolar.com/api/proposal-data/), [Aurora proposal guide](https://help.aurorasolar.com/hc/en-us/articles/14883209518995-Generate-and-Send-a-Web-Proposal-or-PDF-in-Sales-Mode)\n\n**“Automated” doesn’t necessarily mean fully hands-off.** The installer still needs to supply or verify the design, energy usage, and financial assumptions; the software handles calculations and presentation once those inputs are in place. [Aurora financial-analysis overview](https://help.aurorasolar.com/hc/en-us/articles/51752305485715-Financial-analysis-Overview)\n\nIn plain English: **it turns solar project details into a polished “here’s what you’ll get, what it costs, and what you could save” offer.**",
+    "sources": [
+      {
+        "uri": "https://docs.aurorasolar.com/reference/proposals",
+        "title": "Proposals",
+        "reference": "turn0search0"
+      },
+      {
+        "uri": "https://docs.aurorasolar.com/reference/createproposal",
+        "title": "Create Proposal",
+        "reference": "turn0search1"
+      },
+      {
+        "uri": "https://aurorasolar.com/",
+        "title": "Homepage | Aurora Solar",
+        "reference": "turn0search2"
+      },
+      {
+        "uri": "https://help.aurorasolar.com/hc/en-us/articles/4406006770067-Sales-Mode-Overview",
+        "title": "Sales Mode Overview – Aurora Solar Help Center",
+        "reference": "turn0search3"
+      },
+      {
+        "uri": "https://support.opensolar.com/hc/en-us/articles/17378693408271-How-project-pricing-works-in-OpenSolar",
+        "title": "How project pricing works in OpenSolar – OpenSolar",
+        "reference": "turn0search4"
+      },
+      {
+        "uri": "https://help.aurorasolar.com/hc/en-us/articles/51752305485715-Financial-analysis-Overview",
+        "title": "Financial analysis: Overview – Aurora Solar Help Center",
+        "reference": "turn0search5"
+      },
+      {
+        "uri": "https://aurorasolar.com/aurora-vs-solar-proposal-software/",
+        "title": "Aurora vs. Solar Proposal Software | Aurora Solar",
+        "reference": "turn0search6"
+      },
+      {
+        "uri": "https://www.opensolar.com/pro/",
+        "title": "Pro | Free AI-Powered Solar Software by OpenSolar",
+        "reference": "turn0search7"
+      },
+      {
+        "uri": "https://resources.aurorasolar.com/solaris-case-study/",
+        "title": "Solaris Renewables Case Study - How Solaris Renewables Thrives with Aurora’s All-in-One Solar Platform",
+        "reference": "turn0search8"
+      },
+      {
+        "uri": "https://support.opensolar.com/hc/en-us/articles/16782185462671-How-to-configure-pricing-in-OpenSolar",
+        "title": "How to configure pricing in OpenSolar – OpenSolar",
+        "reference": "turn0search9"
+      },
+      {
+        "uri": "https://aurorasolar.com/wp-content/uploads/2022/08/The-Big-Book-of-Commercial-Solar-Software-Must-Haves.pdf",
+        "title": "The Big Book of Commercial Solar Software Must-Haves",
+        "reference": "turn0search12"
+      },
+      {
+        "uri": "https://help.aurorasolar.com/hc/en-us/articles/14883209518995-Generate-and-Send-a-Web-Proposal-or-PDF-in-Sales-Mode",
+        "title": "Generate and Send a Web Proposal or PDF in Sales Mode – Aurora Solar Help Center",
+        "reference": "turn0search10"
+      },
+      {
+        "uri": "https://developers.opensolar.com/api/proposal-data/",
+        "title": "OpenSolar",
+        "reference": "turn0search11"
+      },
+      {
+        "uri": "https://www.aurorasolar.com/wp-content/uploads/2021/02/Solar-Technology-Survey-Insights.pdf",
+        "title": "TECH ADOPTION",
+        "reference": "turn0search13"
+      },
+      {
+        "uri": "https://www.opensolar.com/wp-content/uploads/2023/08/NREL-OpenSolar-Report-pdf.pdf",
+        "title": "Comparing the OpenSolar Remote Shading Analysis Tool to On-Site Shading Measurements",
+        "reference": "turn0search14"
+      },
+      {
+        "uri": "https://aurorasolar.com/wp-content/uploads/2025/09/AuroraSolar_ROIWhitepaper_Final.pdf",
+        "title": "The ROI Playbook",
+        "reference": "turn0search15"
+      },
+      {
+        "uri": "https://aurorasolar.com/wp-content/uploads/2022/10/How-solar-software-delivers-ROI.pdf",
+        "title": "How solar software",
+        "reference": "turn0search16"
+      },
+      {
+        "uri": "https://www.reddit.com/r/Solarbusiness/comments/1sze927/opensolars_free_platform_just_locked_your_data/",
+        "title": "OpenSolar's \"Free\" platform just locked your data.",
+        "reference": "turn0reddit17"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/1d82t8g",
+        "title": "New Aurora v2 - how's it working for you?",
+        "reference": "turn0reddit18"
+      },
+      {
+        "uri": "https://www.reddit.com/r/SolarUK/comments/1qr35j3/fed_of_doing_solar_designs_and_proposals/",
+        "title": "Fed of doing Solar Designs and Proposals",
+        "reference": "turn0reddit19"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/1u4i4tz/looking_for_feedback_with_drastic_change_in_final/",
+        "title": "Looking for feedback with drastic change in final design",
+        "reference": "turn0reddit20"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/dct73i",
+        "title": "Solar proposal software",
+        "reference": "turn0reddit21"
+      },
+      {
+        "uri": "https://www.reddit.com/r/Solarbusiness/comments/1dbmvrq",
+        "title": "Finding Clients (Solar installers)",
+        "reference": "turn0reddit22"
+      },
+      {
+        "uri": "https://www.reddit.com/r/Solarbusiness/comments/17k8mgw",
+        "title": "What is your favorite solar design software?",
+        "reference": "turn0reddit23"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/wxs8ec",
+        "title": "Question for solar pros",
+        "reference": "turn0reddit24"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/1n7emg2/open_solar_software_for_pv_solar_design/",
+        "title": "Open Solar & software for PV Solar Design alternatives",
+        "reference": "turn0reddit25"
+      },
+      {
+        "uri": "https://www.reddit.com/r/Solarbusiness/comments/17jbq7r",
+        "title": "How long does it usually take to sketch out a plan in Aurora/HelioScope?",
+        "reference": "turn0reddit26"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solar/comments/1sr3po7/requesting_thoughts_on_this_proposal/",
+        "title": "Requesting thoughts on this proposal",
+        "reference": "turn0reddit27"
+      },
+      {
+        "uri": "https://www.reddit.com/r/solarenergy/comments/18xh57c/software_for_solar_companies/",
+        "title": "Software for Solar Companies",
+        "reference": "turn0reddit28"
+      },
+      {
+        "uri": "https://arxiv.org/abs/1909.13139",
+        "title": "Optimal Sizing of Stand-alone Solar PV Systems via Automated Formal Synthesis",
+        "reference": "turn0academia29"
+      },
+      {
+        "uri": "https://arxiv.org/abs/1401.5162",
+        "title": "A Simple Software Application for Simulating Commercially Available Solar Panels",
+        "reference": "turn0academia30"
+      }
+    ],
+    "searchQueries": [
+      "site.aurorasolar.com solar proposal software design savings proposal ..."
+    ],
+    "searchObserved": true
+  },
+  "diagnostics": {
+    "inheritedSkillCatalog": false,
+    "completedToolTypes": [
+      "userMessage",
+      "webSearch",
+      "agentMessage"
+    ]
+  }
+}

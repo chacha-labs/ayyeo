@@ -48,6 +48,7 @@ const NODE_PACKAGES = [
   'integration-wordpress',
   'integration-wordpress-traffic',
   'intelligence',
+  'provider-codex',
   'provider-cdp',
   'provider-claude',
   'provider-gemini',
