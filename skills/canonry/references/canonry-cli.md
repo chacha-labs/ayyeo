@@ -419,9 +419,23 @@ Perplexity runs on its Agent API. `--model` takes a preset (`fast` default, `low
 
 Quota flags: `--max-concurrent`, `--max-per-minute`, `--max-per-day`
 
-Available providers: `gemini`, `openai`, `claude`, `perplexity`, `local`, `cdp`
+Available providers: `gemini`, `openai`, `claude`, `perplexity`, `local`, `codex` (local subscription), `cdp`
 
 If a provider hits rate limits (429 errors), the run completes as `partial`. Reduce concurrency or increase time between sweeps.
+
+### Codex subscription (local only)
+
+Run `codex login` on the machine hosting Canonry, then connect its existing subscription session:
+
+```sh
+cnry settings codex connect [--model <id>] --format json
+cnry settings codex status --format json
+cnry settings codex refresh --format json
+cnry run <project> --provider codex --probe --wait --format json
+cnry settings codex disconnect --format json
+```
+
+Connection commands require instance-administrator authority. Codex must be selected explicitly in the project, run, or Advanced plan; connecting does not expand existing default sweeps. Disconnect leaves the CLI signed in. API-key CLI authentication and hosted deployment connection are unsupported. Query runs consume the shared subscription allowance. Citation measurement fails when the runtime cannot expose verifiable source evidence; never report such failures as not cited. See `docs/providers/codex.md` for runtime compatibility and evidence details.
 
 ### Gemini Vertex AI
 

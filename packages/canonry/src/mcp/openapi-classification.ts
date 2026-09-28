@@ -1,6 +1,10 @@
 export type OpenApiMcpClassification = 'included' | 'deferred' | 'excluded-protocol'
 
 export const MCP_OPENAPI_OPERATION_CLASSIFICATIONS = {
+  'GET /api/v1/settings/providers/codex/status': 'included',
+  'POST /api/v1/settings/providers/codex/connect': 'included',
+  'POST /api/v1/settings/providers/codex/refresh': 'included',
+  'POST /api/v1/settings/providers/codex/disconnect': 'included',
   'GET /api/v1/operations/logs': 'included',
   'GET /api/v1/openapi.json': 'excluded-protocol',
   // The browser launchpad needs create-only collision semantics. Agents already

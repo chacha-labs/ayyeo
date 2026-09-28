@@ -1,3 +1,4 @@
+import { codexStatusDtoSchema } from '@ainyc/canonry-contracts'
 /**
  * Centralized OpenAPI schema registry for canonry's API responses.
  *
@@ -527,6 +528,7 @@ const SCHEMA_TABLE = {
   CalendarRecurrence: calendarRecurrenceSchema,
   ScheduleDto: scheduleDtoSchema,
   SettingsDto: settingsDtoSchema,
+  CodexStatusDto: codexStatusDtoSchema,
   SiteAuditLivePageHealthDto: siteAuditLivePageHealthSchema,
   SiteAuditPagesResponseDto: siteAuditPagesResponseSchema,
   SiteAuditRunProgressDto: siteAuditRunProgressSchema,

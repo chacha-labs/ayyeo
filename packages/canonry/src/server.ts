@@ -39,8 +39,12 @@ import { openaiAdapter } from "@ainyc/canonry-provider-openai";
 import { claudeAdapter } from "@ainyc/canonry-provider-claude";
 import { localAdapter } from "@ainyc/canonry-provider-local";
 import { cdpChatgptAdapter } from "@ainyc/canonry-provider-cdp";
+import { CodexRuntime, createCodexAdapter } from "@ainyc/canonry-provider-codex";
+import { createCodexConnection, CODEX_QUOTA } from "./codex-connection.js";
+import { createCodexFailureStore } from "./codex-diagnostics.js";
 import { perplexityAdapter } from "@ainyc/canonry-provider-perplexity";
 import {
+  ProviderNames,
   authInvalid,
   authRequired,
   forbidden,
@@ -75,7 +79,7 @@ import type {
 } from "./config.js";
 import { resolveEmbedConfig, SERVER_ENFORCED_EMBED_PROJECT_TABS, unsupportedEmbedProjectTabs } from "./embed.js";
 import { resolveAgentAllowViewers, resolveAgentEnabled, resolveAgentProactiveEnabled } from "./agent-config.js";
-import { saveConfigPatch, getConfigPath } from "./config.js";
+import { saveConfigPatch, getConfigPath, getConfigDir } from "./config.js";
 import { getPlacesConfig } from "./places-config.js";
 import {
   getGoogleAuthConfig,
@@ -858,6 +862,14 @@ export async function createServer(opts: {
 
   // Build provider registry from config (with legacy field migration)
   const registry = new ProviderRegistry();
+  const saveCodexFailure = createCodexFailureStore(path.join(getConfigDir(), 'diagnostics', 'codex'));
+  const codexRuntime = new CodexRuntime(undefined, undefined, async capture => {
+    try { await saveCodexFailure(capture); }
+    catch (error) { log.error('codex.failure-capture.failed', { error: describeError(error), runId: capture.runId }); }
+  });
+  const codexAdapter = createCodexAdapter(codexRuntime);
+  const apiAdapters = [...API_ADAPTERS, codexAdapter];
+  app.addHook("onClose", async () => { await codexRuntime.close(); });
   const providers = opts.config.providers ?? {};
 
   // Migrate legacy geminiApiKey if providers.gemini is not set
@@ -892,23 +904,25 @@ export async function createServer(opts: {
   });
 
   // Register API providers from config
-  for (const adapter of API_ADAPTERS) {
+  for (const adapter of apiAdapters) {
     const entry = providers[adapter.name];
     if (!entry) continue;
     // Local provider requires baseUrl; Gemini can use apiKey OR vertexProject; others require apiKey
     const isConfigured =
-      adapter.name === "local"
+      adapter.name === ProviderNames.codex ? !!(entry.enabled && entry.codexAccountId && entry.model) : adapter.name === "local"
         ? !!entry.baseUrl
         : adapter.name === "gemini"
           ? !!(entry.apiKey || entry.vertexProject)
           : !!entry.apiKey;
     if (isConfigured) {
+      if (adapter.name === ProviderNames.codex) codexRuntime.enable();
       registry.register(adapter, {
         provider: adapter.name,
         apiKey: entry.apiKey,
         baseUrl: entry.baseUrl,
         model: entry.model,
-        quotaPolicy: entry.quota ?? DEFAULT_QUOTA,
+        quotaPolicy: entry.quota ?? (adapter.name === ProviderNames.codex ? CODEX_QUOTA : DEFAULT_QUOTA),
+        codexAccountId: entry.codexAccountId,
         vertexProject: entry.vertexProject,
         vertexRegion: entry.vertexRegion,
         vertexCredentials: entry.vertexCredentials,
@@ -1832,13 +1846,13 @@ export async function createServer(opts: {
   });
 
   // Build provider summary for API routes (dynamic from adapter list)
-  const providerSummary = API_ADAPTERS.map((adapter) => ({
+  const providerSummary = apiAdapters.map((adapter) => ({
     name: adapter.name,
     displayName: adapter.displayName,
     keyUrl: adapter.keyUrl,
     modelHint: `e.g. ${adapter.modelRegistry.defaultModel}`,
     model: registry.get(adapter.name)?.config.model,
-    defaultModel: adapter.modelRegistry.defaultModel,
+    defaultModel: adapter.modelRegistry.defaultModel || registry.get(adapter.name)?.config.model,
     configured: !!registry.get(adapter.name),
     quota: registry.get(adapter.name)?.config.quotaPolicy,
     vertexConfigured:
@@ -2970,10 +2984,14 @@ export async function createServer(opts: {
       version: PKG_VERSION,
       includeCanonryLocal: true,
     },
+    codexConnection: createCodexConnection(opts.config, registry, codexAdapter, codexRuntime, (enabled, model) => {
+      const entry = providerSummary.find(provider => provider.name === ProviderNames.codex);
+      if (entry) { entry.configured = enabled; entry.model = model; }
+    }),
     providerSummary,
     getProviderModels: providerModelCatalog,
     getCachedProviderModels: providerModelCatalog.cached,
-    providerAdapters: [...API_ADAPTERS, ...BROWSER_ADAPTERS].map((a) => ({
+    providerAdapters: [...apiAdapters, ...BROWSER_ADAPTERS].map((a) => ({
       name: a.name,
       displayName: a.displayName,
       mode: a.mode,
@@ -3073,6 +3091,7 @@ export async function createServer(opts: {
       });
     },
     onRunCancelled: (runId: string) => {
+      codexRuntime.cancelRun(runId);
       const controller = siteAuditAbortControllers.get(runId);
       if (controller && !controller.signal.aborted) {
         controller.abort(new Error("Cancelled by user"));

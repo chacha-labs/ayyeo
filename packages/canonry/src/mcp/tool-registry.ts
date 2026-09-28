@@ -1,3 +1,4 @@
+import { codexStatusDtoSchema, codexConnectRequestSchema } from '@ainyc/canonry-contracts'
 import { agentConversationCreateSchema } from '@ainyc/canonry-contracts'
 import type { ToolAnnotations } from '@modelcontextprotocol/sdk/types.js'
 import {
@@ -1759,6 +1760,42 @@ export const canonryMcpTools = [
     annotations: readAnnotations(),
     openApiOperations: ['GET /api/v1/projects/{name}/backlinks/sources'],
     handler: (client, input) => client.backlinksSources(input.project),
+  }),
+  defineTool({
+    name: 'canonry_codex_status', title: 'Status Codex subscription',
+    description: 'Status the local Codex subscription connection. Requires instance administrator authority. Reuses the existing CLI login; disconnect never logs out the CLI.',
+    access: 'read', tier: 'setup', requiredScope: '*',
+    inputSchema: emptyInputSchema, outputSchema: codexStatusDtoSchema,
+    annotations: readAnnotations(),
+    openApiOperations: ['GET /api/v1/settings/providers/codex/status'],
+    handler: (client) => client.codexStatus(),
+  }),
+  defineTool({
+    name: 'canonry_codex_connect', title: 'Connect Codex subscription',
+    description: 'Connect the local Codex subscription connection. Requires instance administrator authority. Reuses the existing CLI login; disconnect never logs out the CLI.',
+    access: 'write', tier: 'setup', requiredScope: '*',
+    inputSchema: codexConnectRequestSchema, outputSchema: codexStatusDtoSchema,
+    annotations: writeAnnotations({ idempotentHint: true }),
+    openApiOperations: ['POST /api/v1/settings/providers/codex/connect'],
+    handler: (client, input) => client.codexConnect(input),
+  }),
+  defineTool({
+    name: 'canonry_codex_refresh', title: 'Refresh Codex subscription',
+    description: 'Refresh the local Codex subscription connection. Requires instance administrator authority. Reuses the existing CLI login; disconnect never logs out the CLI.',
+    access: 'write', tier: 'setup', requiredScope: '*',
+    inputSchema: emptyInputSchema, outputSchema: codexStatusDtoSchema,
+    annotations: writeAnnotations({ idempotentHint: true }),
+    openApiOperations: ['POST /api/v1/settings/providers/codex/refresh'],
+    handler: (client) => client.codexRefresh(),
+  }),
+  defineTool({
+    name: 'canonry_codex_disconnect', title: 'Disconnect Codex subscription',
+    description: 'Disconnect the local Codex subscription connection. Requires instance administrator authority. Reuses the existing CLI login; disconnect never logs out the CLI.',
+    access: 'write', tier: 'setup', requiredScope: '*',
+    inputSchema: emptyInputSchema, outputSchema: codexStatusDtoSchema,
+    annotations: writeAnnotations({ idempotentHint: true }),
+    openApiOperations: ['POST /api/v1/settings/providers/codex/disconnect'],
+    handler: (client) => client.codexDisconnect(),
   }),
   defineTool({
     name: 'canonry_settings_get',

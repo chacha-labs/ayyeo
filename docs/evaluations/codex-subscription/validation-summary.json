@@ -1,0 +1,50 @@
+{
+  "focusedTests": {
+    "total": 328,
+    "passed": 328,
+    "failed": 0,
+    "success": true
+  },
+  "archiveReplay": {
+    "datasets": {
+      "before": 40,
+      "after": 98,
+      "final-smoke": 1,
+      "final-acceptance": 59,
+      "release-smoke": 1
+    },
+    "mismatches": [],
+    "passed": true
+  },
+  "liveAcceptance": {
+    "requested": 60,
+    "accepted": 59,
+    "completionPercent": 98.3,
+    "acceptedAnswersReviewed": 59,
+    "rejectedAnswersReviewed": 1,
+    "extractionMismatches": 0
+  },
+  "releaseSmoke": {
+    "status": "completed",
+    "snapshots": 1,
+    "cliStillSubscriptionAuthenticated": true,
+    "verbatimWebPrograms": 1
+  },
+  "localChecks": [
+    "affected provider/CLI/API/web typechecks",
+    "CLI and web builds",
+    "pnpm check",
+    "generated SDK drift",
+    "plugin drift",
+    "Val skill mirror drift"
+  ],
+  "ci": "Not run: operator explicitly requested leaving fork Actions disabled.",
+  "rawAnswerAudit": {
+    "answersChecked": 59,
+    "method": "Independent simple-inline-link audit of original Markdown, with unsupported formats rejected. Shared brand matcher applied to raw text after removing hidden destinations and formatting markers; final-link sets compared with saved sources.",
+    "mismatches": [],
+    "passed": true
+  },
+  "recordedAt": "2026-09-28",
+  "artifactAvailability": "Full captures and development logs archived locally in .context/codex-evaluation-archive; not included in the PR. Essential captured regression fixtures remain in packages/provider-codex/test/fixtures."
+}

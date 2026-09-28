@@ -1,5 +1,5 @@
 import type { ProviderAdapter, ProviderConfig, ProviderName, ProviderHealthcheckResult } from '@ainyc/canonry-contracts'
-import { isBrowserProvider, resolveProviderModel } from '@ainyc/canonry-contracts'
+import { isBrowserProvider, resolveProviderModel, isImplicitProvider } from '@ainyc/canonry-contracts'
 
 export interface RegisteredProvider {
   adapter: ProviderAdapter
@@ -19,6 +19,10 @@ export class ProviderRegistry {
     this.providers.set(adapter.name, { adapter, config: resolved })
   }
 
+  unregister(name: ProviderName): void {
+    this.providers.delete(name)
+  }
+
   get(name: ProviderName): RegisteredProvider | undefined {
     return this.providers.get(name)
   }
@@ -30,7 +34,7 @@ export class ProviderRegistry {
   getForProject(projectProviders: ProviderName[]): RegisteredProvider[] {
     // Empty array means "use all configured providers"
     if (projectProviders.length === 0) {
-      return this.getAll()
+      return this.getAll().filter(entry => isImplicitProvider(entry.adapter.name))
     }
     const result: RegisteredProvider[] = []
     const seen = new Set<ProviderName>()

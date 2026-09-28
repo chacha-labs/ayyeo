@@ -1,5 +1,5 @@
 import type { ProjectDto, InsightDto, MentionShareBreakdownDto, ProjectOverviewDto, QueryClassifier, RunErrorDto, RunKind } from '@ainyc/canonry-contracts'
-import { RunKinds, RunStatuses, RunTriggers, CitationStates, compileQueryClassifier, effectiveBrandNames, formatRunErrorOneLine } from '@ainyc/canonry-contracts'
+import { ProviderNames, RunKinds, RunStatuses, RunTriggers, CitationStates, compileQueryClassifier, effectiveBrandNames, formatRunErrorOneLine } from '@ainyc/canonry-contracts'
 import type {
   ApiCompetitor,
   ApiBingCoverageSummary,
@@ -823,9 +823,11 @@ export function buildDashboard(projectDataList: ProjectData[], apiSettings?: Api
         state: (p.configured ? 'ready' : 'needs-config') as 'ready' | 'needs-config',
         detail: p.configured
           ? 'Provider is configured.'
-          : p.name.toLowerCase() === 'local'
-            ? 'Base URL is missing.'
-            : 'API key is missing.',
+          : p.name.toLowerCase() === ProviderNames.codex
+            ? 'Connect an existing Codex CLI subscription session.'
+            : p.name.toLowerCase() === 'local'
+              ? 'Base URL is missing.'
+              : 'API key is missing.',
         quota: p.quota,
       })),
       google: {

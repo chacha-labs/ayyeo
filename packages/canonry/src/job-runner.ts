@@ -542,6 +542,7 @@ export class JobRunner {
             const raw = await adapter.executeTrackedQuery(
               {
                 query: q.query,
+                runId,
                 canonicalDomains: allDomains,
                 competitorDomains,
                 location: runLocation,
@@ -1299,6 +1300,7 @@ export class JobRunner {
             canonicalDomains: ctx.allDomains,
             competitorDomains,
             location: requestedContext ?? undefined,
+            runId: ctx.runId,
           },
           config,
         )

@@ -43,6 +43,7 @@ import { compositeRoutes } from './composites.js'
 import { contentRoutes } from './content.js'
 import { openApiRoutes } from './openapi.js'
 import type { OpenApiInfo } from './openapi.js'
+import { codexRoutes, type CodexRoutesOptions } from './codex.js'
 import { settingsRoutes } from './settings.js'
 import type { SettingsRoutesOptions, ProviderSummaryEntry, ProviderAdapterInfo } from './settings.js'
 import { keysRoutes } from './keys.js'
@@ -120,7 +121,7 @@ export { runChecks } from './doctor/runner.js'
 export * from './notifications/alert.js'
 export * from './notifications/destinations.js'
 export { resolveVercelSyncDeadlineMs, VERCEL_MAX_SYNC_WINDOW_MS, DEFAULT_VERCEL_SYNC_DEADLINE_MS, TRAFFIC_SOURCE_MAX_CATCHUP_MS } from './traffic-limits.js'
-export interface ApiRoutesOptions {
+export interface ApiRoutesOptions extends CodexRoutesOptions {
   db: DatabaseClient
   /** Host-approved direct bearer IDs, never inferred from customer roles or scopes. */
   operatorApiKeyIds?: readonly string[]
@@ -601,6 +602,7 @@ export async function apiRoutes(app: FastifyInstance, opts: ApiRoutesOptions) {
       briefContentRecommendation: opts.briefContentRecommendation,
       briefPromptVersion: opts.briefPromptVersion,
     })
+    await api.register(codexRoutes, { codexConnection: opts.codexConnection })
     await api.register(settingsRoutes, {
       getProviderModels: opts.getProviderModels,
       providerSummary: opts.providerSummary,

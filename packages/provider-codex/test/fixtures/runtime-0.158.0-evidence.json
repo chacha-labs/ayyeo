@@ -1,0 +1,924 @@
+[
+  {
+    "query": "Aurora Solar vs EnergyLink for residential solar",
+    "runtimeVersion": "0.158.0",
+    "evidence": {
+      "answerText": "**These may not be direct competitors—it depends on which “EnergyLink” you mean.**\n\nAssuming you mean **AuroraSolar.com** and **GoEnergyLink.com**:\n\n| | Aurora Solar | EnergyLink |\n|---|---|---|\n| **What it is** | Solar design and sales software for installers | A company that engineers, procures, and constructs energy projects |\n| **Residential relevance** | Explicitly supports residential roof modeling, panel layouts, shading analysis, production estimates, and proposals | Currently focuses on commercial, industrial, and larger-scale projects |\n| **Best fit** | Designing and quoting home solar systems | Hiring a provider for a business or institutional energy project |\n\nSources: [Aurora’s residential tools](https://aurorasolar.com/), [EnergyLink’s services](https://goenergylink.com/).\n\n### My take\n- **If you’re an installer choosing residential design software:** Aurora is the relevant option of these two—not an apples-to-apples software comparison.\n- **If you’re a homeowner choosing an installer:** Aurora’s software is not itself an installation service. EnergyLink’s website focuses on commercial work; its older residential guidance explicitly says it stopped accepting residential leads. I wouldn’t shortlist these as two competing home installers. [EnergyLink’s explanation](https://goenergylink.com/blog/what-are-the-differences-between-residential-and-commercial-solar/)\n\n**Can you share the EnergyLink website, and whether you’re comparing software or companies to install solar on your home?**",
+      "sources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar",
+          "reference": "turn0search0"
+        },
+        {
+          "uri": "https://help.aurorasolar.com/hc/en-us",
+          "title": "Aurora Solar Help Center",
+          "reference": "turn0search1"
+        },
+        {
+          "uri": "https://docs.aurorasolar.com/reference/projects",
+          "title": "Projects",
+          "reference": "turn0search2"
+        },
+        {
+          "uri": "https://help.aurorasolar.com/hc/en-us/articles/30551226386707-Self-Serve-Plans-Foundation-and-Build",
+          "title": "Self Serve Plans: Foundation and Build – Aurora Solar Help Center",
+          "reference": "turn0search3"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/aurora-ai/",
+          "title": "Aurora AI | Aurora Solar",
+          "reference": "turn0search4"
+        },
+        {
+          "uri": "https://aurorasolar.com/aurora-for-installers/",
+          "title": "Aurora for Installers | Aurora Solar",
+          "reference": "turn0search5"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/design-mode/",
+          "title": "Design Mode | Aurora Solar",
+          "reference": "turn0search6"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/pricing/",
+          "title": "Pricing | Aurora Solar",
+          "reference": "turn0search7"
+        },
+        {
+          "uri": "https://aurorasolar.com/aurora-ai/",
+          "title": "Aurora AI | Aurora Solar",
+          "reference": "turn0search8"
+        },
+        {
+          "uri": "https://aurorasolar.com/design-mode/",
+          "title": "Design Mode | Aurora Solar",
+          "reference": "turn0search9"
+        },
+        {
+          "uri": "https://help.aurorasolar.com/hc/en-us/articles/4402392992915-Entering-energy-consumption-in-Aurora",
+          "title": "Entering energy consumption in Aurora – Aurora Solar Help Center",
+          "reference": "turn0search10"
+        },
+        {
+          "uri": "https://www.aurorasolar.com/sales-mode/",
+          "title": "Sales Mode | Aurora Solar",
+          "reference": "turn0search11"
+        },
+        {
+          "uri": "https://aurorasolar.com/wp-content/uploads/2021/04/The-Big-Book-of-Solar-Software-Must-Haves.pdf",
+          "title": "Introduction",
+          "reference": "turn0search12"
+        },
+        {
+          "uri": "https://www.fimer.com/sites/default/files/FIMER_Brochure_Solar%20inverter%20solutions%20for%20building%20applications-EN-revB.pdf",
+          "title": "Aurora Vision®",
+          "reference": "turn0search13"
+        },
+        {
+          "uri": "https://portal.segensolar.co.za/reseller/docs/Aurora%20Full%20Catalogue.pdf",
+          "title": "page",
+          "reference": "turn0search14"
+        },
+        {
+          "uri": "https://aurorasolar.com/wp-content/uploads/2022/10/How-solar-software-delivers-ROI.pdf",
+          "title": "How solar software",
+          "reference": "turn0search15"
+        },
+        {
+          "uri": "https://sacra-pdfs.s3.us-east-2.amazonaws.com/aurora-solar.pdf",
+          "title": "The company's core revenue comes from solar installers using their platform to design residential projects (150-220 credits) and commercial projects (2,000 credits), with additional revenue from add-on features like AI-assisted site modeling (90 credits) and e-signature capabilities (50 credits). Enterprise customers commit to annual minimums of $15,000, while smaller customers can start with 2,500 credits ($250) valid for one year.",
+          "reference": "turn0search16"
+        },
+        {
+          "uri": "https://www.reddit.com/r/dataisbeautiful/comments/1lv2cru",
+          "title": "[OC] First year of residential solar",
+          "reference": "turn0reddit17"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/16s2n7m",
+          "title": "Which Software does Solar X use in Canada(Ontario) to determine the panel orientation and system, considering the shading on the house?",
+          "reference": "turn0reddit18"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/wxs8ec",
+          "title": "Question for solar pros",
+          "reference": "turn0reddit19"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/wis87x",
+          "title": "Help with Solar Size and Panel Placement Comparison",
+          "reference": "turn0reddit20"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/katijs",
+          "title": "Solar Designer, Salesman, and Project Manager here for a small private solar company stuck in the dark ages of manual input for contract documents. Solutions for quickly and automatically populating all the documents when it comes time to contract?",
+          "reference": "turn0reddit21"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/18w9qso",
+          "title": "Residential Solar start up",
+          "reference": "turn0reddit22"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1d4l724",
+          "title": "Solar software",
+          "reference": "turn0reddit23"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Aurora_Solar_Thermal_Power_Project",
+          "title": "Aurora Solar Thermal Power Project",
+          "reference": "turn0search24"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/1bnhq82",
+          "title": "How does engineering work for solar roofs?",
+          "reference": "turn0reddit25"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/17un96v",
+          "title": "Let The Showdown Begin!",
+          "reference": "turn0reddit26"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/xdbab8",
+          "title": "Questions about my grid-connected solar array",
+          "reference": "turn0reddit27"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1m8lcju",
+          "title": "Comparing system designs: different sizes (kW) but similar estimated production offsets?",
+          "reference": "turn0reddit28"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1pr0umt/online_estimators_for_rooftop_solar/",
+          "title": "Online estimators for rooftop solar",
+          "reference": "turn0reddit29"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/SunLink",
+          "title": "SunLink",
+          "reference": "turn0search30"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Tigo_Energy",
+          "title": "Tigo Energy",
+          "reference": "turn0search31"
+        },
+        {
+          "uri": "https://aurorasolar.com/partners/",
+          "title": "Partners | Aurora Solar",
+          "reference": "turn1search0"
+        },
+        {
+          "uri": "https://solar-x.ca/ontario/aurora-solar-installation",
+          "title": "Solar Panel Installation Aurora ON | Solar X Canada",
+          "reference": "turn1search1"
+        },
+        {
+          "uri": "https://www.energylink.com/Public/Interfaces",
+          "title": "EnergyLink - Interfaces",
+          "reference": "turn1search2"
+        },
+        {
+          "uri": "https://www.energylink.ai/",
+          "title": "EnergyLink – The Energy Data Platform",
+          "reference": "turn1search3"
+        },
+        {
+          "uri": "https://aurorasolartech.com/contact/",
+          "title": "Contact – Aurora Solar Technologies",
+          "reference": "turn1search4"
+        },
+        {
+          "uri": "https://aurorasolar.com/news/aurora-solar-announces-expansion-of-operations-in-canada/",
+          "title": "Aurora Solar Announces Expansion of Operations in Canada | Aurora Solar",
+          "reference": "turn1search5"
+        },
+        {
+          "uri": "https://epecenergylink.com/",
+          "title": "Energylink: Trade Clean Energy with Your Neighbors | EnergyLink",
+          "reference": "turn1search6"
+        },
+        {
+          "uri": "https://app.energylink.com/Public/Resources.aspx",
+          "title": "Resources",
+          "reference": "turn1search7"
+        },
+        {
+          "uri": "https://quote.aurorasolar.com/?aurora_blog_cta=home+blog",
+          "title": "Aurora Solar Marketplace",
+          "reference": "turn1search8"
+        },
+        {
+          "uri": "https://www.worldfutureenergysummit.com/content/dam/sitebuilder/rxae/worldfutureenergysummit/2021/content-hub/Mesia-Digital_Report-Book_Final-Low.pdf.coredownload.697224299.pdf",
+          "title": "MIDDLE EAST SOLAR INDUST",
+          "reference": "turn1search12"
+        },
+        {
+          "uri": "https://erp.sat.theenergylink.com/auth/login",
+          "title": "EnergyLink",
+          "reference": "turn1search9"
+        },
+        {
+          "uri": "https://www.aeso.ca/download/listedfiles/2025_02_LTA_FINAL.pdf",
+          "title": "Long-Term Adequacy Report",
+          "reference": "turn1search13"
+        },
+        {
+          "uri": "https://app.energylink.com/Public/Interfaces",
+          "title": "EnergyLink - Interfaces",
+          "reference": "turn1search10"
+        },
+        {
+          "uri": "https://docente.ifsc.edu.br/klunger.beck/energia/extra/especificacao_painel/Sun_Power/geral/ss-sunpower-helix-energylink-pro-sellsheet.pdf",
+          "title": "System Monitoring",
+          "reference": "turn1search14"
+        },
+        {
+          "uri": "https://www.consumeraffairs.com/solar-energy/energylink.html",
+          "title": "EnergyLink Review 2026 | ConsumerAffairs®",
+          "reference": "turn1search11"
+        },
+        {
+          "uri": "https://www.nantucket-ma.gov/DocumentCenter/View/38731/2019-Town-of-Nantucket-Premises-Technical-Proposal-PDF",
+          "title": "RFP Response for Solar PV Development for Onsite Energy Generation",
+          "reference": "turn1search15"
+        },
+        {
+          "uri": "https://ised-isde.canada.ca/cipo/trademark-search/pdf/2349762?lang=eng",
+          "title": "Canadian Trademarks Details:   AURORA SOLAR TECHNOLOGIES & Design — 2349762 — Canadian Trademarks Database - Intellectual property and copyright - Canadian Intellectual Property Office - Innovation, Science and Economic Development Canada",
+          "reference": "turn1search16"
+        },
+        {
+          "uri": "https://www.thempc.org/eagenda/x/hrb/2024/april-10-2024-historic-district-board-of-review-meeting/submittal-packet-24-west-gaston-st.pdf",
+          "title": "SunPower® EnergyLink™ | Residential and Commercial PVS6",
+          "reference": "turn1search17"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Calgary/comments/13sod9d",
+          "title": "Solar Experts - Are these prices too high?",
+          "reference": "turn1reddit18"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergycanada/comments/1lufzgh",
+          "title": "First year of solar production (visualized)",
+          "reference": "turn1reddit19"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1v2qx4z/im_a_solar_panel_installer_ama/",
+          "title": "I'm a solar panel installer. AMA!",
+          "reference": "turn1reddit20"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/17un96v",
+          "title": "Let The Showdown Begin!",
+          "reference": "turn1reddit21"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1fg1cs5",
+          "title": "Anyone hiring for a Solar Design Engineer?",
+          "reference": "turn1reddit22"
+        },
+        {
+          "uri": "https://www.reddit.com/r/dataisbeautiful/comments/1lv2cru",
+          "title": "[OC] First year of residential solar",
+          "reference": "turn1reddit23"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/1fg3f0d",
+          "title": "Anyone hiring for a Solar Design Engineer?",
+          "reference": "turn1reddit24"
+        },
+        {
+          "uri": "https://www.reddit.com/r/askportland/comments/1dfi29l",
+          "title": "What is the best solar company serving Portland?",
+          "reference": "turn1reddit25"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/1ltesxw",
+          "title": "Solar Contracting",
+          "reference": "turn1reddit26"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/1mswgos",
+          "title": "Question for installers",
+          "reference": "turn1reddit27"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/1v2qzay/im_a_solar_panel_installer_ama/",
+          "title": "I'm a solar panel installer. AMA!",
+          "reference": "turn1reddit28"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Aurora_Solar_Thermal_Power_Project",
+          "title": "Aurora Solar Thermal Power Project",
+          "reference": "turn1search29"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/1999_World_Solar_Challenge",
+          "title": "1999 World Solar Challenge",
+          "reference": "turn1search30"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/166ts0s",
+          "title": "Solar installation companies, would you give an instant quote directly on your site?",
+          "reference": "turn1reddit31"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Aurora_%28disambiguation%29",
+          "title": "Aurora (disambiguation)",
+          "reference": "turn1search32"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Aurora_Solar_Car",
+          "title": "Aurora Solar Car",
+          "reference": "turn1search33"
+        },
+        {
+          "uri": "https://zakazky.bvk.cz/document_5265/c62d0b13400de5134a8f2f6643716668-240523_bvk_vz-fve_pisemna-zprava-zadavatele_sig-pdf",
+          "title": "PÍSEMNÁ ZPRÁVA ZADAVATELE",
+          "reference": "turn2search12"
+        },
+        {
+          "uri": "https://verejnezakazky.vop.cz/document_22973/8d533d86ebce49ca76e018fa23a5edfb-029_pisemna-zprava-zadavatele-pdf",
+          "title": "Zadávací dokumentace",
+          "reference": "turn2search13"
+        },
+        {
+          "uri": "https://zakazky.bvk.cz/contract_display_536.html",
+          "title": "Veřejné zakázky - E-ZAK BVK",
+          "reference": "turn2search0"
+        },
+        {
+          "uri": "https://zakazky.sako.cz/contract_display_117.html",
+          "title": "Veřejné zakázky - E-ZAK SAKO Brno, a.s.",
+          "reference": "turn2search1"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/our-history-how-energylink-became-a-leading-renewable-epc-firm-in-the-ci-middle-market/",
+          "title": "Our History: How EnergyLink Became a Leading Renewable EPC Firm in the C&I Middle Market | EnergyLink",
+          "reference": "turn2search2"
+        },
+        {
+          "uri": "https://verejnezakazky.vop.cz/contract_display_2434.html",
+          "title": "Veřejné zakázky - E-ZAK VOP",
+          "reference": "turn2search3"
+        },
+        {
+          "uri": "https://www.worldfutureenergysummit.com/content/dam/sitebuilder/rxae/worldfutureenergysummit/2021/content-hub/Mesia-Digital_Report-Book_Final-Low.pdf.coredownload.697224299.pdf",
+          "title": "MIDDLE EAST SOLAR INDUST",
+          "reference": "turn2search14"
+        },
+        {
+          "uri": "https://zakazky.eagri.cz/contract_display_18585.html",
+          "title": "Veřejné zakázky - E-ZAK MZE",
+          "reference": "turn2search4"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/what-are-the-differences-between-residential-and-commercial-solar/",
+          "title": "What are the Differences Between Residential and Commercial Solar?",
+          "reference": "turn2search5"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/inflation-reduction-act-renewable-energy/",
+          "title": "How the Inflation Reduction Act Impacts Renewable Energy | EnergyLink",
+          "reference": "turn2search6"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/master-electrician-john-carter-carries-on-family-trade/",
+          "title": "Master Electrician, John Carter, carries on family trade | EnergyLink",
+          "reference": "turn2search7"
+        },
+        {
+          "uri": "https://la-solargroup.com/the-next-generation-solar-panel-a-must-have/",
+          "title": "SunPower Solar Panels | Equinox | LA Solar Group",
+          "reference": "turn2search8"
+        },
+        {
+          "uri": "https://yespress.io/enverus",
+          "title": "Enverus Built a $6 Billion-Plus Data Machine for Energy Decisions Nobody Can Afford to Guess | YesPress",
+          "reference": "turn2search9"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/invisible-tesla-solar-panels/",
+          "title": "Tesla's New Solar Panels are Almost Invisible | The Pulse | EnergyLink",
+          "reference": "turn2search10"
+        },
+        {
+          "uri": "https://goenergylink.com/",
+          "title": "goenergylink.com",
+          "reference": "turn2view0"
+        },
+        {
+          "uri": "https://goenergylink.com/",
+          "title": "goenergylink.com",
+          "reference": "turn3view0"
+        },
+        {
+          "uri": "https://goenergylink.com/",
+          "title": "goenergylink.com",
+          "reference": "turn3view1"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar residential solar software EnergyLink residential solar",
+        "\"EnergyLink\" \"residential\" solar",
+        "\"Aurora Solar\" installer Canada",
+        "\"EnergyLink\" solar software",
+        "\"EnergyLink\" \"residential solar\" Canada",
+        "\"EnergyLink\" \"solar design\""
+      ],
+      "searchObserved": true,
+      "webToolCalls": [
+        {
+          "callId": "call_COwoNC8eku5Ktl65iqaDefCc",
+          "program": "text(await tools.web__run({search_query:[{q:'Aurora Solar residential solar software EnergyLink residential solar'}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "Homepage | Aurora Solar (https://aurorasolar.com/)\nciteturn0search0 [wordlim: 200]\n\nAurora Solar Help Center (https://help.aurorasolar.com/hc/en-us)\nciteturn0search1 [wordlim: 200]\n\nProjects (https://docs.aurorasolar.com/reference/projects)\nciteturn0search2 [wordlim: 200]\n\nSelf Serve Plans: Foundation and Build – Aurora Solar Help Center (https://help.aurorasolar.com/hc/en-us/articles/30551226386707-Self-Serve-Plans-Foundation-and-Build)\nciteturn0search3 [wordlim: 200]\n\nAurora AI | Aurora Solar (https://www.aurorasolar.com/aurora-ai/)\nciteturn0search4 [wordlim: 200]\n\nAurora for Installers | Aurora Solar (https://aurorasolar.com/aurora-for-installers/)\nciteturn0search5 [wordlim: 200]\n\nDesign Mode | Aurora Solar (https://www.aurorasolar.com/design-mode/)\nciteturn0search6 [wordlim: 200]\n\nPricing | Aurora Solar (https://www.aurorasolar.com/pricing/)\nciteturn0search7 [wordlim: 200]\n\nAurora AI | Aurora Solar (https://aurorasolar.com/aurora-ai/)\nciteturn0search8 [wordlim: 200]\n\nDesign Mode | Aurora Solar (https://aurorasolar.com/design-mode/)\nciteturn0search9 [wordlim: 200]\n\nEntering energy consumption in Aurora – Aurora Solar Help Center (https://help.aurorasolar.com/hc/en-us/articles/4402392992915-Entering-energy-consumption-in-Aurora)\nciteturn0search10 [wordlim: 200]\n\nSales Mode | Aurora Solar (https://www.aurorasolar.com/sales-mode/)\nciteturn0search11 [wordlim: 200]\n\nIntroduction (https://aurorasolar.com/wp-content/uploads/2021/04/The-Big-Book-of-Solar-Software-Must-Haves.pdf)\nciteturn0search12 [wordlim: 200]\n\nAurora Vision® (https://www.fimer.com/sites/default/files/FIMER_Brochure_Solar%20inverter%20solutions%20for%20building%20applications-EN-revB.pdf)\nciteturn0search13 [wordlim: 200]\n\npage (https://portal.segensolar.co.za/reseller/docs/Aurora%20Full%20Catalogue.pdf)\nciteturn0search14 [wordlim: 200]\n\nHow solar software (https://aurorasolar.com/wp-content/uploads/2022/10/How-solar-software-delivers-ROI.pdf)\nciteturn0search15 [wordlim: 200]\n\nThe company's core revenue comes from solar installers using their platform to design residential projects (150-220 credits) and commercial projects (2,000 credits), with additional revenue from add-on features like AI-assisted site modeling (90 credits) and e-signature capabilities (50 credits). Enterprise customers commit to annual minimums of $15,000, while smaller customers can start with 2,500 credits ($250) valid for one year. (https://sacra-pdfs.s3.us-east-2.amazonaws.com/aurora-solar.pdf)\nciteturn0search16 [wordlim: 200]\n\n[OC] First year of residential solar (https://www.reddit.com/r/dataisbeautiful/comments/1lv2cru)\nciteturn0reddit17 [wordlim: 200]\n\nWhich Software does Solar X use in Canada(Ontario) to determine the panel orientation and system, considering the shading on the house? (https://www.reddit.com/r/solarenergy/comments/16s2n7m)\nciteturn0reddit18 [wordlim: 200]\n\nQuestion for solar pros (https://www.reddit.com/r/solar/comments/wxs8ec)\nciteturn0reddit19 [wordlim: 200]\n\nHelp with Solar Size and Panel Placement Comparison (https://www.reddit.com/r/solar/comments/wis87x)\nciteturn0reddit20 [wordlim: 200]\n\nSolar Designer, Salesman, and Project Manager here for a small private solar company stuck in the dark ages of manual input for contract documents. Solutions for quickly and automatically populating all the documents when it comes time to contract? (https://www.reddit.com/r/solar/comments/katijs)\nciteturn0reddit21 [wordlim: 200]\n\nResidential Solar start up (https://www.reddit.com/r/solarenergy/comments/18w9qso)\nciteturn0reddit22 [wordlim: 200]\n\nSolar software (https://www.reddit.com/r/solar/comments/1d4l724)\nciteturn0reddit23 [wordlim: 200]\n\nAurora Solar Thermal Power Project (https://en.wikipedia.org/wiki/Aurora_Solar_Thermal_Power_Project)\nciteturn0search24 [wordlim: 200]\n\nHow does engineering work for solar roofs? (https://www.reddit.com/r/Solarbusiness/comments/1bnhq82)\nciteturn0reddit25 [wordlim: 200]\n\nLet The Showdown Begin! (https://www.reddit.com/r/solarenergy/comments/17un96v)\nciteturn0reddit26 [wordlim: 200]\n\nQuestions about my grid-connected solar array (https://www.reddit.com/r/solar/comments/xdbab8)\nciteturn0reddit27 [wordlim: 200]\n\nComparing system designs: different sizes (kW) but similar estimated production offsets? (https://www.reddit.com/r/solar/comments/1m8lcju)\nciteturn0reddit28 [wordlim: 200]\n\nOnline estimators for rooftop solar (https://www.reddit.com/r/solar/comments/1pr0umt/online_estimators_for_rooftop_solar/)\nciteturn0reddit29 [wordlim: 200]\n\nSunLink (https://en.wikipedia.org/wiki/SunLink)\nciteturn0search30 [wordlim: 200]\n\nTigo Energy (https://en.wikipedia.org/wiki/Tigo_Energy)\nciteturn0search31 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_uyWYEQlVAoJJgNyWFQ5UyQIG",
+          "program": "text(await tools.web__run({search_query:[{q:'\"EnergyLink\" \"residential\" solar'},{q:'\"Aurora Solar\" installer Canada'},{q:'\"EnergyLink\" solar software'}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "Partners | Aurora Solar (https://aurorasolar.com/partners/)\nciteturn1search0 [wordlim: 200]\n\nSolar Panel Installation Aurora ON | Solar X Canada (https://solar-x.ca/ontario/aurora-solar-installation)\nciteturn1search1 [wordlim: 200]\n\nEnergyLink - Interfaces (https://www.energylink.com/Public/Interfaces)\nciteturn1search2 [wordlim: 200]\n\nEnergyLink – The Energy Data Platform (https://www.energylink.ai/)\nciteturn1search3 [wordlim: 200]\n\nContact – Aurora Solar Technologies (https://aurorasolartech.com/contact/)\nciteturn1search4 [wordlim: 200]\n\nAurora Solar Announces Expansion of Operations in Canada | Aurora Solar (https://aurorasolar.com/news/aurora-solar-announces-expansion-of-operations-in-canada/)\nciteturn1search5 [wordlim: 200]\n\nEnergylink: Trade Clean Energy with Your Neighbors | EnergyLink (https://epecenergylink.com/)\nciteturn1search6 [wordlim: 200]\n\nResources (https://app.energylink.com/Public/Resources.aspx)\nciteturn1search7 [wordlim: 200]\n\nAurora Solar Marketplace (https://quote.aurorasolar.com/?aurora_blog_cta=home+blog)\nciteturn1search8 [wordlim: 200]\n\nMIDDLE EAST SOLAR INDUST (https://www.worldfutureenergysummit.com/content/dam/sitebuilder/rxae/worldfutureenergysummit/2021/content-hub/Mesia-Digital_Report-Book_Final-Low.pdf.coredownload.697224299.pdf)\nciteturn1search12 [wordlim: 200]\n\nEnergyLink (https://erp.sat.theenergylink.com/auth/login)\nciteturn1search9 [wordlim: 200]\n\nLong-Term Adequacy Report (https://www.aeso.ca/download/listedfiles/2025_02_LTA_FINAL.pdf)\nciteturn1search13 [wordlim: 200]\n\nEnergyLink - Interfaces (https://app.energylink.com/Public/Interfaces)\nciteturn1search10 [wordlim: 200]\n\nSystem Monitoring (https://docente.ifsc.edu.br/klunger.beck/energia/extra/especificacao_painel/Sun_Power/geral/ss-sunpower-helix-energylink-pro-sellsheet.pdf)\nciteturn1search14 [wordlim: 200]\n\nEnergyLink Review 2026 | ConsumerAffairs® (https://www.consumeraffairs.com/solar-energy/energylink.html)\nciteturn1search11 [wordlim: 200]\n\nRFP Response for Solar PV Development for Onsite Energy Generation (https://www.nantucket-ma.gov/DocumentCenter/View/38731/2019-Town-of-Nantucket-Premises-Technical-Proposal-PDF)\nciteturn1search15 [wordlim: 200]\n\nCanadian Trademarks Details:   AURORA SOLAR TECHNOLOGIES & Design — 2349762 — Canadian Trademarks Database - Intellectual property and copyright - Canadian Intellectual Property Office - Innovation, Science and Economic Development Canada (https://ised-isde.canada.ca/cipo/trademark-search/pdf/2349762?lang=eng)\nciteturn1search16 [wordlim: 200]\n\nSunPower® EnergyLink™ | Residential and Commercial PVS6 (https://www.thempc.org/eagenda/x/hrb/2024/april-10-2024-historic-district-board-of-review-meeting/submittal-packet-24-west-gaston-st.pdf)\nciteturn1search17 [wordlim: 200]\n\nSolar Experts - Are these prices too high? (https://www.reddit.com/r/Calgary/comments/13sod9d)\nciteturn1reddit18 [wordlim: 200]\n\nFirst year of solar production (visualized) (https://www.reddit.com/r/solarenergycanada/comments/1lufzgh)\nciteturn1reddit19 [wordlim: 200]\n\nI'm a solar panel installer. AMA! (https://www.reddit.com/r/solar/comments/1v2qx4z/im_a_solar_panel_installer_ama/)\nciteturn1reddit20 [wordlim: 200]\n\nLet The Showdown Begin! (https://www.reddit.com/r/solarenergy/comments/17un96v)\nciteturn1reddit21 [wordlim: 200]\n\nAnyone hiring for a Solar Design Engineer? (https://www.reddit.com/r/solar/comments/1fg1cs5)\nciteturn1reddit22 [wordlim: 200]\n\n[OC] First year of residential solar (https://www.reddit.com/r/dataisbeautiful/comments/1lv2cru)\nciteturn1reddit23 [wordlim: 200]\n\nAnyone hiring for a Solar Design Engineer? (https://www.reddit.com/r/Solarbusiness/comments/1fg3f0d)\nciteturn1reddit24 [wordlim: 200]\n\nWhat is the best solar company serving Portland? (https://www.reddit.com/r/askportland/comments/1dfi29l)\nciteturn1reddit25 [wordlim: 200]\n\nSolar Contracting (https://www.reddit.com/r/solar/comments/1ltesxw)\nciteturn1reddit26 [wordlim: 200]\n\nQuestion for installers (https://www.reddit.com/r/Solarbusiness/comments/1mswgos)\nciteturn1reddit27 [wordlim: 200]\n\nI'm a solar panel installer. AMA! (https://www.reddit.com/r/solarenergy/comments/1v2qzay/im_a_solar_panel_installer_ama/)\nciteturn1reddit28 [wordlim: 200]\n\nAurora Solar Thermal Power Project (https://en.wikipedia.org/wiki/Aurora_Solar_Thermal_Power_Project)\nciteturn1search29 [wordlim: 200]\n\n1999 World Solar Challenge (https://en.wikipedia.org/wiki/1999_World_Solar_Challenge)\nciteturn1search30 [wordlim: 200]\n\nSolar installation companies, would you give an instant quote directly on your site? (https://www.reddit.com/r/solar/comments/166ts0s)\nciteturn1reddit31 [wordlim: 200]\n\nAurora (disambiguation) (https://en.wikipedia.org/wiki/Aurora_%28disambiguation%29)\nciteturn1search32 [wordlim: 200]\n\nAurora Solar Car (https://en.wikipedia.org/wiki/Aurora_Solar_Car)\nciteturn1search33 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_dbd5OpKvmsDlCM2gI7lVbWne",
+          "program": "text(await tools.web__run({open:[{ref_id:\"https://goenergylink.com\"}],search_query:[{q:'\"EnergyLink\" \"residential solar\" Canada'},{q:'\"EnergyLink\" \"solar design\"'}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "PÍSEMNÁ ZPRÁVA ZADAVATELE (https://zakazky.bvk.cz/document_5265/c62d0b13400de5134a8f2f6643716668-240523_bvk_vz-fve_pisemna-zprava-zadavatele_sig-pdf)\nciteturn2search12 [wordlim: 200]\n\nZadávací dokumentace (https://verejnezakazky.vop.cz/document_22973/8d533d86ebce49ca76e018fa23a5edfb-029_pisemna-zprava-zadavatele-pdf)\nciteturn2search13 [wordlim: 200]\n\nVeřejné zakázky - E-ZAK BVK (https://zakazky.bvk.cz/contract_display_536.html)\nciteturn2search0 [wordlim: 200]\n\nVeřejné zakázky - E-ZAK SAKO Brno, a.s. (https://zakazky.sako.cz/contract_display_117.html)\nciteturn2search1 [wordlim: 200]\n\nOur History: How EnergyLink Became a Leading Renewable EPC Firm in the C&I Middle Market | EnergyLink (https://goenergylink.com/blog/our-history-how-energylink-became-a-leading-renewable-epc-firm-in-the-ci-middle-market/)\nciteturn2search2 [wordlim: 200]\n\nVeřejné zakázky - E-ZAK VOP (https://verejnezakazky.vop.cz/contract_display_2434.html)\nciteturn2search3 [wordlim: 200]\n\nMIDDLE EAST SOLAR INDUST (https://www.worldfutureenergysummit.com/content/dam/sitebuilder/rxae/worldfutureenergysummit/2021/content-hub/Mesia-Digital_Report-Book_Final-Low.pdf.coredownload.697224299.pdf)\nciteturn2search14 [wordlim: 200]\n\nVeřejné zakázky - E-ZAK MZE (https://zakazky.eagri.cz/contract_display_18585.html)\nciteturn2search4 [wordlim: 200]\n\nWhat are the Differences Between Residential and Commercial Solar? (https://goenergylink.com/blog/what-are-the-differences-between-residential-and-commercial-solar/)\nciteturn2search5 [wordlim: 200]\n\nHow the Inflation Reduction Act Impacts Renewable Energy | EnergyLink (https://goenergylink.com/blog/inflation-reduction-act-renewable-energy/)\nciteturn2search6 [wordlim: 200]\n\nMaster Electrician, John Carter, carries on family trade | EnergyLink (https://goenergylink.com/blog/master-electrician-john-carter-carries-on-family-trade/)\nciteturn2search7 [wordlim: 200]\n\nSunPower Solar Panels | Equinox | LA Solar Group (https://la-solargroup.com/the-next-generation-solar-panel-a-must-have/)\nciteturn2search8 [wordlim: 200]\n\nEnverus Built a $6 Billion-Plus Data Machine for Energy Decisions Nobody Can Afford to Guess | YesPress (https://yespress.io/enverus)\nciteturn2search9 [wordlim: 200]\n\nTesla's New Solar Panels are Almost Invisible | The Pulse | EnergyLink (https://goenergylink.com/blog/invisible-tesla-solar-panels/)\nciteturn2search10 [wordlim: 200]\n\ngoenergylink.com (https://goenergylink.com/)\nciteturn2view0 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_hWHxWEvZum2xTUKfL9f9z3LW",
+          "program": "text(await tools.web__run({find:[{ref_id:\"turn2view0\",pattern:\"commercial\"},{ref_id:\"turn2view0\",pattern:\"residential\"}],response_length:\"short\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "goenergylink.com (https://goenergylink.com/)\nciteturn3view0 [wordlim: 200]\n\ngoenergylink.com (https://goenergylink.com/)\nciteturn3view1 [wordlim: 200]"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "provider": "codex",
+      "answerText": "These may not be direct competitors—it depends on which “EnergyLink” you mean.\n\nAssuming you mean AuroraSolar.com and GoEnergyLink.com:\n\n| | Aurora Solar | EnergyLink |\n|---|---|---|\n| What it is | Solar design and sales software for installers | A company that engineers, procures, and constructs energy projects |\n| Residential relevance | Explicitly supports residential roof modeling, panel layouts, shading analysis, production estimates, and proposals | Currently focuses on commercial, industrial, and larger-scale projects |\n| Best fit | Designing and quoting home solar systems | Hiring a provider for a business or institutional energy project |\n\nSources: Aurora’s residential tools, EnergyLink’s services.\n\nMy take\n\nIf you’re an installer choosing residential design software: Aurora is the relevant option of these two—not an apples-to-apples software comparison.\n\nIf you’re a homeowner choosing an installer: Aurora’s software is not itself an installation service. EnergyLink’s website focuses on commercial work; its older residential guidance explicitly says it stopped accepting residential leads. I wouldn’t shortlist these as two competing home installers. EnergyLink’s explanation\n\nCan you share the EnergyLink website, and whether you’re comparing software or companies to install solar on your home?",
+      "citedDomains": [
+        "aurorasolar.com",
+        "goenergylink.com"
+      ],
+      "groundingSources": [
+        {
+          "uri": "https://aurorasolar.com/",
+          "title": "Homepage | Aurora Solar"
+        },
+        {
+          "uri": "https://goenergylink.com/",
+          "title": "goenergylink.com"
+        },
+        {
+          "uri": "https://goenergylink.com/blog/what-are-the-differences-between-residential-and-commercial-solar/",
+          "title": "What are the Differences Between Residential and Commercial Solar?"
+        }
+      ],
+      "searchQueries": [
+        "Aurora Solar residential solar software EnergyLink residential solar",
+        "\"EnergyLink\" \"residential\" solar",
+        "\"Aurora Solar\" installer Canada",
+        "\"EnergyLink\" solar software",
+        "\"EnergyLink\" \"residential solar\" Canada",
+        "\"EnergyLink\" \"solar design\""
+      ],
+      "retrievalStatus": "used"
+    }
+  },
+  {
+    "query": "Enact Systems vs Solo for solar proposals",
+    "runtimeVersion": "0.158.0",
+    "evidence": {
+      "answerText": "**My take: choose Solo for a residential sales-first workflow; choose Enact for a design-led installer workflow, especially if you also do commercial projects.** That’s an assessment of their current documented capabilities—not a hands-on benchmark.\n\n### How they compare\n\n| Area | Enact Systems | Solo |\n|---|---|---|\n| **Proposal experience** | Custom-branded proposals emphasizing system specifications, financial analysis, charts, and 3D visuals; supports electronic signatures. [Enact](https://enact.solar/providers/solar-proposal-software/) | Interactive sales presentations with live pricing changes, add-ons, financing, and signing—particularly suited to in-home selling. [Solo](https://gosolo.io/solar-studio/) |\n| **Design workflow** | Integrated solar/storage design, 3D shading, and production estimates across residential and commercial projects. [Enact design](https://enact.solar/providers/solar-design-software/) | Built-in AI-assisted design and shading/performance modeling, plus on-demand expert design support. **Solo isn’t just outsourced proposals anymore.** [Solar Studio](https://gosolo.io/solar-studio/) |\n| **Financing** | Models cash, loans, leases, and PPAs, with customizable terms and side-by-side comparisons. [Enact documentation](https://support.enact-systems.com/portal/en/kb/articles/step-by-step-guide-for-designing-pricing-a-solar-pv-system) | Documented lender integrations support qualification, applications, documents, and change orders inside the proposal. Includes GoodLeap, LightReach, Sungage, and others. [Solo financing](https://help.gosolo.io/integrated-finance-options) |\n| **Beyond the proposal** | Project-management features, plus separately priced engineering and asset-monitoring products. [Features](https://enact.solar/providers/solar-proposal-software/), [product tiers](https://enact.solar/providers/provider-pricing/) | Sales-team controls, CRM handoffs, and additional proposal workflows for batteries, roofing, and HVAC. [Solo templates](https://gosolo.io/on-demand-proposals/) |\n| **Published pricing** | **$279/month billed annually or $299 monthly**, with two users, unlimited residential projects/proposals, and 10 new commercial projects monthly. Confirm currency and extra-user costs. [Pricing](https://enact.solar/providers/provider-pricing/) | Current pricing page publishes **no dollar amounts**; plans vary by usage, support, and scale, with unlimited users included. Get a written quote. [Pricing](https://gosolo.io/pricing/) |\n\n### Which I’d pick\n\n- **Residential sales organization with multiple reps:** **Solo**, particularly when integrated financing and adjusting the offer during the appointment are central.\n- **Installer creating its own designs, with residential and commercial work:** **Enact** would be my first demo.\n- **Only need attractive proposals:** Don’t decide on screenshots. Ask both vendors to build the **same real project** and demonstrate a panel-layout change, battery addition, financing switch, and customer signature.\n\n**Before committing:** compare total cost—including setup, design services, revisions, integrations, and extra users—and check that both produce defensible savings using identical assumptions.\n\n**Are you proposing residential or commercial systems, and in Canada or the U.S.?** That could materially change the recommendation, especially around utility rates and financing.",
+      "sources": [
+        {
+          "uri": "https://gosolo.io/pricing/",
+          "title": "Pricing - New 2026 - Solar Proposal and Growth Software | Solo",
+          "reference": "turn0search0"
+        },
+        {
+          "uri": "https://enact.solar/solar-design-services/",
+          "title": "Solar Design Services | ENACT",
+          "reference": "turn0search1"
+        },
+        {
+          "uri": "https://support.enact-systems.com/portal/en/kb/articles/step-by-step-guide-for-designing-pricing-a-solar-pv-system",
+          "title": "Step by Step Guide for Designing & Pricing a Solar PV System",
+          "reference": "turn0search2"
+        },
+        {
+          "uri": "https://kurums.com/solar-proposal-software/",
+          "title": "Best Solar Proposal Software 2026: OpenSolar, Solargraf - Kurums | Business Intelligence",
+          "reference": "turn0search3"
+        },
+        {
+          "uri": "https://www.sec.gov/Archives/edgar/data/1585201/000166516021001856/offeringmemoformc.pdf",
+          "title": "Enact Systems — Software Platform for Solar and Storage",
+          "reference": "turn0search12"
+        },
+        {
+          "uri": "https://www.solardeck.co/pricing",
+          "title": "Solardeck Pricing for Solar Consultants | Solardeck",
+          "reference": "turn0search4"
+        },
+        {
+          "uri": "https://yespress.io/enact-solar",
+          "title": "Enact Solar Wants to Be the Operating System for Every Rooftop - From First Sketch to First Fault | YesPress",
+          "reference": "turn0search5"
+        },
+        {
+          "uri": "https://gosolo.io/pricing-old-3/",
+          "title": "Pricing-old - Solar Proposal and Growth Software | Solo",
+          "reference": "turn0search6"
+        },
+        {
+          "uri": "https://enact.solar/wp-content/uploads/2023/08/Enact-Residential-USA-Sample-Proposal-3.pdf",
+          "title": "Accelerating clean energy.",
+          "reference": "turn0search13"
+        },
+        {
+          "uri": "https://www.surgepv.com/reviews/enact-solar",
+          "title": "Enact Solar Review 2026: Pricing, Features & Best Alternative | SurgePV",
+          "reference": "turn0search7"
+        },
+        {
+          "uri": "https://help.gosolo.io/proposals",
+          "title": "Proposals | Solo Help Center",
+          "reference": "turn0search8"
+        },
+        {
+          "uri": "https://www.hellosolo.co/",
+          "title": "Freelancer Business Management Software | Hello.Solo",
+          "reference": "turn0search9"
+        },
+        {
+          "uri": "https://www.solentrex.com/pricing",
+          "title": "Transparent PV Proposal Pricing - Solentrex",
+          "reference": "turn0search10"
+        },
+        {
+          "uri": "https://quickestimate.co/blog/solar-proposal-software",
+          "title": "Solar Proposal Software in 2026: 6 Tools Compared (SurgePV Wins) · Quickest Solar CRM",
+          "reference": "turn0search11"
+        },
+        {
+          "uri": "https://www.sec.gov/Archives/edgar/data/1585201/000166516024000970/form_car.pdf",
+          "title": "ENACT Systems Inc.",
+          "reference": "turn0search14"
+        },
+        {
+          "uri": "https://solar-media.s3.amazonaws.com/assets/Pubs/Webinars/Enact%20-%20PV%20Tech%20webinar%2026th%20October%202022/ENACT%20SYSTEMS%20Oct%2026_Master%20file%20%20final.pdf",
+          "title": "PowerPoint Presentation",
+          "reference": "turn0search15"
+        },
+        {
+          "uri": "https://enact.solar/wp-content/uploads/2024/05/Enact-2023-U.S.-Solar-and-Storage-Market-Intelligence-Report.pdf",
+          "title": "Enact 2023 U.S. Solar and Storage Market Intelligence Report.docx",
+          "reference": "turn0search16"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/17vu8f5",
+          "title": "What are you using to create your final proposal?",
+          "reference": "turn0reddit17"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/xsebav",
+          "title": "Help with Solar Proposals",
+          "reference": "turn0reddit18"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/i4xgcr",
+          "title": "Cost",
+          "reference": "turn0reddit19"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/1sze927/opensolars_free_platform_just_locked_your_data/",
+          "title": "OpenSolar's \"Free\" platform just locked your data.",
+          "reference": "turn0reddit20"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarbusiness/comments/17k8mgw",
+          "title": "What is your favorite solar design software?",
+          "reference": "turn0reddit21"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solarenergy/comments/16s2n7m",
+          "title": "Which Software does Solar X use in Canada(Ontario) to determine the panel orientation and system, considering the shading on the house?",
+          "reference": "turn0reddit22"
+        },
+        {
+          "uri": "https://www.reddit.com/r/u_solarsoftwaredesign/comments/o2lffp",
+          "title": "DIGITAL PLATFORM FOR SOLAR AND STORAGE ASSET MANAGEMENT",
+          "reference": "turn0reddit23"
+        },
+        {
+          "uri": "https://www.reddit.com/r/u_solarsoftwaredesign/comments/nyxhzz",
+          "title": "Cloud Platform for Smart Solar Energy",
+          "reference": "turn0reddit24"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Proposal_software",
+          "title": "Proposal software",
+          "reference": "turn0search25"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarsales/comments/1s1wt1e/solar_prop/",
+          "title": "Solar Prop",
+          "reference": "turn0reddit26"
+        },
+        {
+          "uri": "https://www.reddit.com/r/Solarsales/comments/1uqifb0/i_got_tired_of_using_outdated_solar_software_so_i/",
+          "title": "I got tired of using outdated solar software, so I started building my own.",
+          "reference": "turn0reddit27"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/dct73i",
+          "title": "Solar proposal software",
+          "reference": "turn0reddit28"
+        },
+        {
+          "uri": "https://www.reddit.com/r/solar/comments/k6qx1w",
+          "title": "Is there any sort of technology that would allow for an interactive proposal for customers? I'm a system designer for a small company and I sometimes find myself designing half a dozen proposals before a client decides on a final design.",
+          "reference": "turn0reddit29"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Eclipse_ERP",
+          "title": "Eclipse ERP",
+          "reference": "turn0search30"
+        },
+        {
+          "uri": "https://arxiv.org/abs/2602.08037",
+          "title": "SOLO: wide-field asteroid light curve monitoring system for SPHEREx",
+          "reference": "turn0academia31"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/EnergySage",
+          "title": "EnergySage",
+          "reference": "turn0search32"
+        },
+        {
+          "uri": "https://arxiv.org/abs/1401.5162",
+          "title": "A Simple Software Application for Simulating Commercially Available Solar Panels",
+          "reference": "turn0academia33"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Open_energy_system_models",
+          "title": "Open energy system models",
+          "reference": "turn0search34"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Shadows_%28software%29",
+          "title": "Shadows (software)",
+          "reference": "turn0search35"
+        },
+        {
+          "uri": "https://arxiv.org/abs/2003.04938",
+          "title": "A Mean-Field Game Approach to Equilibrium Pricing in Solar Renewable Energy Certificate Markets",
+          "reference": "turn0academia36"
+        },
+        {
+          "uri": "https://arxiv.org/abs/2403.14004",
+          "title": "Pricing4SaaS: a suite of software libraries for pricing-driven feature toggling",
+          "reference": "turn0academia37"
+        },
+        {
+          "uri": "https://en.wikipedia.org/wiki/Photovoltaic_system",
+          "title": "Photovoltaic system",
+          "reference": "turn0search38"
+        },
+        {
+          "uri": "https://gosolo.io/solar-studio/",
+          "title": "Solar Sales Software | Interactive Proposals & Financing",
+          "reference": "turn1search0"
+        },
+        {
+          "uri": "https://help.gosolo.io/missioncontrol-finance-options",
+          "title": "MissionControl: Finance Options",
+          "reference": "turn1search1"
+        },
+        {
+          "uri": "https://help.gosolo.io/integrated-finance-options",
+          "title": "Integrated Finance Options",
+          "reference": "turn1search2"
+        },
+        {
+          "uri": "https://help.gosolo.io/requesting-sunlight-credentials",
+          "title": "Requesting a Sunlight Financial Integration",
+          "reference": "turn1search3"
+        },
+        {
+          "uri": "https://theagenticaiindex.com/ai-tools-for-solar-power.html",
+          "title": "10 AI tools for solar businesses in 2026 — what each one does, how you'd use it, and what it costs | The Agentic AI Index",
+          "reference": "turn1search4"
+        },
+        {
+          "uri": "https://help.gosolo.io/selecting-participate-energy-on-proposals",
+          "title": "Selecting Participate Energy on Proposals",
+          "reference": "turn1search5"
+        },
+        {
+          "uri": "https://enact.solar/homeowners/residential-solar/",
+          "title": "Residential Solar | ENACT",
+          "reference": "turn1search6"
+        },
+        {
+          "uri": "https://help.gosolo.io/how-to-edit-a-finance-option",
+          "title": "How to Edit a Finance Option",
+          "reference": "turn1search7"
+        },
+        {
+          "uri": "https://help.gosolo.io/basic-proposal-walkthrough",
+          "title": "Basic Proposal Walkthrough",
+          "reference": "turn1search8"
+        },
+        {
+          "uri": "https://enact.solar/",
+          "title": "ENACT |",
+          "reference": "turn1search9"
+        },
+        {
+          "uri": "https://help.gosolo.io/proposals",
+          "title": "Proposals | Solo Help Center",
+          "reference": "turn1search10"
+        },
+        {
+          "uri": "https://help.gosolo.io/june-2026",
+          "title": "June 2026",
+          "reference": "turn1search11"
+        },
+        {
+          "uri": "https://enact.solar/wp-content/uploads/2024/07/Commercial-Proposal-US.pdf",
+          "title": "Custom Analysis prepared for",
+          "reference": "turn1search12"
+        },
+        {
+          "uri": "https://gosolo.io/wp-content/uploads/2024/02/2024-Solar-Trends-Report-Digital.pdf",
+          "title": "THE EQUALITY STATE",
+          "reference": "turn1search13"
+        },
+        {
+          "uri": "https://gosolo.io/",
+          "title": "Home Service Sales Software | Estimates, Proposals & Financing",
+          "reference": "turn1view0"
+        },
+        {
+          "uri": "https://help.gosolo.io/proposals",
+          "title": "Proposals | Solo Help Center",
+          "reference": "turn2search0"
+        },
+        {
+          "uri": "https://enact.solar/case-studies/expertise-reliability-and-nationwide-reach-how-rooftek-delivers-certified-roofing-and-solar-solutions/",
+          "title": "Expertise, Reliability, and Nationwide Reach: How Rooftek® Delivers Certified Roofing and Solar Solutions | ENACT",
+          "reference": "turn2search1"
+        },
+        {
+          "uri": "https://enact.solar/case-studies/laying-the-groundwork-for-smarter-solar-planning-dr-heinrich-gmbhs-transition-to-enact-solar/",
+          "title": "Laying the Groundwork for Smarter Solar Planning Dr-Heinrich GmbH’s Transition to Enact Solar | ENACT",
+          "reference": "turn2search2"
+        },
+        {
+          "uri": "https://enact.solar/providers/solar-proposal-software/",
+          "title": "Solar Proposal Software | ENACT",
+          "reference": "turn2search3"
+        },
+        {
+          "uri": "https://enact.solar/providers/provider-pricing/",
+          "title": "Installer Solar Software Pricing | ENACT",
+          "reference": "turn2search4"
+        },
+        {
+          "uri": "https://enact.solar/providers/solar-design-software/",
+          "title": "Solar Design Software | ENACT",
+          "reference": "turn2search5"
+        },
+        {
+          "uri": "https://enact.solar/legacy-consumer-battery-brands-target-home-energy-storage/",
+          "title": "Legacy consumer battery brands target home energy storage | ENACT",
+          "reference": "turn2search6"
+        },
+        {
+          "uri": "https://gosolo.io/on-demand-proposals/",
+          "title": "On Demand Solar and Battery-Only Proposals | Proposal Templates",
+          "reference": "turn3view1"
+        }
+      ],
+      "searchQueries": [
+        "Enact Systems solar proposal software pricing features",
+        "Solo solar proposal software pricing features",
+        "site.enact.solar pricing $279",
+        "site:gosolo.io solar studio on demand proposals finance integrations",
+        "site:enact.solar \"279\"",
+        "site:enact.solar \"Interactive\" proposals",
+        "site:help.gosolo.io \"Does Solo Design Commercial Proposals\""
+      ],
+      "searchObserved": true,
+      "webToolCalls": [
+        {
+          "callId": "call_u5sw64DoMo6FcHirLz5hnAr4",
+          "program": "text(await tools.web__run({search_query:[{q:\"Enact Systems solar proposal software pricing features\"},{\"q\":\"Solo solar proposal software pricing features\"}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "Pricing - New 2026 - Solar Proposal and Growth Software | Solo (https://gosolo.io/pricing/)\nciteturn0search0 [wordlim: 200]\n\nSolar Design Services | ENACT (https://enact.solar/solar-design-services/)\nciteturn0search1 [wordlim: 200]\n\nStep by Step Guide for Designing & Pricing a Solar PV System (https://support.enact-systems.com/portal/en/kb/articles/step-by-step-guide-for-designing-pricing-a-solar-pv-system)\nciteturn0search2 [wordlim: 200]\n\nBest Solar Proposal Software 2026: OpenSolar, Solargraf - Kurums | Business Intelligence (https://kurums.com/solar-proposal-software/)\nciteturn0search3 [wordlim: 200]\n\nEnact Systems — Software Platform for Solar and Storage (https://www.sec.gov/Archives/edgar/data/1585201/000166516021001856/offeringmemoformc.pdf)\nciteturn0search12 [wordlim: 200]\n\nSolardeck Pricing for Solar Consultants | Solardeck (https://www.solardeck.co/pricing)\nciteturn0search4 [wordlim: 200]\n\nEnact Solar Wants to Be the Operating System for Every Rooftop - From First Sketch to First Fault | YesPress (https://yespress.io/enact-solar)\nciteturn0search5 [wordlim: 200]\n\nPricing-old - Solar Proposal and Growth Software | Solo (https://gosolo.io/pricing-old-3/)\nciteturn0search6 [wordlim: 200]\n\nAccelerating clean energy. (https://enact.solar/wp-content/uploads/2023/08/Enact-Residential-USA-Sample-Proposal-3.pdf)\nciteturn0search13 [wordlim: 200]\n\nEnact Solar Review 2026: Pricing, Features & Best Alternative | SurgePV (https://www.surgepv.com/reviews/enact-solar)\nciteturn0search7 [wordlim: 200]\n\nProposals | Solo Help Center (https://help.gosolo.io/proposals)\nciteturn0search8 [wordlim: 200]\n\nFreelancer Business Management Software | Hello.Solo (https://www.hellosolo.co/)\nciteturn0search9 [wordlim: 200]\n\nTransparent PV Proposal Pricing - Solentrex (https://www.solentrex.com/pricing)\nciteturn0search10 [wordlim: 200]\n\nSolar Proposal Software in 2026: 6 Tools Compared (SurgePV Wins) · Quickest Solar CRM (https://quickestimate.co/blog/solar-proposal-software)\nciteturn0search11 [wordlim: 200]\n\nENACT Systems Inc. (https://www.sec.gov/Archives/edgar/data/1585201/000166516024000970/form_car.pdf)\nciteturn0search14 [wordlim: 200]\n\nPowerPoint Presentation (https://solar-media.s3.amazonaws.com/assets/Pubs/Webinars/Enact%20-%20PV%20Tech%20webinar%2026th%20October%202022/ENACT%20SYSTEMS%20Oct%2026_Master%20file%20%20final.pdf)\nciteturn0search15 [wordlim: 200]\n\nEnact 2023 U.S. Solar and Storage Market Intelligence Report.docx (https://enact.solar/wp-content/uploads/2024/05/Enact-2023-U.S.-Solar-and-Storage-Market-Intelligence-Report.pdf)\nciteturn0search16 [wordlim: 200]\n\nWhat are you using to create your final proposal? (https://www.reddit.com/r/Solarbusiness/comments/17vu8f5)\nciteturn0reddit17 [wordlim: 200]\n\nHelp with Solar Proposals (https://www.reddit.com/r/solarenergy/comments/xsebav)\nciteturn0reddit18 [wordlim: 200]\n\nCost (https://www.reddit.com/r/solar/comments/i4xgcr)\nciteturn0reddit19 [wordlim: 200]\n\nOpenSolar's \"Free\" platform just locked your data. (https://www.reddit.com/r/Solarbusiness/comments/1sze927/opensolars_free_platform_just_locked_your_data/)\nciteturn0reddit20 [wordlim: 200]\n\nWhat is your favorite solar design software? (https://www.reddit.com/r/Solarbusiness/comments/17k8mgw)\nciteturn0reddit21 [wordlim: 200]\n\nWhich Software does Solar X use in Canada(Ontario) to determine the panel orientation and system, considering the shading on the house? (https://www.reddit.com/r/solarenergy/comments/16s2n7m)\nciteturn0reddit22 [wordlim: 200]\n\nDIGITAL PLATFORM FOR SOLAR AND STORAGE ASSET MANAGEMENT (https://www.reddit.com/r/u_solarsoftwaredesign/comments/o2lffp)\nciteturn0reddit23 [wordlim: 200]\n\nCloud Platform for Smart Solar Energy (https://www.reddit.com/r/u_solarsoftwaredesign/comments/nyxhzz)\nciteturn0reddit24 [wordlim: 200]\n\nProposal software (https://en.wikipedia.org/wiki/Proposal_software)\nciteturn0search25 [wordlim: 200]\n\nSolar Prop (https://www.reddit.com/r/Solarsales/comments/1s1wt1e/solar_prop/)\nciteturn0reddit26 [wordlim: 200]\n\nI got tired of using outdated solar software, so I started building my own. (https://www.reddit.com/r/Solarsales/comments/1uqifb0/i_got_tired_of_using_outdated_solar_software_so_i/)\nciteturn0reddit27 [wordlim: 200]\n\nSolar proposal software (https://www.reddit.com/r/solar/comments/dct73i)\nciteturn0reddit28 [wordlim: 200]\n\nIs there any sort of technology that would allow for an interactive proposal for customers? I'm a system designer for a small company and I sometimes find myself designing half a dozen proposals before a client decides on a final design. (https://www.reddit.com/r/solar/comments/k6qx1w)\nciteturn0reddit29 [wordlim: 200]\n\nEclipse ERP (https://en.wikipedia.org/wiki/Eclipse_ERP)\nciteturn0search30 [wordlim: 200]\n\nSOLO: wide-field asteroid light curve monitoring system for SPHEREx (https://arxiv.org/abs/2602.08037)\nciteturn0academia31 [wordlim: 200]\n\nEnergySage (https://en.wikipedia.org/wiki/EnergySage)\nciteturn0search32 [wordlim: 200]\n\nA Simple Software Application for Simulating Commercially Available Solar Panels (https://arxiv.org/abs/1401.5162)\nciteturn0academia33 [wordlim: 200]\n\nOpen energy system models (https://en.wikipedia.org/wiki/Open_energy_system_models)\nciteturn0search34 [wordlim: 200]\n\nShadows (software) (https://en.wikipedia.org/wiki/Shadows_%28software%29)\nciteturn0search35 [wordlim: 200]\n\nA Mean-Field Game Approach to Equilibrium Pricing in Solar Renewable Energy Certificate Markets (https://arxiv.org/abs/2003.04938)\nciteturn0academia36 [wordlim: 200]\n\nPricing4SaaS: a suite of software libraries for pricing-driven feature toggling (https://arxiv.org/abs/2403.14004)\nciteturn0academia37 [wordlim: 200]\n\nPhotovoltaic system (https://en.wikipedia.org/wiki/Photovoltaic_system)\nciteturn0search38 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_IM7j1TCQUi78EbKXZ7AakHM6",
+          "program": "text(await tools.web__run({open:[{ref_id:\"https://gosolo.io/\"},{ref_id:\"https://enact.solar/solar-installers/pricing/\"}],search_query:[{q:\"site.enact.solar pricing $279\"},{\"q\":\"site:gosolo.io solar studio on demand proposals finance integrations\"}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "Solar Sales Software | Interactive Proposals & Financing (https://gosolo.io/solar-studio/)\nciteturn1search0 [wordlim: 200]\n\nMissionControl: Finance Options (https://help.gosolo.io/missioncontrol-finance-options)\nciteturn1search1 [wordlim: 200]\n\nIntegrated Finance Options (https://help.gosolo.io/integrated-finance-options)\nciteturn1search2 [wordlim: 200]\n\nRequesting a Sunlight Financial Integration (https://help.gosolo.io/requesting-sunlight-credentials)\nciteturn1search3 [wordlim: 200]\n\n10 AI tools for solar businesses in 2026 — what each one does, how you'd use it, and what it costs | The Agentic AI Index (https://theagenticaiindex.com/ai-tools-for-solar-power.html)\nciteturn1search4 [wordlim: 200]\n\nSelecting Participate Energy on Proposals (https://help.gosolo.io/selecting-participate-energy-on-proposals)\nciteturn1search5 [wordlim: 200]\n\nResidential Solar | ENACT (https://enact.solar/homeowners/residential-solar/)\nciteturn1search6 [wordlim: 200]\n\nHow to Edit a Finance Option (https://help.gosolo.io/how-to-edit-a-finance-option)\nciteturn1search7 [wordlim: 200]\n\nBasic Proposal Walkthrough (https://help.gosolo.io/basic-proposal-walkthrough)\nciteturn1search8 [wordlim: 200]\n\nENACT | (https://enact.solar/)\nciteturn1search9 [wordlim: 200]\n\nProposals | Solo Help Center (https://help.gosolo.io/proposals)\nciteturn1search10 [wordlim: 200]\n\nJune 2026 (https://help.gosolo.io/june-2026)\nciteturn1search11 [wordlim: 200]\n\nCustom Analysis prepared for (https://enact.solar/wp-content/uploads/2024/07/Commercial-Proposal-US.pdf)\nciteturn1search12 [wordlim: 200]\n\nTHE EQUALITY STATE (https://gosolo.io/wp-content/uploads/2024/02/2024-Solar-Trends-Report-Digital.pdf)\nciteturn1search13 [wordlim: 200]\n\nHome Service Sales Software | Estimates, Proposals & Financing (https://gosolo.io/)\nciteturn1view0 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_gFpCyJWAUHpprffIcQhSrE0X",
+          "program": "text(await tools.web__run({search_query:[{q:'site:enact.solar \"279\"'},{q:'site:enact.solar \"Interactive\" proposals'},{q:'site:help.gosolo.io \"Does Solo Design Commercial Proposals\"'}],open:[{ref_id:\"https://enact.solar/pricing/\"}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "Proposals | Solo Help Center (https://help.gosolo.io/proposals)\nciteturn2search0 [wordlim: 200]\n\nExpertise, Reliability, and Nationwide Reach: How Rooftek® Delivers Certified Roofing and Solar Solutions | ENACT (https://enact.solar/case-studies/expertise-reliability-and-nationwide-reach-how-rooftek-delivers-certified-roofing-and-solar-solutions/)\nciteturn2search1 [wordlim: 200]\n\nLaying the Groundwork for Smarter Solar Planning Dr-Heinrich GmbH’s Transition to Enact Solar | ENACT (https://enact.solar/case-studies/laying-the-groundwork-for-smarter-solar-planning-dr-heinrich-gmbhs-transition-to-enact-solar/)\nciteturn2search2 [wordlim: 200]\n\nSolar Proposal Software | ENACT (https://enact.solar/providers/solar-proposal-software/)\nciteturn2search3 [wordlim: 200]\n\nInstaller Solar Software Pricing | ENACT (https://enact.solar/providers/provider-pricing/)\nciteturn2search4 [wordlim: 200]\n\nSolar Design Software | ENACT (https://enact.solar/providers/solar-design-software/)\nciteturn2search5 [wordlim: 200]\n\nLegacy consumer battery brands target home energy storage | ENACT (https://enact.solar/legacy-consumer-battery-brands-target-home-energy-storage/)\nciteturn2search6 [wordlim: 200]"
+          ]
+        },
+        {
+          "callId": "call_pXxFysUWFruiiU6FuEcFvDIj",
+          "program": "text(await tools.web__run({open:[{ref_id:\"https://help.gosolo.io/does-solo-design-commercial-proposals\"},{ref_id:\"https://gosolo.io/on-demand-proposals/\"}],response_length:\"long\"}));\n",
+          "accepted": true,
+          "outputs": [
+            "[Retrieved-page body or tool status omitted; original retained in local capture]",
+            "On Demand Solar and Battery-Only Proposals | Proposal Templates (https://gosolo.io/on-demand-proposals/)\nciteturn3view1 [wordlim: 200]"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "provider": "codex",
+      "answerText": "My take: choose Solo for a residential sales-first workflow; choose Enact for a design-led installer workflow, especially if you also do commercial projects. That’s an assessment of their current documented capabilities—not a hands-on benchmark.\n\nHow they compare\n\n| Area | Enact Systems | Solo |\n|---|---|---|\n| Proposal experience | Custom-branded proposals emphasizing system specifications, financial analysis, charts, and 3D visuals; supports electronic signatures. Enact | Interactive sales presentations with live pricing changes, add-ons, financing, and signing—particularly suited to in-home selling. Solo |\n| Design workflow | Integrated solar/storage design, 3D shading, and production estimates across residential and commercial projects. Enact design | Built-in AI-assisted design and shading/performance modeling, plus on-demand expert design support. Solo isn’t just outsourced proposals anymore. Solar Studio |\n| Financing | Models cash, loans, leases, and PPAs, with customizable terms and side-by-side comparisons. Enact documentation | Documented lender integrations support qualification, applications, documents, and change orders inside the proposal. Includes GoodLeap, LightReach, Sungage, and others. Solo financing |\n| Beyond the proposal | Project-management features, plus separately priced engineering and asset-monitoring products. Features, product tiers | Sales-team controls, CRM handoffs, and additional proposal workflows for batteries, roofing, and HVAC. Solo templates |\n| Published pricing | $279/month billed annually or $299 monthly, with two users, unlimited residential projects/proposals, and 10 new commercial projects monthly. Confirm currency and extra-user costs. Pricing | Current pricing page publishes no dollar amounts; plans vary by usage, support, and scale, with unlimited users included. Get a written quote. Pricing |\n\nWhich I’d pick\n\nResidential sales organization with multiple reps: Solo, particularly when integrated financing and adjusting the offer during the appointment are central.\n\nInstaller creating its own designs, with residential and commercial work: Enact would be my first demo.\n\nOnly need attractive proposals: Don’t decide on screenshots. Ask both vendors to build the same real project and demonstrate a panel-layout change, battery addition, financing switch, and customer signature.\n\nBefore committing: compare total cost—including setup, design services, revisions, integrations, and extra users—and check that both produce defensible savings using identical assumptions.\n\nAre you proposing residential or commercial systems, and in Canada or the U.S.? That could materially change the recommendation, especially around utility rates and financing.",
+      "citedDomains": [
+        "enact.solar",
+        "gosolo.io",
+        "enact-systems.com"
+      ],
+      "groundingSources": [
+        {
+          "uri": "https://enact.solar/providers/solar-proposal-software/",
+          "title": "Solar Proposal Software | ENACT"
+        },
+        {
+          "uri": "https://gosolo.io/solar-studio/",
+          "title": "Solar Sales Software | Interactive Proposals & Financing"
+        },
+        {
+          "uri": "https://enact.solar/providers/solar-design-software/",
+          "title": "Solar Design Software | ENACT"
+        },
+        {
+          "uri": "https://support.enact-systems.com/portal/en/kb/articles/step-by-step-guide-for-designing-pricing-a-solar-pv-system",
+          "title": "Step by Step Guide for Designing & Pricing a Solar PV System"
+        },
+        {
+          "uri": "https://help.gosolo.io/integrated-finance-options",
+          "title": "Integrated Finance Options"
+        },
+        {
+          "uri": "https://enact.solar/providers/provider-pricing/",
+          "title": "Installer Solar Software Pricing | ENACT"
+        },
+        {
+          "uri": "https://gosolo.io/on-demand-proposals/",
+          "title": "On Demand Solar and Battery-Only Proposals | Proposal Templates"
+        },
+        {
+          "uri": "https://gosolo.io/pricing/",
+          "title": "Pricing - New 2026 - Solar Proposal and Growth Software | Solo"
+        }
+      ],
+      "searchQueries": [
+        "Enact Systems solar proposal software pricing features",
+        "Solo solar proposal software pricing features",
+        "site.enact.solar pricing $279",
+        "site:gosolo.io solar studio on demand proposals finance integrations",
+        "site:enact.solar \"279\"",
+        "site:enact.solar \"Interactive\" proposals",
+        "site:help.gosolo.io \"Does Solo Design Commercial Proposals\""
+      ],
+      "retrievalStatus": "used"
+    }
+  }
+]

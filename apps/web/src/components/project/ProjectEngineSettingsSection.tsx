@@ -195,7 +195,7 @@ export function ProjectEngineSettingsSection({
       <fieldset disabled={saving} className="project-engine-fieldset">
         <legend>Provider mode</legend>
         <label><input type="radio" checked={automatic} onChange={() => { setEditing(true); setAutomatic(true) }} /> All configured engines</label>
-        <p className="project-engine-help">Includes engines configured later in global Settings.</p>
+        <p className="project-engine-help">Includes engines configured later in global Settings. Codex requires explicit selection.</p>
         <label><input type="radio" checked={!automatic} onChange={chooseEngines} /> Choose engines</label>
         {!automatic && (
           <div className="project-engine-list">

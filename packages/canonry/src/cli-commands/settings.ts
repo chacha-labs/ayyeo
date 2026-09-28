@@ -1,4 +1,4 @@
-import { setGoogleAuth, setProvider, showSettings } from '../commands/settings.js'
+import { codexConnectionCommand, setGoogleAuth, setProvider, showSettings } from '../commands/settings.js'
 import type { CliCommandSpec } from '../cli-dispatch.js'
 import {
   getString,
@@ -10,6 +10,12 @@ import {
 import { usageError } from '../cli-error.js'
 
 export const SETTINGS_CLI_COMMANDS: readonly CliCommandSpec[] = [
+  ...(['status', 'connect', 'refresh', 'disconnect'] as const).map(action => ({
+    path: ['settings', 'codex', action],
+    usage: `canonry settings codex ${action}${action === 'connect' ? ' [--model <model>]' : ''} [--format json]`,
+    options: action === 'connect' ? { model: stringOption() } : undefined,
+    run: async (input) => codexConnectionCommand(action, { model: getString(input.values, 'model'), format: input.format }),
+  } satisfies CliCommandSpec)),
   {
     path: ['settings', 'provider'],
     usage: 'canonry settings provider <name> [--api-key <key>] [--base-url <url>] [--model <model>] [--max-concurrent <n>] [--max-per-minute <n>] [--max-per-day <n>] [--format json]',

@@ -1,3 +1,4 @@
+import { isImplicitProvider, ProviderNames } from '@ainyc/canonry-contracts'
 import { useCallback, useEffect, useRef, useState, type ReactNode, type RefCallback } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
@@ -432,7 +433,7 @@ function ReadySetupPage({
   const readyProviders = settings.providerStatuses.filter(p => p.state === 'ready')
   const projectProviders = resumeProject?.project.providers.map(normalizeProviderName) ?? []
   const runnableApiProviders = readyProviders.filter(provider => (
-    projectProviders.length === 0 || projectProviders.includes(normalizeProviderName(provider.name))
+    projectProviders.length === 0 ? isImplicitProvider(normalizeProviderName(provider.name)) : projectProviders.includes(normalizeProviderName(provider.name))
   ))
   const configuredApiProviders = readyProviders.map(provider => normalizeProviderName(provider.name))
   const selectedApiProviderReady = runnableApiProviders.length > 0
@@ -481,6 +482,8 @@ function ReadySetupPage({
       cdpConfigured,
     })
   const runnableProviderCount = runnableApiProviders.length + (cdpConfigured === true ? 1 : 0)
+  const codexNeedsSelection = providerReadiness === false && configuredApiProviders.includes(ProviderNames.codex)
+    && !projectProviders.includes(ProviderNames.codex)
   const [selectedProvider, setSelectedProvider] = useState(runnableApiProviders[0]?.name ?? '')
   const [generateCount, setGenerateCount] = useState(5)
   const [generatingQueries, setGeneratingQueries] = useState(false)
@@ -1076,14 +1079,16 @@ function ReadySetupPage({
     <section aria-labelledby="setup-provider-heading" className="space-y-3 border-b border-default pb-6 mb-6">
       <div className="flex flex-wrap items-center gap-3">
         <h2 id="setup-provider-heading" className="text-lg font-semibold text-heading">
-          {providerReadiness === false ? 'Connect a provider' : 'Answer engine provider'}
+          {codexNeedsSelection ? 'Select an answer engine' : providerReadiness === false ? 'Connect a provider' : 'Answer engine provider'}
         </h2>
         <ToneBadge tone={providerReadiness === true ? 'positive' : 'neutral'}>
-          {providerReadiness === true ? 'Configured' : providerReadiness === false ? 'Not connected' : 'Checking'}
+          {providerReadiness === true ? 'Configured' : codexNeedsSelection ? 'Selection required' : providerReadiness === false ? 'Not connected' : 'Checking'}
         </ToneBadge>
       </div>
       <p className="max-w-prose text-sm text-secondary">
-        {providerReadiness === true
+        {codexNeedsSelection
+          ? 'Codex is connected. Select it explicitly in project settings before running a sweep.'
+          : providerReadiness === true
           ? runnableApiProviders.length > 0
             ? `${runnableApiProviders.map(provider => provider.displayName ?? provider.name).join(', ')} available for this project. Research and sweeps use your provider account.`
             : 'ChatGPT in Chrome is configured for sweeps. Query Research needs an API provider.'
@@ -1091,6 +1096,9 @@ function ReadySetupPage({
             ? 'An answer engine is required for visibility sweeps. You can save queries now and connect later.'
             : 'Checking available providers. You can choose queries while this finishes.'}
       </p>
+      {codexNeedsSelection && resumeProjectName && <Button type="button" variant="outline" asChild>
+        <Link to="/projects/$projectName/settings" params={{ projectName: resumeProjectName }}>Choose project engines</Link>
+      </Button>}
       {providerReadiness === false || showProviderConfig ? (
         providerToConfigure ? (
           <div>
@@ -1117,7 +1125,7 @@ function ReadySetupPage({
                   </select>
                 </div>
               )}
-              secondaryActions={providerRefreshAction}
+              secondaryActions={normalizeProviderName(providerToConfigure.name) === ProviderNames.codex ? undefined : providerRefreshAction}
               providerName={providerToConfigure.name}
               keyUrl={providerToConfigure.keyUrl}
               modelHint={providerToConfigure.modelHint}

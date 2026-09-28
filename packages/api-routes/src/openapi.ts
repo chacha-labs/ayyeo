@@ -2556,6 +2556,25 @@ const routeCatalog: OpenApiOperation[] = [
     },
   },
   {
+    method: 'get', path: '/api/v1/settings/providers/codex/status', summary: 'Read cached Codex subscription connection status', tags: ['settings'],
+    responses: { 200: jsonResponse('Codex status.', 'CodexStatusDto'), 403: errorResponse('Instance administrator required.') },
+  },
+  {
+    method: 'post', path: '/api/v1/settings/providers/codex/connect', summary: 'Connect Codex subscription connection', tags: ['settings'],
+    requestBody: { required: false, content: { 'application/json': { schema: { type: 'object', additionalProperties: false, properties: { model: stringSchema } } } } },
+    responses: { 200: jsonResponse('Codex status.', 'CodexStatusDto'), 400: errorResponse('Invalid request.'), 403: errorResponse('Instance administrator required.'), 501: errorResponse('Local Canonry required.') },
+  },
+  {
+    method: 'post', path: '/api/v1/settings/providers/codex/refresh', summary: 'Refresh Codex subscription connection', tags: ['settings'],
+    requestBody: { required: false, content: { 'application/json': { schema: { type: 'object', additionalProperties: false, properties: {} } } } },
+    responses: { 200: jsonResponse('Codex status.', 'CodexStatusDto'), 400: errorResponse('Invalid request.'), 403: errorResponse('Instance administrator required.'), 501: errorResponse('Local Canonry required.') },
+  },
+  {
+    method: 'post', path: '/api/v1/settings/providers/codex/disconnect', summary: 'Disconnect Codex subscription connection', tags: ['settings'],
+    requestBody: { required: false, content: { 'application/json': { schema: { type: 'object', additionalProperties: false, properties: {} } } } },
+    responses: { 200: jsonResponse('Codex status.', 'CodexStatusDto'), 400: errorResponse('Invalid request.'), 403: errorResponse('Instance administrator required.'), 501: errorResponse('Local Canonry required.') },
+  },
+  {
     method: 'get',
     path: '/api/v1/settings',
     summary: 'Get provider settings summary',

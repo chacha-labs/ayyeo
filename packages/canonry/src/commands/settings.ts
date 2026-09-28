@@ -110,3 +110,12 @@ export async function setGoogleAuth(opts: {
   console.log(`Google OAuth credentials saved to ${getConfigPath()}.`)
   console.log('Restart the local server if it is already running.')
 }
+
+export async function codexConnectionCommand(action: 'status' | 'connect' | 'refresh' | 'disconnect', opts: { model?: string; format?: string }): Promise<void> {
+  const client = getClient()
+  const result = action === 'connect' ? await client.codexConnect({ model: opts.model })
+    : action === 'refresh' ? await client.codexRefresh()
+      : action === 'disconnect' ? await client.codexDisconnect() : await client.codexStatus()
+  if (isMachineFormat(opts.format)) console.log(JSON.stringify(result, null, 2))
+  else console.log(`Codex: ${result.state}\n${result.message}${result.model ? `\nModel: ${result.model}` : ''}`)
+}

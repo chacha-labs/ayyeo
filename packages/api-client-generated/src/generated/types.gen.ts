@@ -5362,7 +5362,7 @@ export type LatestProjectRunDto = {
             resolvedCount: number | null;
             captureVersion: number | null;
             retrievalStatus: 'used' | 'not-used' | 'unknown' | 'not-applicable' | null;
-            retrievalContract: 'native-auto-v1' | 'search-required-v1' | null;
+            retrievalContract: 'codex-web-search-v1' | 'native-auto-v1' | 'search-required-v1' | null;
             competitorOverlap: Array<string>;
             citedCompetitorDomains: Array<string>;
             mentionedCompetitorDomains: Array<string>;
@@ -8361,7 +8361,7 @@ export type MeasurementQuestionResultResponse = {
     }>;
     captureStatus: 'complete' | 'partial' | 'failed' | 'unsupported' | null;
     retrievalStatus: 'used' | 'not-used' | 'unknown' | 'not-applicable' | null;
-    retrievalContract: 'native-auto-v1' | 'search-required-v1' | null;
+    retrievalContract: 'codex-web-search-v1' | 'native-auto-v1' | 'search-required-v1' | null;
 };
 
 export type MeasurementQuerySetDetail = {
@@ -9230,7 +9230,7 @@ export type ProjectOverviewDto = {
                 resolvedCount: number | null;
                 captureVersion: number | null;
                 retrievalStatus: 'used' | 'not-used' | 'unknown' | 'not-applicable' | null;
-                retrievalContract: 'native-auto-v1' | 'search-required-v1' | null;
+                retrievalContract: 'codex-web-search-v1' | 'native-auto-v1' | 'search-required-v1' | null;
                 competitorOverlap: Array<string>;
                 citedCompetitorDomains: Array<string>;
                 mentionedCompetitorDomains: Array<string>;
@@ -10451,7 +10451,7 @@ export type RunDetailDto = {
         resolvedCount: number | null;
         captureVersion: number | null;
         retrievalStatus: 'used' | 'not-used' | 'unknown' | 'not-applicable' | null;
-        retrievalContract: 'native-auto-v1' | 'search-required-v1' | null;
+        retrievalContract: 'codex-web-search-v1' | 'native-auto-v1' | 'search-required-v1' | null;
         competitorOverlap: Array<string>;
         citedCompetitorDomains: Array<string>;
         mentionedCompetitorDomains: Array<string>;
@@ -10642,6 +10642,20 @@ export type SettingsDto = {
     bing: {
         configured: boolean;
     };
+};
+
+export type CodexStatusDto = {
+    state: 'unavailable' | 'disconnected' | 'connected' | 'signed-out' | 'wrong-auth' | 'account-changed' | 'error';
+    enabled: boolean;
+    message: string;
+    model: string | null;
+    runtimeVersion: string | null;
+    checkedAt: string | null;
+    models: Array<{
+        id: string;
+        displayName: string;
+        tier: 'flagship' | 'standard' | 'fast' | 'economy';
+    }>;
 };
 
 export type SiteAuditLivePageHealthDto = {
@@ -11454,7 +11468,7 @@ export type SnapshotListResponse = {
         resolvedCount: number | null;
         captureVersion: number | null;
         retrievalStatus: 'used' | 'not-used' | 'unknown' | 'not-applicable' | null;
-        retrievalContract: 'native-auto-v1' | 'search-required-v1' | null;
+        retrievalContract: 'codex-web-search-v1' | 'native-auto-v1' | 'search-required-v1' | null;
         competitorOverlap: Array<string>;
         citedCompetitorDomains: Array<string>;
         mentionedCompetitorDomains: Array<string>;
@@ -17650,6 +17664,136 @@ export type GetApiV1ProjectsByNameSnapshotsDiffResponses = {
 };
 
 export type GetApiV1ProjectsByNameSnapshotsDiffResponse = GetApiV1ProjectsByNameSnapshotsDiffResponses[keyof GetApiV1ProjectsByNameSnapshotsDiffResponses];
+
+export type GetApiV1SettingsProvidersCodexStatusData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/settings/providers/codex/status';
+};
+
+export type GetApiV1SettingsProvidersCodexStatusErrors = {
+    /**
+     * Instance administrator required.
+     */
+    403: ErrorEnvelope;
+};
+
+export type GetApiV1SettingsProvidersCodexStatusError = GetApiV1SettingsProvidersCodexStatusErrors[keyof GetApiV1SettingsProvidersCodexStatusErrors];
+
+export type GetApiV1SettingsProvidersCodexStatusResponses = {
+    /**
+     * Codex status.
+     */
+    200: CodexStatusDto;
+};
+
+export type GetApiV1SettingsProvidersCodexStatusResponse = GetApiV1SettingsProvidersCodexStatusResponses[keyof GetApiV1SettingsProvidersCodexStatusResponses];
+
+export type PostApiV1SettingsProvidersCodexConnectData = {
+    body?: {
+        model?: string;
+    };
+    path?: never;
+    query?: never;
+    url: '/api/v1/settings/providers/codex/connect';
+};
+
+export type PostApiV1SettingsProvidersCodexConnectErrors = {
+    /**
+     * Invalid request.
+     */
+    400: ErrorEnvelope;
+    /**
+     * Instance administrator required.
+     */
+    403: ErrorEnvelope;
+    /**
+     * Local Canonry required.
+     */
+    501: ErrorEnvelope;
+};
+
+export type PostApiV1SettingsProvidersCodexConnectError = PostApiV1SettingsProvidersCodexConnectErrors[keyof PostApiV1SettingsProvidersCodexConnectErrors];
+
+export type PostApiV1SettingsProvidersCodexConnectResponses = {
+    /**
+     * Codex status.
+     */
+    200: CodexStatusDto;
+};
+
+export type PostApiV1SettingsProvidersCodexConnectResponse = PostApiV1SettingsProvidersCodexConnectResponses[keyof PostApiV1SettingsProvidersCodexConnectResponses];
+
+export type PostApiV1SettingsProvidersCodexRefreshData = {
+    body?: {
+        [key: string]: never;
+    };
+    path?: never;
+    query?: never;
+    url: '/api/v1/settings/providers/codex/refresh';
+};
+
+export type PostApiV1SettingsProvidersCodexRefreshErrors = {
+    /**
+     * Invalid request.
+     */
+    400: ErrorEnvelope;
+    /**
+     * Instance administrator required.
+     */
+    403: ErrorEnvelope;
+    /**
+     * Local Canonry required.
+     */
+    501: ErrorEnvelope;
+};
+
+export type PostApiV1SettingsProvidersCodexRefreshError = PostApiV1SettingsProvidersCodexRefreshErrors[keyof PostApiV1SettingsProvidersCodexRefreshErrors];
+
+export type PostApiV1SettingsProvidersCodexRefreshResponses = {
+    /**
+     * Codex status.
+     */
+    200: CodexStatusDto;
+};
+
+export type PostApiV1SettingsProvidersCodexRefreshResponse = PostApiV1SettingsProvidersCodexRefreshResponses[keyof PostApiV1SettingsProvidersCodexRefreshResponses];
+
+export type PostApiV1SettingsProvidersCodexDisconnectData = {
+    body?: {
+        [key: string]: never;
+    };
+    path?: never;
+    query?: never;
+    url: '/api/v1/settings/providers/codex/disconnect';
+};
+
+export type PostApiV1SettingsProvidersCodexDisconnectErrors = {
+    /**
+     * Invalid request.
+     */
+    400: ErrorEnvelope;
+    /**
+     * Instance administrator required.
+     */
+    403: ErrorEnvelope;
+    /**
+     * Local Canonry required.
+     */
+    501: ErrorEnvelope;
+};
+
+export type PostApiV1SettingsProvidersCodexDisconnectError = PostApiV1SettingsProvidersCodexDisconnectErrors[keyof PostApiV1SettingsProvidersCodexDisconnectErrors];
+
+export type PostApiV1SettingsProvidersCodexDisconnectResponses = {
+    /**
+     * Codex status.
+     */
+    200: CodexStatusDto;
+};
+
+export type PostApiV1SettingsProvidersCodexDisconnectResponse = PostApiV1SettingsProvidersCodexDisconnectResponses[keyof PostApiV1SettingsProvidersCodexDisconnectResponses];
 
 export type GetApiV1SettingsData = {
     body?: never;

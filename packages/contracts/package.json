@@ -20,6 +20,10 @@
     "linkify-it": "^6.1.0",
     "tlds": "^1.261.0",
     "tldts": "^7.4.9",
-    "zod": "^4.1.12"
+    "zod": "^4.1.12",
+    "mdast-util-from-markdown": "2.0.3"
+  },
+  "devDependencies": {
+    "@types/mdast": "4.0.4"
   }
 }

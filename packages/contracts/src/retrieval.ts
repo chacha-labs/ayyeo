@@ -46,6 +46,7 @@ export const RetrievalStatuses = retrievalStatusSchema.enum
  *                        and search policy are not public
  */
 export const retrievalContractSchema = z.enum([
+  'codex-web-search-v1',
   'native-auto-v1',
   'search-required-v1',
 ])

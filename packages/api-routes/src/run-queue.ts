@@ -1,3 +1,4 @@
+import { isImplicitProvider } from '@ainyc/canonry-contracts'
 import crypto from 'node:crypto'
 import { and, eq, or } from 'drizzle-orm'
 import {
@@ -126,7 +127,7 @@ export function resolveRunnableProviderSelection(input: {
     ? requested
     : project.length > 0
       ? project
-      : availableProviders
+      : availableProviders.filter(isImplicitProvider)
   const available = new Set(availableProviders)
   return {
     availableProviders,

@@ -1,3 +1,4 @@
+import { isImplicitProvider } from '@ainyc/canonry-contracts'
 export const CDP_PROVIDER_NAME = 'cdp:chatgpt'
 
 export function normalizeProviderName(name: string): string {
@@ -27,7 +28,7 @@ export function resolveAiVisibilityProviderReadiness({
   if (canUseApiProvider && configuredApiProviders !== undefined) {
     const apiReady = configuredApiProviders
       .map(normalizeProviderName)
-      .some(provider => selected.length === 0 || selectedSet.has(provider))
+      .some(provider => selected.length === 0 ? isImplicitProvider(provider) : selectedSet.has(provider))
     if (apiReady) return true
   }
   if (canUseCdp && cdpConfigured === true) return true

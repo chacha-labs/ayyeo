@@ -373,6 +373,7 @@ test('buildDashboard names the missing local-provider requirement truthfully', (
   const apiSettings: ApiSettings = {
     providers: [
       { name: 'local', displayName: 'Local', configured: false },
+      { name: 'codex', displayName: 'Codex (subscription)', configured: false },
       { name: 'openai', displayName: 'OpenAI', configured: false },
     ],
     google: { configured: false },
@@ -380,6 +381,7 @@ test('buildDashboard names the missing local-provider requirement truthfully', (
 
   const statuses = buildDashboard([], apiSettings).settings.providerStatuses
 
+  expect(statuses.find((provider) => provider.name === 'codex')?.detail).toBe('Connect an existing Codex CLI subscription session.')
   expect(statuses.find((provider) => provider.name === 'local')?.detail).toBe('Base URL is missing.')
   expect(statuses.find((provider) => provider.name === 'openai')?.detail).toBe('API key is missing.')
 })

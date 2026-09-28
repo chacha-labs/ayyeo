@@ -11,6 +11,8 @@ import { CliError } from './cli-error.js'
 export type GoogleConnectionType = 'gsc' | 'ga4' | 'gbp'
 
 export interface ProviderConfigEntry {
+  enabled?: boolean
+  codexAccountId?: string
   apiKey?: string
   baseUrl?: string
   model?: string

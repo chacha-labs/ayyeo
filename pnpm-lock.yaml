@@ -432,6 +432,9 @@ importers:
       '@ainyc/canonry-provider-claude':
         specifier: workspace:*
         version: link:../provider-claude
+      '@ainyc/canonry-provider-codex':
+        specifier: workspace:*
+        version: link:../provider-codex
       '@ainyc/canonry-provider-gemini':
         specifier: workspace:*
         version: link:../provider-gemini
@@ -474,6 +477,9 @@ importers:
       linkify-it:
         specifier: ^6.1.0
         version: 6.1.0
+      mdast-util-from-markdown:
+        specifier: 2.0.3
+        version: 2.0.3
       tlds:
         specifier: ^1.261.0
         version: 1.261.0
@@ -483,6 +489,10 @@ importers:
       zod:
         specifier: ^4.1.12
         version: 4.3.6
+    devDependencies:
+      '@types/mdast':
+        specifier: 4.0.4
+        version: 4.0.4
 
   packages/db:
     dependencies:
@@ -628,6 +638,18 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.91.1
         version: 0.91.1(zod@4.3.6)
+
+  packages/provider-codex:
+    dependencies:
+      '@ainyc/canonry-contracts':
+        specifier: workspace:*
+        version: link:../contracts
+      acorn:
+        specifier: 8.16.0
+        version: 8.16.0
+      zod:
+        specifier: ^4.1.12
+        version: 4.3.6
 
   packages/provider-gemini:
     dependencies:
