@@ -1,9 +1,0 @@
-{
-  "state": "connected",
-  "enabled": true,
-  "message": "Configured to reuse the CLI subscription. Check again to verify the current account.",
-  "model": "gpt-6-astra",
-  "runtimeVersion": null,
-  "checkedAt": null,
-  "models": []
-}

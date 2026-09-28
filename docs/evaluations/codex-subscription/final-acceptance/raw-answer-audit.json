@@ -1,6 +1,0 @@
-{
-  "answersChecked": 59,
-  "method": "Independent simple-inline-link audit of original Markdown, with unsupported formats rejected. Shared brand matcher applied to raw text after removing hidden destinations and formatting markers; final-link sets compared with saved sources.",
-  "mismatches": [],
-  "passed": true
-}

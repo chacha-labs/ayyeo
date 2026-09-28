@@ -1,9 +1,0 @@
-{
-  "datasets": {
-    "before": 40,
-    "after": 98,
-    "final-smoke": 1
-  },
-  "mismatches": [],
-  "passed": true
-}

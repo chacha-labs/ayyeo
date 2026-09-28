@@ -1,3 +1,0 @@
-
-> @ainyc/canonry-api-routes@0.0.0 typecheck $WORKSPACE/packages/api-routes
-> tsc --noEmit -p tsconfig.json

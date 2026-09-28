@@ -1,9 +1,0 @@
-{
-  "state": "disconnected",
-  "enabled": false,
-  "message": "Connect the existing Codex CLI subscription session. If signed out, run codex login on this machine.",
-  "model": "gpt-6-astra",
-  "runtimeVersion": null,
-  "checkedAt": null,
-  "models": []
-}

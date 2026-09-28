@@ -1,5 +1,0 @@
-
-> canonry@5.29.0 val:skills:check $WORKSPACE
-> node scripts/sync-val-town-skills.mjs --check
-
-Val Town skill mirror is current (19 documents, 21 modules).

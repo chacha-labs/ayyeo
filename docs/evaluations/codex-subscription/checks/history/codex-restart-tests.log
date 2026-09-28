@@ -1,8 +1,0 @@
-
- RUN  v4.1.0 $WORKSPACE
-
-
- Test Files  1 passed (1)
-      Tests  3 passed (3)
-   Start at  18:48:22
-   Duration  1.42s (transform 724ms, setup 28ms, import 1.22s, tests 8ms, environment 0ms)

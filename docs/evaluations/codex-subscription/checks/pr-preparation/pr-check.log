@@ -1,6 +1,0 @@
-
-> canonry@5.29.0 check $WORKSPACE
-> node scripts/lint-changed.mjs
-
-lint: checking 7 changed file(s)
-lint: passed (7 files, 6 cached, 1.19s)

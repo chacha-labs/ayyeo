@@ -1,3 +1,0 @@
-
-> @canonry/canonry@5.29.0 typecheck $WORKSPACE/packages/canonry
-> tsc --noEmit -p tsconfig.json

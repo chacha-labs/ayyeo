@@ -1,67 +1,45 @@
-# Codex subscription implementation and evaluation
+# Codex subscription evaluation summary
 
-The fork now has a local, explicitly selected `codex` provider alongside the API providers. It reuses the existing CLI subscription login. Start with the [handoff](HANDOFF.md) for implementation details, usage, validation, and limitations.
+The implementation adds a local, opt-in Codex answer engine. See the [handoff](HANDOFF.md) for implementation and follow-up guidance, the [provider guide](../../providers/codex.md) for setup, and [validation-summary.json](validation-summary.json) for recorded check results.
 
-## Recorded workload
+## Recorded validation
 
-Target: **Aurora Solar / aurorasolar.com**, US / English, no location override. The fixed basket contains 20 repository-supplied query strings: **18 non-brand and 2 branded** relative to Aurora Solar. See [the frozen manifest](before/manifest.json).
+Target: Aurora Solar (`aurorasolar.com`), US / English, no location override. The basket contains 20 queries: 18 non-brand and two branded. It comes from `seedRawCandidates` in `packages/api-routes/test/fixtures/discovery-replay/b2b-saas.json`, using zero-based indexes `0–11, 14, 17, 18, 20–24`.
 
-| Phase | Provider/model | Requested | Saved | Failed |
-|---|---|---:|---:|---:|
-| Before | Gemini `gemini-2.5-flash` | 20 | 20 | 0 |
-| Before | Claude `claude-sonnet-4-6` | 20 | 20 | 0 |
-| After | Gemini `gemini-2.5-flash` | 20 | 20 | 0 |
-| After | Claude `claude-sonnet-4-6` | 20 | 20 | 0 |
-| After, three passes | Codex `gpt-6-astra` | 60 | 58 | 2 |
+| Phase | Provider/model | Requested | Saved |
+|---|---|---:|---:|
+| Before | Gemini `gemini-2.5-flash` | 20 | 20 |
+| Before | Claude `claude-sonnet-4-6` | 20 | 20 |
+| After | Gemini `gemini-2.5-flash` | 20 | 20 |
+| After | Claude `claude-sonnet-4-6` | 20 | 20 |
+| Initial Codex acceptance | `gpt-6-astra`, runtime `0.157.1` | 60 | 58 |
+| Final Codex acceptance | `gpt-6-astra`, runtime `0.158.0` | 60 | 59 |
 
-Codex completion was **58/60 = 96.7%**, meeting the planned 95% threshold. Two answers were rejected for source links without captured attribution; neither became a “not cited” observation. The first two passes saved 19 each; the third saved all 20. See [run outcomes](after/summary.json) and [evaluation results](after/evaluation.json).
+Final completion was **59/60 (98.3%)**, above the 95% gate. The three passes saved 20, 19, and 20 observations. All 60 final answers were reviewed; the 59 saved observations had no observed mention/citation extraction mismatches. An independent audit of the original Markdown also found no visible-mention or final-link-set differences. Review was performed by the assistant, not an external human auditor or an exhaustive fact-check of vendor claims.
 
-The 40 before-change API responses replayed with zero differences. All 98 after-change saved responses also replayed with zero differences. An independent assistant review covered all 58 saved Codex answers and found zero mention/citation label mismatches. Source relevance/support was reviewed against captured material; this is not an external human audit or exhaustive verification of vendor marketing claims. See [review notes](after/assistant-reviews.json).
+| Final query class | Requested | Saved | Missing | Mentioned | Cited |
+|---|---:|---:|---:|---:|---:|
+| Non-brand | 54 | 53 | 1 | 35 / 53 | 44 / 53 |
+| Branded | 6 | 6 | 0 | 6 / 6 | 6 / 6 |
 
-The final verbatim-web-program AST guard was added after the 100-attempt workload. All 16 web programs from the five-query pilot pass that guard; adversarial transformed/synthesized-output tests reject it. A separate [final-build smoke query](final-smoke/summary.json) completed successfully through the hardened path. Disconnect was exercised and the CLI remained subscription-authenticated. The full three-pass workload was **not** repeated after this final hardening.
+Local verification recorded **328 passing focused tests**, affected provider/CLI/API/web typechecks, CLI/web builds, `pnpm check`, and SDK/plugin/skill drift checks. The full 199-observation archive replayed with zero differences. A signed-in dashboard walkthrough covered connection controls and explicit enrollment; the final compiled-server smoke confirmed disconnect leaves the CLI signed in. Actions remains disabled at the operator's request; no full-workspace CI result is claimed.
 
-## Observations by query class
+## Failure findings
 
-These are observed counts, not comparative rankings. Missing observations remain separate from measured negatives.
+The original two rejected answers were not retained, so their causes cannot be proven. Six diagnostic reruns passed. A subsequent full-basket attempt reproduced an Enact/Solo failure: the parser recognized the old source URL but ignored the redirect destination explicitly reported by the native web tool. The fix accepts only those native redirect aliases. The captured case remains a regression fixture in `packages/provider-codex/test/fixtures/redirect-failure.json`.
 
-| Phase/provider | Query class | Measured | Mentioned | Cited | Missing |
-|---|---|---:|---:|---:|---:|
-| Before Gemini | non-brand | 18 | 11 | 6 | 0 |
-| Before Claude | non-brand | 18 | 12 | 0 | 0 |
-| After Gemini | non-brand | 18 | 12 | 4 | 0 |
-| After Claude | non-brand | 18 | 14 | 1 | 0 |
-| Codex, three passes | non-brand | 53 | 37 | 47 | 1 |
-| Before Gemini | branded | 2 | 2 | 2 | 0 |
-| Before Claude | branded | 2 | 2 | 2 | 0 |
-| After Gemini | branded | 2 | 2 | 2 | 0 |
-| After Claude | branded | 2 | 2 | 2 | 0 |
-| Codex, three passes | branded | 5 | 5 | 5 | 1 |
+The final run's single rejection was **“solar proposal software pricing for enterprise.”** It cited a Solargraf URL whose captured fetch returned 403, with no matching trusted source evidence. That answer and available web outputs were retained separately, without creating a negative observation. The earlier search program/output was not retained in that benchmark build, so this does not establish that the model invented the pricing. Final code additionally retains bounded rejected-exec diagnostics, without treating them as citation evidence.
 
-Live answers naturally varied. Among the 18 queries measured successfully in all three Codex passes, one changed its mention outcome and one changed its citation outcome. The JSON evaluation retains the exact query-level comparison. This variability is distinct from a code regression; deterministic replay is the regression gate.
+The final 60-query capture included the redirect fix. Later diagnostic/identity refinements were covered by focused tests and a separate compiled-server smoke. Live acceptance used Simple portfolios; Advanced paths have automated coverage. Live answer variation is separate from software regressions, and these results do not establish consumer ChatGPT equivalence.
 
-## Files
+## Artifact retention
 
-- [Before results](before/results-export.json), [before per-query table](before/observations.md), and [before raw snapshots](before/stored-snapshots.json.gz).
-- [After results](after/results-export.json), [after observations](after/observations.json), and [after raw snapshots](after/stored-snapshots.json.gz).
-- [Five-query pilot manifest](pilot/manifest.json), sanitized pilot event captures, and the recorded protocol schemas under `context/protocol/`.
-- Final smoke response, raw snapshot, restored/refreshed/disconnected connection states, and outcome under `final-smoke/`.
-- Test/check records under `checks/`; `checks/history/` includes superseded development failures and must not be read as the final status.
-- Historical capture/review scripts under `context/scripts/`. These are archived as `.txt`; they assume the original `.context` layout. The portable offline replay command below is the supported replay entry point.
-- [Accepted implementation plan](context/accepted-plan.md), [conversation decisions](context/decisions.md), and [original setup screenshot](context/original-setup.png).
-- [Artifact inventory](artifact-inventory.json) and `SHA256SUMS` identify the sanitized published copies. Historical checksums refer to original captures and will differ where sanitization changed a file.
+Bulk query answers, raw captures, protocol dumps, screenshots, historical scripts, logs, and duplicate result exports have been removed from the PR. The complete sanitized archive is preserved locally at `.context/codex-evaluation-archive/`; the original local captures remain intact. The three captured fixtures used by provider tests remain committed.
 
-## Offline replay
-
-From the repository root, with workspace dependencies installed:
+On the originating workspace only, the archived replay remains available:
 
 ```sh
-node --import tsx scripts/replay-codex-evaluation.mjs
+node --import tsx .context/replay-codex-evaluation.mjs .context/codex-evaluation-archive
 ```
 
-Expected: `before: 40`, `after: 98`, `final-smoke: 1`, zero mismatches. The script disables network access and does not mutate artifacts. Large raw JSON files are gzip-compressed; normal exports remain readable JSON.
-
-Authentication files, credentials, private runtime instructions, account notifications, encrypted reasoning, retrieved-page bodies, and verbatim source excerpts are excluded. Source headers, reference IDs, and URLs are retained; the original local captures retain the retrieved material used during review. The complete saved answer text, citation evidence, normalized observations, and sanitized provider response bodies are retained. Rejected queries have error records; their discarded full model response bodies were not persisted by the measurement pipeline.
-
-## PR preparation and final acceptance
-
-The [final September 28 capture](final-acceptance/README.md) saved **59/60 (98.3%)** Codex observations with zero reviewed extraction or replay mismatches. The [retained native-redirect regression](redirect-investigation-2026-09-28/README.md) identified and fixed a real false rejection. The expanded offline replay now covers **199 saved observations**, including the separate final release smoke. The original baseline and 58/60 result remain unchanged. Actions is intentionally disabled on this fork; see the [handoff](HANDOFF.md) for local checks and limitations.
+A fresh checkout contains the concise summary and regression fixtures, not the complete benchmark corpus.

@@ -1,3 +1,0 @@
-
-> @ainyc/canonry-web@0.0.0 typecheck $WORKSPACE/apps/web
-> tsc --noEmit -p tsconfig.json

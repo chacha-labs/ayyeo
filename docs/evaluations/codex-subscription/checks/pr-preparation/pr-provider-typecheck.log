@@ -1,3 +1,0 @@
-
-> @ainyc/canonry-provider-codex@0.0.0 typecheck $WORKSPACE/packages/provider-codex
-> tsc --noEmit -p tsconfig.json

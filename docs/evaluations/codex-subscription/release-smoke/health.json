@@ -1,9 +1,0 @@
-{
-  "status": "ok",
-  "service": "canonry",
-  "version": "5.29.0",
-  "mcp": {
-    "status": "available"
-  },
-  "commit": "c97b3f8e6ae9d842e6465b36f940240561c8d1e7"
-}

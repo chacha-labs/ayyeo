@@ -1,5 +1,0 @@
-
-> canonry@5.21.0 plugin:sync $WORKSPACE
-> node scripts/sync-canonry-plugin.mjs
-
-Synced Canonry plugin skills, portable core, and client adapters to v5.21.0.

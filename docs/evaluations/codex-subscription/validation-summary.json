@@ -44,5 +44,7 @@
     "method": "Independent simple-inline-link audit of original Markdown, with unsupported formats rejected. Shared brand matcher applied to raw text after removing hidden destinations and formatting markers; final-link sets compared with saved sources.",
     "mismatches": [],
     "passed": true
-  }
+  },
+  "recordedAt": "2026-09-28",
+  "artifactAvailability": "Full captures and development logs archived locally in .context/codex-evaluation-archive; not included in the PR. Essential captured regression fixtures remain in packages/provider-codex/test/fixtures."
 }
