@@ -764,7 +764,7 @@
     {
       "source": "generated task handoff",
       "file": "HANDOFF.md",
-      "sha256": "e631e9453c0e04da1de868c173a549c0335482db8f7957da31995526cb81a414"
+      "sha256": "d1f4f46d3ab7abd55be3630292c28962897f9f219af3cdfa53a304db78775857"
     },
     {
       "source": "generated task handoff",
@@ -907,7 +907,7 @@
     {
       "file": "failure-rerun-2026-09-28/README.md",
       "source": "generated failure investigation",
-      "sha256": "daf7cd6f2f9a93c6c3a5f612da45c4576891137d8957299d7276548aded22b13"
+      "sha256": "896ffeb849719531f632e44d310667b2f7fa8c96549d55c818fa77bf6aec9924"
     },
     {
       "file": "failure-rerun-2026-09-28/runtime-adaptation.patch.gz",
@@ -918,6 +918,16 @@
       "file": "failure-rerun-2026-09-28/replay-verification.json",
       "source": "generated failure investigation",
       "sha256": "31d4829caace487f7d81a6dcccfa5236f67de4cc1696ca0542ce88515f94bfcb"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "redirect-investigation-2026-09-28/README.md",
+      "sha256": "b408c83f9b706c5000d78a39332a69c42bb85c1ad56821208106a6d38f5af56e"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "redirect-investigation-2026-09-28/retained-failure.json.gz",
+      "sha256": "c9a9b7d49ba9821b6836a8f1197fb794fa87f369aa9ff877103fdf5a34de5812"
     }
   ],
   "excluded": [

@@ -1,3 +1,4 @@
+import redirectFailure from './fixtures/redirect-failure.json' with { type: 'json' }
 import captured from './fixtures/runtime-0.158.0-evidence.json' with { type: 'json' }
 import { describe, expect, it } from 'vitest'
 import { determineAnswerMentioned } from '@ainyc/canonry-contracts'
@@ -58,4 +59,28 @@ describe('Codex evidence boundary', () => {
 
 it.each(captured)('replays captured runtime 0.158.0 evidence: $query', ({ evidence: value, expected }) => {
   expect(normalizeCodexEvidence(value)).toEqual(expected)
+})
+
+
+it('accepts the tool-reported redirect destinations in the captured Enact failure', () => {
+  const result = normalizeCodexEvidence(redirectFailure.evidence)
+  expect(result.groundingSources.map(source => source.uri)).toEqual([
+    'https://enact.solar/providers/', 'https://gosolo.io/solar-studio/',
+    'https://enact.solar/providers/provider-pricing/', 'https://enact.solar/solar-design-services/', 'https://gosolo.io/pricing/',
+  ])
+  expect(result.citedDomains).toEqual(['enact.solar', 'gosolo.io'])
+  expect(determineAnswerMentioned(result.answerText, ['Aurora Solar'], ['aurorasolar.com'])).toBe(false)
+})
+
+it('does not trust redirects in page body text or unreported URL variants', () => {
+  const header = 'Original (https://original.example/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]'
+  const sources = captureCodexSources([header + '\n; Redirected to URL: https://invented.example/; Total lines: 20'])
+  expect(sources).toEqual([{ uri: 'https://original.example/', title: 'Original', reference: 'turn0search0' }])
+  expect(() => normalizeCodexEvidence({ ...evidence('[source](https://invented.example/)'), sources })).toThrow('without captured attribution')
+  expect(() => normalizeCodexEvidence({ ...evidence('[source](https://original.example/new)'), sources })).toThrow('without captured attribution')
+})
+
+it('rejects conflicting native redirect destinations for one reference', () => {
+  const header = 'Original (https://original.example/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]; Redirected to URL: '
+  expect(() => captureCodexSources([header + 'https://one.example/; Total lines: 10', header + 'https://two.example/; Total lines: 10'])).toThrow('Conflicting')
 })

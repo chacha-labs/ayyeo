@@ -9,3 +9,5 @@ Fresh ephemeral conversations use a fixed prompt and live search. No inherited s
 Pure provider-specific normalization lives here; generic utilities stay in contracts. Test normalization independently of the process, and process behavior with a fake App Server. Live acceptance uses the saved Aurora Solar basket and requires explicit authorization for quota consumption.
 
 Verified runtime versions are 0.157.1 and 0.158.0. Failed measurement turns invoke the host failure-capture callback before rejection with allowlisted answer/web evidence only; preserve the original provider error if diagnostic persistence fails.
+
+Native attribution-line redirect destinations are verified source aliases. Never infer redirects from webpage prose, matching domains, or guessed URL normalization. The captured Enact failure is the regression fixture for this boundary.

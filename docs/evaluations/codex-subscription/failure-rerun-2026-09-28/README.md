@@ -38,3 +38,7 @@ The local initial version-check failure is separately retained at `.context/code
 ## Next diagnostic requirement
 
 A future full benchmark should use pre-validation capture for **every** attempt. If an unmatched link recurs, preserve its exact URL, captured alternatives, relevant tool outputs and final answer. Determine whether a narrowly defined URL-normalization fix is warranted from that evidence; do not relax citation validation merely to raise completion rates.
+
+## Subsequent reproduction
+
+The later full-basket attempt reproduced a real redirect-handling bug on the Enact/Solo query. See [the retained failure and diagnosis](../redirect-investigation-2026-09-28/README.md). The six diagnostic results above remain unchanged.
