@@ -39,7 +39,7 @@ Canonry is API-first. The API is the source of truth, the CLI is the standard op
 | [`providers/gemini.md`](providers/gemini.md) | current | engineers | Gemini provider behavior and constraints |
 | [`providers/openai.md`](providers/openai.md) | current | engineers | OpenAI provider behavior and constraints |
 | [`providers/claude.md`](providers/claude.md) | current | engineers | Claude provider behavior and constraints |
-| [`evaluations/codex-subscription/README.md`](evaluations/codex-subscription/README.md) | current | engineers, reviewers | Codex implementation handoff and concise evaluation results |
+| [`evaluations/codex-subscription/README.md`](evaluations/codex-subscription/README.md) | current | engineers, reviewers | Codex implementation, commands, limitations, and evaluation results |
 | [`providers/codex.md`](providers/codex.md) | current | operators, engineers | Local Codex subscription connection, source evidence, and runtime compatibility |
 | [`providers/local.md`](providers/local.md) | current | engineers | Local provider behavior and constraints |
 | [`providers/perplexity.md`](providers/perplexity.md) | current | engineers | Perplexity provider behavior and constraints |

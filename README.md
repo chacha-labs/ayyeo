@@ -130,7 +130,7 @@ For an existing project, configure a provider with your own key.
 | Perplexity | [Perplexity settings](https://www.perplexity.ai/settings/api) | `PERPLEXITY_API_KEY` |
 | Local model | Any OpenAI-compatible endpoint | `LOCAL_BASE_URL` |
 
-For local Codex subscription access, sign into the Codex CLI on the server machine with `codex login`, then run `cnry settings codex connect`. Select it explicitly with `cnry run my-site --provider codex --wait`. Existing API providers remain available. See [Codex connection and compatibility](docs/providers/codex.md).
+For local Codex subscription access, sign into the Codex CLI on the server machine with `codex login`, then run `cnry settings codex connect`. Select it explicitly with `cnry run my-site --provider codex --wait`. Existing API providers remain available. See [Codex connection and compatibility](docs/providers/codex.md) and [implementation, verification, and limitations](docs/evaluations/codex-subscription/README.md).
 
 Add the queries that matter to your project:
 
