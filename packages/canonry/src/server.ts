@@ -41,6 +41,7 @@ import { localAdapter } from "@ainyc/canonry-provider-local";
 import { cdpChatgptAdapter } from "@ainyc/canonry-provider-cdp";
 import { CodexRuntime, createCodexAdapter } from "@ainyc/canonry-provider-codex";
 import { createCodexConnection, CODEX_QUOTA } from "./codex-connection.js";
+import { createCodexFailureStore } from "./codex-diagnostics.js";
 import { perplexityAdapter } from "@ainyc/canonry-provider-perplexity";
 import {
   ProviderNames,
@@ -78,7 +79,7 @@ import type {
 } from "./config.js";
 import { resolveEmbedConfig, SERVER_ENFORCED_EMBED_PROJECT_TABS, unsupportedEmbedProjectTabs } from "./embed.js";
 import { resolveAgentAllowViewers, resolveAgentEnabled, resolveAgentProactiveEnabled } from "./agent-config.js";
-import { saveConfigPatch, getConfigPath } from "./config.js";
+import { saveConfigPatch, getConfigPath, getConfigDir } from "./config.js";
 import { getPlacesConfig } from "./places-config.js";
 import {
   getGoogleAuthConfig,
@@ -861,7 +862,11 @@ export async function createServer(opts: {
 
   // Build provider registry from config (with legacy field migration)
   const registry = new ProviderRegistry();
-  const codexRuntime = new CodexRuntime();
+  const saveCodexFailure = createCodexFailureStore(path.join(getConfigDir(), 'diagnostics', 'codex'));
+  const codexRuntime = new CodexRuntime(undefined, undefined, async capture => {
+    try { await saveCodexFailure(capture); }
+    catch (error) { log.error('codex.failure-capture.failed', { error: describeError(error), runId: capture.runId }); }
+  });
   const codexAdapter = createCodexAdapter(codexRuntime);
   const apiAdapters = [...API_ADAPTERS, codexAdapter];
   app.addHook("onClose", async () => { await codexRuntime.close(); });

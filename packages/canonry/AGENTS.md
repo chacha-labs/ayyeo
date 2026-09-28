@@ -683,3 +683,5 @@ Native `agent ask` supports `--context <json>`, `--max-tool-calls`, and
 turn; it does not widen tool scope. Preserve terminal `aero_turn_status` in JSON
 output and fail unexpected SSE EOF. See `src/agent/AGENTS.md` and
 `docs/aero-evaluation.md` for runtime boundaries and captured-turn evaluation.
+
+Codex failed-turn evidence is stored by `src/codex-diagnostics.ts` under the local config directory with bounded retention and owner-only permissions. Never include it in public error envelopes, telemetry, or successful observation counts.

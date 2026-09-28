@@ -2,7 +2,7 @@
 
 ## Current state
 
-Implemented on branch **`feat/codex-subscription-provider`**, based on `origin/main` at `ce28687c960cb27f6e173cc56510b33b44a0f0b3`. Canonry and plugin manifests are bumped to **5.21.0**. No production deployment, global Canonry installation, PR merge, or Codex logout was performed.
+Implemented on branch **`feat/codex-subscription-provider`**, based on `origin/main` at `ce28687c960cb27f6e173cc56510b33b44a0f0b3`. Canonry and plugin manifests are bumped to **5.29.0**. No production deployment, global Canonry installation, PR merge, or Codex logout was performed.
 
 The implementation adds a separate local `codex` answer-engine provider alongside existing API providers. It reuses the hosting OS user's CLI subscription authentication. It is disabled until connected and excluded from implicit provider selection even after connection.
 
@@ -71,9 +71,21 @@ See [the evaluation overview](README.md), [machine-readable results](after/evalu
 - CLI and web builds, affected typechecks, `pnpm check`, generated-client drift, and plugin drift were checked locally. Existing OpenAPI comment and web bundle-size warnings are retained. Full workspace CI is separate; consult GitHub for its status.
 - No signed-in browser walkthrough was completed; component tests and the production web build passed. The attempted isolated browser preview stopped at its sign-in screen.
 
+## September 28 failure investigation
+
+Both originally rejected queries were rerun three times each with pre-validation diagnostic capture; all six new attempts passed. See [the investigation and retained answers](failure-rerun-2026-09-28/README.md). The original causes remain unknown because their answer bodies were not retained. At capture time, the installed runtime was 0.158.0 and the production guard still allowed only 0.157.1, so these were explicitly separate diagnostic-pilot calls. The PR preparation below subsequently added evaluated 0.158.0 support. The original 58/60 benchmark is unchanged. See the PR preparation update below for the subsequent fixes and validation.
+
+## PR preparation (September 28)
+
+- Rechecked npm before push: both published packages are 5.28.1, so the feature release is bumped to 5.29.0. The original captures retain their historical 5.21.0 build identity.
+- Added evaluated 0.158.0 compatibility, two captured replay fixtures, and supported/unsupported-version tests. Unknown runtime versions still fail closed.
+- Failed measurement turns now retain allowlisted final-answer/web evidence in owner-only gzip JSON files under the local config directory's `diagnostics/codex/`. Retention is bounded to 100 captures / 100 MiB. Storage failure never masks the original provider failure. These are host-only files, not observations or public API payloads.
+- Completed a signed-in dashboard walkthrough: Settings connect, refresh, disconnect, setup connect, explicit project engine enrollment, and recognition of configured readiness. Fixed duplicate refresh buttons and the misleading disconnected label when Codex was connected but not selected. Captured screenshots remain in `.context/`.
+- Replayed the unchanged 139-observation corpus with zero mismatches; 296 focused regression tests passed, including the new failure-storage and setup cases. A final 60-query Codex benchmark is running against the built server with 0.158.0; its results and source review will be recorded separately before release readiness is claimed.
+
 ## Important limits for the next engineer
 
-1. **Experimental protocol dependency.** Supported App Server runtime is `0.157.1`. The launcher reported `0.144.5`, so the integration reads runtime identity from initialization. Do not loosen the version guard without new protocol/evidence fixtures and a bounded live pilot.
+1. **Experimental protocol dependency.** Supported App Server runtimes are `0.157.1` and `0.158.0`. The launcher reported `0.144.5`, so the integration reads runtime identity from initialization. Do not loosen the version guard without new protocol/evidence fixtures and a bounded live pilot.
 2. **Evidence can be unavailable.** Public search events alone are insufficient. Missing raw evidence, transformed tool output, unresolved citations, or unsupported formatting fail closed. Improve supported formats with real fixtures; never weaken the source requirement to improve completion numbers.
 3. **Account identity visibility.** The protocol exposes email, not a separate workspace identity. Canonry stores an email fingerprint and detects observable account changes; it cannot distinguish all same-email workspace changes.
 4. **Shared CLI context.** Repository instructions, skills, plugins, MCP tools, shell, and image tools are disabled. Codex can still list its global CLI `AGENTS.md`; this is documented, and it can be relevant when comparing different operator environments.

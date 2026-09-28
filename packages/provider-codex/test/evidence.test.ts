@@ -1,3 +1,4 @@
+import captured from './fixtures/runtime-0.158.0-evidence.json' with { type: 'json' }
 import { describe, expect, it } from 'vitest'
 import { determineAnswerMentioned } from '@ainyc/canonry-contracts'
 import { captureCodexSources, normalizeCodexEvidence } from '../src/evidence.js'
@@ -53,4 +54,8 @@ describe('Codex evidence boundary', () => {
   ])('rejects missing or unverifiable evidence instead of inventing a negative observation', input => {
     expect(() => normalizeCodexEvidence(input)).toThrow()
   })
+})
+
+it.each(captured)('replays captured runtime 0.158.0 evidence: $query', ({ evidence: value, expected }) => {
+  expect(normalizeCodexEvidence(value)).toEqual(expected)
 })

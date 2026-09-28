@@ -1,0 +1,77 @@
+{
+  "attempts": [
+    {
+      "pass": 1,
+      "query": "q16",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 3393,
+      "sourceCount": 62,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 47.194
+    },
+    {
+      "pass": 1,
+      "query": "q15",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 1520,
+      "sourceCount": 83,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 38.162
+    },
+    {
+      "pass": 2,
+      "query": "q16",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 3527,
+      "sourceCount": 67,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 42.433
+    },
+    {
+      "pass": 2,
+      "query": "q15",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 1538,
+      "sourceCount": 53,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 25.686
+    },
+    {
+      "pass": 3,
+      "query": "q16",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 3180,
+      "sourceCount": 57,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 38.995
+    },
+    {
+      "pass": 3,
+      "query": "q15",
+      "accepted": true,
+      "error": null,
+      "answerCharacters": 1635,
+      "sourceCount": 53,
+      "unmatchedLinks": [],
+      "rejectedPrograms": 0,
+      "elapsedSeconds": 30.261
+    }
+  ],
+  "accepted": 6,
+  "total": 6,
+  "originalFailuresRecovered": false,
+  "runtimeVersion": "0.158.0",
+  "originalRuntimeVersion": "0.157.1",
+  "productionGuardChanged": false,
+  "newObservationsWritten": false
+}

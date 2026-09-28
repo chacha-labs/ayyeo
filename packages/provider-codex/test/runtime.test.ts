@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { CodexRuntime, type CodexRpc } from '../src/runtime.js'
 
 class FakeRpc implements CodexRpc {
@@ -7,11 +7,12 @@ class FakeRpc implements CodexRpc {
   listeners = new Set<(method: string, params: unknown) => void>()
   closed = false
   auth: { type: string; email?: string } | null = { type: 'chatgpt', email: 'operator@example.com' }
-  outcome: 'complete' | 'hang' | 'quota' | 'crash' | 'missing-evidence' = 'complete'
+  version = '0.157.1'
+  outcome: 'unmatched-link' | 'complete' | 'hang' | 'quota' | 'crash' | 'missing-evidence' = 'complete'
   count = 0
   request(method: string, params: Record<string, unknown>): Promise<unknown> {
     this.calls.push({ method, params })
-    if (method === 'initialize') return Promise.resolve({ userAgent: 'canonry/0.157.1' })
+    if (method === 'initialize') return Promise.resolve({ userAgent: `canonry/${this.version}` })
     if (method === 'account/read') return Promise.resolve({ account: this.auth })
     if (method === 'model/list') return Promise.resolve({ data: [{ model: 'test-model', displayName: 'Test model', isDefault: true }] })
     if (method === 'config/read') return Promise.resolve({ config: { mcp_servers: { personal: {} } } })
@@ -29,8 +30,8 @@ class FakeRpc implements CodexRpc {
           emit('rawResponseItem/completed', { type: 'custom_tool_call_output', call_id: 'call', output: [{ type: 'input_text', text: 'Example (https://example.com/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]' }] })
         }
         emit('item/completed', { type: 'webSearch', query: 'query' })
-        emit('item/completed', { type: 'agentMessage', id: 'answer', phase: 'final_answer', text: '[Example](https://example.com/)' })
-        emit('item/completed', { type: 'agentMessage', id: 'answer', phase: 'final_answer', text: '[Example](https://example.com/)' })
+        emit('item/completed', { type: 'agentMessage', id: 'answer', phase: 'final_answer', text: this.outcome === 'unmatched-link' ? '[Example](https://unmatched.example/)' : '[Example](https://example.com/)' })
+        emit('item/completed', { type: 'agentMessage', id: 'answer', phase: 'final_answer', text: this.outcome === 'unmatched-link' ? '[Example](https://unmatched.example/)' : '[Example](https://example.com/)' })
         this.emit('turn/completed', { threadId, turn: { id: 'turn', status: this.outcome === 'quota' ? 'failed' : 'completed', error: this.outcome === 'quota' ? { code: 'UsageLimitExceeded' } : null } })
       })
       return Promise.resolve({ turn: { id: 'turn' } })
@@ -102,4 +103,38 @@ it('allows format-constrained text generation without claiming a citation measur
   expect(result.answerText).toBe('[Example](https://example.com/)')
   expect(result.sources).toEqual([])
   expect(rpc.calls.find(call => call.method === 'thread/start')?.params.baseInstructions).toContain('exactly the requested format')
+})
+
+
+it.each(['0.157.1', '0.158.0'])('accepts verified runtime %s', async version => {
+  const { runtime, rpc } = setup(); rpc.version = version
+  expect((await runtime.inspect()).runtimeVersion).toBe(version)
+})
+
+it('rejects unknown runtimes before reading account or starting a turn', async () => {
+  const { runtime, rpc } = setup(); rpc.version = '0.159.0'
+  await expect(runtime.inspect()).rejects.toThrow('Unsupported')
+  expect(rpc.calls.map(call => call.method)).toEqual(['initialize'])
+  expect(rpc.closed).toBe(true)
+})
+
+it('retains the final answer and native source output when attribution fails', async () => {
+  const rpc = new FakeRpc(); rpc.outcome = 'unmatched-link'
+  const capture = vi.fn().mockResolvedValue(undefined)
+  const runtime = new CodexRuntime(() => rpc, 100, capture); runtime.enable(); runtimes.push(runtime)
+  await expect(runtime.execute(input, 'test-model', accountId)).rejects.toThrow('without captured attribution')
+  expect(capture).toHaveBeenCalledTimes(1)
+  const saved = capture.mock.calls[0]![0]
+  expect(saved).toMatchObject({ query: 'query', runId: 'run', model: 'test-model', runtimeVersion: '0.157.1',
+    evidence: { answerText: '[Example](https://unmatched.example/)', searchObserved: true, searchQueries: ['query'] } })
+  expect(saved.evidence.webToolCalls[0].outputs[0]).toContain('https://example.com/')
+  expect(JSON.stringify(saved)).not.toContain('operator@example.com')
+  expect(JSON.stringify(saved)).not.toContain(accountId)
+  expect(rpc.calls.filter(call => call.method === 'turn/start')).toHaveLength(1)
+})
+
+it('preserves the provider failure when diagnostic storage fails', async () => {
+  const rpc = new FakeRpc(); rpc.outcome = 'quota'
+  const runtime = new CodexRuntime(() => rpc, 100, async () => { throw new Error('Disk full') }); runtime.enable(); runtimes.push(runtime)
+  await expect(runtime.execute(input, 'test-model', accountId)).rejects.toThrow('UsageLimitExceeded')
 })

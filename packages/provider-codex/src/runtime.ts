@@ -23,6 +23,18 @@ export interface CodexInspection {
   runtimeVersion: string
 }
 
+/** Allowlisted diagnostic data only; never includes account replies or reasoning. */
+export interface CodexFailureCapture {
+  capturedAt: string
+  query: string
+  runId?: string
+  location?: TrackedQueryInput['location']
+  model: string
+  runtimeVersion: string
+  error: string
+  evidence: CodexEvidence
+}
+
 export interface CodexRpc {
   request(method: string, params: Record<string, unknown>): Promise<unknown>
   notify?(method: string, params: Record<string, unknown>): void
@@ -146,7 +158,8 @@ export class CodexRuntime {
   private active?: { runId?: string; cancel: () => void }
   private cancelledRuns = new Set<string>()
 
-  constructor(private readonly factory: (cwd: string) => CodexRpc = cwd => new CodexProcess(cwd), private readonly timeoutMs = 180_000) {}
+  constructor(private readonly factory: (cwd: string) => CodexRpc = cwd => new CodexProcess(cwd), private readonly timeoutMs = 180_000,
+    private readonly captureFailure?: (capture: CodexFailureCapture) => Promise<void>) {}
 
   private async client(): Promise<CodexRpc> {
     if (this.rpc) return this.rpc
@@ -159,7 +172,7 @@ export class CodexRuntime {
           clientInfo: { name: 'canonry', title: 'Canonry', version: '1.0.0' }, capabilities: { experimentalApi: true },
         }))
         this.version = initialized.userAgent.match(/\d+\.\d+\.\d+/)?.[0] ?? ''
-        if (this.version !== '0.157.1') throw providerError('Unsupported Codex App Server version. This integration is verified with runtime 0.157.1.')
+        if (!['0.157.1', '0.158.0'].includes(this.version)) throw providerError('Unsupported Codex App Server version. This integration is verified with runtimes 0.157.1 and 0.158.0.')
         rpc.notify?.('initialized', {})
         rpc.subscribe(method => { if (method === 'runtime/closed' && this.rpc === rpc) this.rpc = undefined })
         this.rpc = rpc
@@ -288,6 +301,15 @@ export class CodexRuntime {
       return evidence
     } catch (error) {
       if (turnId) await rpc.request('turn/interrupt', { threadId: thread.thread.id, turnId }).catch(() => undefined)
+      if (requireEvidence && this.captureFailure) {
+        // Preserve evidence before the rejected result leaves the runtime. The
+        // host reports storage failures separately; they never replace quota or
+        // provider errors, and a failed answer never becomes an observation.
+        await this.captureFailure({ capturedAt: new Date().toISOString(), query: input.query, runId: input.runId,
+          location: input.location, model, runtimeVersion: this.version, error: redactLogString(describeError(error)),
+          evidence: { answerText: [...answers.values()].join('\n\n'), sources: [], searchQueries: [...searches], searchObserved, webToolCalls },
+        }).catch(() => undefined)
+      }
       throw error
     } finally {
       clearTimeout(timer); unsubscribe(); this.active = undefined

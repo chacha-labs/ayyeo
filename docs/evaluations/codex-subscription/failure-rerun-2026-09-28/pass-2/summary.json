@@ -1,0 +1,22 @@
+[
+  {
+    "query": "q16",
+    "accepted": true,
+    "error": null,
+    "answerCharacters": 3527,
+    "sourceCount": 67,
+    "unmatchedLinks": [],
+    "rejectedPrograms": 0,
+    "elapsedSeconds": 42.433
+  },
+  {
+    "query": "q15",
+    "accepted": true,
+    "error": null,
+    "answerCharacters": 1538,
+    "sourceCount": 53,
+    "unmatchedLinks": [],
+    "rejectedPrograms": 0,
+    "elapsedSeconds": 25.686
+  }
+]

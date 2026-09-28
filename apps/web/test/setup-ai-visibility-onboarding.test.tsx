@@ -44,6 +44,7 @@ function renderProjectSetup(options: {
   queryResponse?: () => Response | Promise<Response>
   providerResponse?: () => Response | Promise<Response>
   includeLocalProvider?: boolean
+  includeCodexProvider?: boolean
 }) {
   const fixture = createDashboardFixture()
   // Match the key destinations published by the provider adapter catalog.
@@ -77,6 +78,10 @@ function renderProjectSetup(options: {
   }
   if (options.includeLocalProvider) {
     fixture.dashboard.settings.providerStatuses.push({ name: 'local', state: 'needs-config', detail: 'Base URL is missing.' })
+  }
+
+  if (options.includeCodexProvider) {
+    fixture.dashboard.settings.providerStatuses.push({ name: 'codex', displayName: 'Codex (subscription)', state: 'ready', detail: 'Subscription connected.' })
   }
 
   const requests: Array<{ path: string; method?: string; body?: RequestInit['body'] }> = []
@@ -721,4 +726,19 @@ test('a first run that skipped the site scan still ends on the finish step', asy
     search: { onboarding: 'complete', setupProject: projectName, skipped: 'visibility' },
     replace: true,
   })
+})
+
+
+test('distinguishes a connected Codex session from explicit project enrollment', async () => {
+  const { requests } = renderProjectSetup({ onboarding: true, readyProviderNames: [], projectProviders: [], includeCodexProvider: true,
+    providerResponse: () => jsonResponse({ state: 'connected', enabled: true, message: 'Subscription connected.', model: 'test-model', runtimeVersion: '0.158.0', checkedAt: null, models: [] }),
+  })
+  expect(await screen.findByRole('heading', { name: 'Select an answer engine' })).toBeTruthy()
+  expect(screen.getByText('Selection required')).toBeTruthy()
+  expect(screen.queryByText('Not connected')).toBeNull()
+  expect(screen.getByRole('link', { name: 'Choose project engines' })).toBeTruthy()
+  fireEvent.change(screen.getByLabelText('Provider to connect'), { target: { value: 'codex' } })
+  await screen.findByRole('button', { name: 'Reconnect Codex' })
+  expect(screen.getAllByRole('button', { name: 'Check again' })).toHaveLength(1)
+  expect(requests.filter(request => request.method && request.method !== 'GET' && request.path !== '/api/v1/telemetry/onboarding')).toEqual([])
 })

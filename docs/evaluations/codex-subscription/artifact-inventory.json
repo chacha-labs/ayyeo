@@ -764,7 +764,7 @@
     {
       "source": "generated task handoff",
       "file": "HANDOFF.md",
-      "sha256": "0d683607f9b959cfc674e95b59947c104dbee019fcc5f66a85403b8a3ec12bb7"
+      "sha256": "e631e9453c0e04da1de868c173a549c0335482db8f7957da31995526cb81a414"
     },
     {
       "source": "generated task handoff",
@@ -785,6 +785,139 @@
       "source": "generated task handoff",
       "file": "context/decisions.md",
       "sha256": "e83682b9625caf1313090745f4e2473466e437bb75e1333bcf749d043adabe41"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/summary.json",
+      "file": "failure-rerun-2026-09-28/pass-1/summary.json",
+      "sha256": "c32e3eb598ecd57bd9cd137c8ebbdd38bc3a33b71f0f0fe373594c2694f8906c",
+      "sourceSha256": "c32e3eb598ecd57bd9cd137c8ebbdd38bc3a33b71f0f0fe373594c2694f8906c"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/q16-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-1/q16-diagnostic.json.gz",
+      "sha256": "9129600b8f96b9dca2d92dc17aa96a64a376ca8dcb3d8636187b61da352948ac",
+      "sourceSha256": "96bb72a03cbb293bc2bc1d46540d0db5d194d82b9a6d5290671f474ad5447641"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/q15-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-1/q15-events.jsonl.gz",
+      "sha256": "5f13ef2bd3c18d786cfc43791c684dd7841d7f27acb032c35f7e5e72628ab83a",
+      "sourceSha256": "a069a27596433cc9d11bc625158c98fbee91836010e02cee851384bef7ec12e3"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/q15-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-1/q15-diagnostic.json.gz",
+      "sha256": "734c32076b364a2589926bee2b5996170494b05e5a01181f9aa49ad3405f26b0",
+      "sourceSha256": "dbffac3ad1c627ad669b5c52b94873c15594b52282ed2c89a3c9bd39686f0990"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/q16-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-1/q16-events.jsonl.gz",
+      "sha256": "c7122bdc29b8b110019df96fccb0010fd4945ee6dee2684bed6ae939caf390fa",
+      "sourceSha256": "632f0a3da1172fbbdf2b2770ab2767d8d732019c60cb21f6ed61fabf12e2525d"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-02-57-803Z/manifest.json",
+      "file": "failure-rerun-2026-09-28/pass-1/manifest.json",
+      "sha256": "1a2d94ba02ede25b4fca4a05e619f20e9bbfe3170c9f4eb04316cd4a4ccbba29",
+      "sourceSha256": "1a2d94ba02ede25b4fca4a05e619f20e9bbfe3170c9f4eb04316cd4a4ccbba29"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/summary.json",
+      "file": "failure-rerun-2026-09-28/pass-2/summary.json",
+      "sha256": "9cb67d217b7feedc7f4358ebd4fa68dfb26319e44132392feb1a91795d6d17b3",
+      "sourceSha256": "9cb67d217b7feedc7f4358ebd4fa68dfb26319e44132392feb1a91795d6d17b3"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/q16-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-2/q16-diagnostic.json.gz",
+      "sha256": "6e227cbe840cabd358661df9d930bbed4cc3b1e4cf2e699941722b1e293ec388",
+      "sourceSha256": "bb1d41f9249f2e3b4d80bfcbe263f3e5a2748dd01df311641dc16620e151426b"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/q15-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-2/q15-events.jsonl.gz",
+      "sha256": "51d99e99e50e55a1b0eac5bd681ce9895ff3982bc878fc779775e7f7d624c0c9",
+      "sourceSha256": "59d90afb55bbdeeb9cf6e55da17df1248c5f22bd74bc3562ddccf76bd94f648d"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/q15-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-2/q15-diagnostic.json.gz",
+      "sha256": "031b572db3c7103213846df693359bad6fff489741e3e52f03db05bdfc3ba192",
+      "sourceSha256": "7a91c41c364422ef554b66afe4e7f098c6b7bdce0851647c5fea08d81278cd1a"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/q16-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-2/q16-events.jsonl.gz",
+      "sha256": "f10490dc6ec2a6accef81299d91316cbf7e077617ea43f99c2aaf9dcb9057c6b",
+      "sourceSha256": "1b7c49ebe847bcc7d54d49a5f5ef5a4824cee14560faba7f594fa9f7e71f9c65"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-04-38-159Z/manifest.json",
+      "file": "failure-rerun-2026-09-28/pass-2/manifest.json",
+      "sha256": "e98e5d113f9417606ce7aa1d8207ec37982be596003fef586059bdb8882a1f88",
+      "sourceSha256": "e98e5d113f9417606ce7aa1d8207ec37982be596003fef586059bdb8882a1f88"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/summary.json",
+      "file": "failure-rerun-2026-09-28/pass-3/summary.json",
+      "sha256": "bc31a9c4c28d017db7852138735ccc05fd63962d551d631d9cf1bc1f9b0fc056",
+      "sourceSha256": "bc31a9c4c28d017db7852138735ccc05fd63962d551d631d9cf1bc1f9b0fc056"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/q16-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-3/q16-diagnostic.json.gz",
+      "sha256": "4e3a01e25f96219640d62be10afee80b047fd8883b63ebd0d29ee06ac656a450",
+      "sourceSha256": "fbce9341e93b99254ce3ab550ae6b5abce8f71a2cdad5e70b5befc3a218cdab6"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/q15-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-3/q15-events.jsonl.gz",
+      "sha256": "d8dc7f6cc5c7724765a60d5ca04ab8eee74d371b322d3f63c6fd98a0f2298b62",
+      "sourceSha256": "a7403d5ef53b4329ce25a5b1b219c6c660d8b9b051044f0918a363fc5526354c"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/q15-diagnostic.json",
+      "file": "failure-rerun-2026-09-28/pass-3/q15-diagnostic.json.gz",
+      "sha256": "6c29740e57eec53e193aeee9f98a33f57ed37ff3dcbf0ce046a4a01edd5170ee",
+      "sourceSha256": "98c1801dd4185e294c041c0d20f9aa02230aed3fe4fbf8851e3d98a841b184b2"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/q16-events.jsonl",
+      "file": "failure-rerun-2026-09-28/pass-3/q16-events.jsonl.gz",
+      "sha256": "0bb2b167df6ffb24c9c600edaec48723e398172803c6109d3a76779701e81cf6",
+      "sourceSha256": "459a0e903c8b9a8029c0d4362aa842674660cea78eb3726d361ec9b563a37c79"
+    },
+    {
+      "source": ".context/codex-failure-rerun-2026-09-28T17-05-52-486Z/manifest.json",
+      "file": "failure-rerun-2026-09-28/pass-3/manifest.json",
+      "sha256": "498571fd2f86d399bd92dd074d16d920937db97fe61d5ab6309ee7c0cad66b6b",
+      "sourceSha256": "498571fd2f86d399bd92dd074d16d920937db97fe61d5ab6309ee7c0cad66b6b"
+    },
+    {
+      "source": "generated failure investigation",
+      "file": "failure-rerun-2026-09-28/summary.json",
+      "sha256": "12f11acfd24359f78b6ea3f6495efb3352efaa7a85e75e5b180bb856ea0a4358"
+    },
+    {
+      "source": "generated failure investigation",
+      "file": "failure-rerun-2026-09-28/capture-script.mjs.txt",
+      "sha256": "70852a5860323906f0369a4b690b38079fd0550238b0d7a074b96e6bcc2a546c"
+    },
+    {
+      "file": "failure-rerun-2026-09-28/README.md",
+      "source": "generated failure investigation",
+      "sha256": "daf7cd6f2f9a93c6c3a5f612da45c4576891137d8957299d7276548aded22b13"
+    },
+    {
+      "file": "failure-rerun-2026-09-28/runtime-adaptation.patch.gz",
+      "source": "generated failure investigation",
+      "sha256": "35eb9f8ad3ef232f392fe7f7c7c7f3622ae8874a3f89c56cbf8b165762949986"
+    },
+    {
+      "file": "failure-rerun-2026-09-28/replay-verification.json",
+      "source": "generated failure investigation",
+      "sha256": "31d4829caace487f7d81a6dcccfa5236f67de4cc1696ca0542ce88515f94bfcb"
     }
   ],
   "excluded": [
