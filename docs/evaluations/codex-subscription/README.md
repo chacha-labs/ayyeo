@@ -61,3 +61,7 @@ node --import tsx scripts/replay-codex-evaluation.mjs
 Expected: `before: 40`, `after: 98`, `final-smoke: 1`, zero mismatches. The script disables network access and does not mutate artifacts. Large raw JSON files are gzip-compressed; normal exports remain readable JSON.
 
 Authentication files, credentials, private runtime instructions, account notifications, encrypted reasoning, retrieved-page bodies, and verbatim source excerpts are excluded. Source headers, reference IDs, and URLs are retained; the original local captures retain the retrieved material used during review. The complete saved answer text, citation evidence, normalized observations, and sanitized provider response bodies are retained. Rejected queries have error records; their discarded full model response bodies were not persisted by the measurement pipeline.
+
+## PR preparation and final acceptance
+
+The [final September 28 capture](final-acceptance/README.md) saved **59/60 (98.3%)** Codex observations with zero reviewed extraction or replay mismatches. The [retained native-redirect regression](redirect-investigation-2026-09-28/README.md) identified and fixed a real false rejection. The expanded offline replay now covers **199 saved observations**, including the separate final release smoke. The original baseline and 58/60 result remain unchanged. Actions is intentionally disabled on this fork; see the [handoff](HANDOFF.md) for local checks and limitations.

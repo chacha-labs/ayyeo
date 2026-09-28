@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "project": "final-acceptance-aurora-solar",
+  "displayName": "Aurora Solar",
+  "canonicalDomain": "aurorasolar.com",
+  "aliases": [],
+  "country": "US",
+  "language": "en",
+  "location": null,
+  "providers": {
+    "codex": {
+      "model": "gpt-6-astra"
+    }
+  },
+  "queries": [
+    {
+      "key": "q01",
+      "text": "what is automated solar proposal software",
+      "sourceIndex": 0
+    },
+    {
+      "key": "q02",
+      "text": "how does solar CRM integration improve sales",
+      "sourceIndex": 1
+    },
+    {
+      "key": "q03",
+      "text": "why is accurate solar system design crucial for proposals",
+      "sourceIndex": 2
+    },
+    {
+      "key": "q04",
+      "text": "benefits of digital solar sales tools for large teams",
+      "sourceIndex": 3
+    },
+    {
+      "key": "q05",
+      "text": "understanding ROI of solar proposal software",
+      "sourceIndex": 4
+    },
+    {
+      "key": "q06",
+      "text": "challenges of manual solar quoting for growing businesses",
+      "sourceIndex": 5
+    },
+    {
+      "key": "q07",
+      "text": "best solar quoting software for 20-person sales team",
+      "sourceIndex": 6
+    },
+    {
+      "key": "q08",
+      "text": "top residential solar proposal tools for enterprise",
+      "sourceIndex": 7
+    },
+    {
+      "key": "q09",
+      "text": "leading solar design and proposal software",
+      "sourceIndex": 8
+    },
+    {
+      "key": "q10",
+      "text": "solar sales software for large residential installers",
+      "sourceIndex": 9
+    },
+    {
+      "key": "q11",
+      "text": "cloud-based solar proposal solutions for sales managers",
+      "sourceIndex": 10
+    },
+    {
+      "key": "q12",
+      "text": "reputable solar sales quoting platforms",
+      "sourceIndex": 11
+    },
+    {
+      "key": "q13",
+      "text": "Aurora Solar website",
+      "sourceIndex": 14
+    },
+    {
+      "key": "q14",
+      "text": "solar proposal software comparison sites",
+      "sourceIndex": 17
+    },
+    {
+      "key": "q15",
+      "text": "Aurora Solar vs EnergyLink for residential solar",
+      "sourceIndex": 18
+    },
+    {
+      "key": "q16",
+      "text": "Enact Systems vs Solo for solar proposals",
+      "sourceIndex": 20
+    },
+    {
+      "key": "q17",
+      "text": "what are alternatives to manual solar quoting",
+      "sourceIndex": 21
+    },
+    {
+      "key": "q18",
+      "text": "which solar design software integrates best with CRM",
+      "sourceIndex": 22
+    },
+    {
+      "key": "q19",
+      "text": "best solar proposal solution: local install vs cloud",
+      "sourceIndex": 23
+    },
+    {
+      "key": "q20",
+      "text": "solar proposal software pricing for enterprise",
+      "sourceIndex": 24
+    }
+  ],
+  "querySource": "packages/api-routes/test/fixtures/discovery-replay/b2b-saas.json",
+  "sourceSha256": "932960d2c0cd2ed3554a7633c0766221962c2162007a0b3d18f281343c1942c0",
+  "repetitions": 3,
+  "maxLogicalQueriesPerProvider": 60,
+  "execution": "Three serial passes of the frozen 20-query basket; explicit Codex selection, fresh ephemeral thread per query, probe runs, no location override, no automatic retry or API fallback.",
+  "trigger": "probe",
+  "commit": "4f1473a37cd273b45371e1845f3506bbf23fc37b",
+  "limitations": [
+    "One domain and category; three passes do not establish broad answer quality.",
+    "Simple portfolios exercised live; Advanced parity covered by automated execution tests.",
+    "Live answer variation is separate from deterministic extraction regressions."
+  ],
+  "phase": "final-build-codex-acceptance",
+  "plannedPasses": {
+    "codex": 3
+  },
+  "codexModel": "gpt-6-astra",
+  "runtimeVersion": "0.158.0",
+  "baselineSha256": "b121e36055930093bb9ddae2263300f0475cb5badef75f1485960298f33e4fca",
+  "maxLogicalQueries": 60,
+  "startedAt": "2026-09-28T17:31:16.380332+00:00",
+  "effectiveBrandNames": [
+    "Aurora Solar"
+  ],
+  "workingTreeDirty": true,
+  "sha256": "4012d572bd59cd127ef54126506c63973265498fe5eda97060fcc0d6b32ea835"
+}

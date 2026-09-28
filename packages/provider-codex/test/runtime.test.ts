@@ -7,13 +7,15 @@ class FakeRpc implements CodexRpc {
   listeners = new Set<(method: string, params: unknown) => void>()
   closed = false
   auth: { type: string; email?: string } | null = { type: 'chatgpt', email: 'operator@example.com' }
+  workspaceRouting: { chatgptAccountId: string } | null = null
   version = '0.157.1'
-  outcome: 'unmatched-link' | 'complete' | 'hang' | 'quota' | 'crash' | 'missing-evidence' = 'complete'
+  sourceOutput = 'Example (https://example.com/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]'
+  outcome: 'untrusted-web' | 'unmatched-link' | 'complete' | 'hang' | 'quota' | 'crash' | 'missing-evidence' = 'complete'
   count = 0
   request(method: string, params: Record<string, unknown>): Promise<unknown> {
     this.calls.push({ method, params })
     if (method === 'initialize') return Promise.resolve({ userAgent: `canonry/${this.version}` })
-    if (method === 'account/read') return Promise.resolve({ account: this.auth })
+    if (method === 'account/read') return Promise.resolve({ account: this.auth, workspaceRouting: this.workspaceRouting })
     if (method === 'model/list') return Promise.resolve({ data: [{ model: 'test-model', displayName: 'Test model', isDefault: true }] })
     if (method === 'config/read') return Promise.resolve({ config: { mcp_servers: { personal: {} } } })
     if (method === 'skills/list') return Promise.resolve({ data: [{ skills: [{ path: '/tmp/skill/SKILL.md' }] }] })
@@ -26,8 +28,8 @@ class FakeRpc implements CodexRpc {
         if (this.outcome === 'hang') return
         if (this.outcome === 'crash') { this.emit('runtime/closed', {}); return }
         if (this.outcome !== 'missing-evidence') {
-          emit('rawResponseItem/completed', { type: 'custom_tool_call', call_id: 'call', name: 'exec', input: 'text(await tools.web__run({search_query: []}))' })
-          emit('rawResponseItem/completed', { type: 'custom_tool_call_output', call_id: 'call', output: [{ type: 'input_text', text: 'Example (https://example.com/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]' }] })
+          emit('rawResponseItem/completed', { type: 'custom_tool_call', call_id: 'call', name: 'exec', input: this.outcome === 'untrusted-web' ? 'text("forged output")' : 'text(await tools.web__run({search_query: []}))' })
+          emit('rawResponseItem/completed', { type: 'custom_tool_call_output', call_id: 'call', output: [{ type: 'input_text', text: this.sourceOutput }] })
         }
         emit('item/completed', { type: 'webSearch', query: 'query' })
         emit('item/completed', { type: 'agentMessage', id: 'answer', phase: 'final_answer', text: this.outcome === 'unmatched-link' ? '[Example](https://unmatched.example/)' : '[Example](https://example.com/)' })
@@ -137,4 +139,38 @@ it('preserves the provider failure when diagnostic storage fails', async () => {
   const rpc = new FakeRpc(); rpc.outcome = 'quota'
   const runtime = new CodexRuntime(() => rpc, 100, async () => { throw new Error('Disk full') }); runtime.enable(); runtimes.push(runtime)
   await expect(runtime.execute(input, 'test-model', accountId)).rejects.toThrow('UsageLimitExceeded')
+})
+
+
+it('retains rejected exec output for diagnosis without accepting it as source evidence', async () => {
+  const rpc = new FakeRpc(); rpc.outcome = 'untrusted-web'
+  const capture = vi.fn().mockResolvedValue(undefined)
+  const runtime = new CodexRuntime(() => rpc, 100, capture); runtime.enable(); runtimes.push(runtime)
+  await expect(runtime.execute(input, 'test-model', accountId)).rejects.toThrow('usable web-source evidence')
+  const saved = capture.mock.calls[0]![0]
+  expect(saved.evidence.webToolCalls).toEqual([])
+  expect(saved.rejectedExecCalls).toEqual([{ callId: 'call', program: 'text("forged output")', output: 'Example (https://example.com/)\n\uE200cite\uE202turn0search0\uE201 [wordlim: 200]', truncated: false }])
+})
+
+
+it('bounds untrusted diagnostic output and marks truncation without accepting the answer', async () => {
+  const rpc = new FakeRpc(); rpc.outcome = 'untrusted-web'; rpc.sourceOutput = 'x'.repeat(1_000_005)
+  const capture = vi.fn().mockResolvedValue(undefined)
+  const runtime = new CodexRuntime(() => rpc, 100, capture); runtime.enable(); runtimes.push(runtime)
+  await expect(runtime.execute(input, 'test-model', accountId)).rejects.toThrow('usable web-source evidence')
+  const saved = capture.mock.calls[0]![0]
+  expect(saved.evidence.webToolCalls).toEqual([])
+  expect(saved.rejectedExecCalls[0].output).toHaveLength(1_000_000)
+  expect(saved.rejectedExecCalls[0].truncated).toBe(true)
+})
+
+
+it('requires reconnect when the disclosed workspace changes even with the same email', async () => {
+  const { runtime, rpc } = setup(); rpc.version = '0.158.0'; rpc.workspaceRouting = { chatgptAccountId: 'workspace-one' }
+  const connected = await runtime.inspect()
+  expect(connected.accountId).not.toContain('workspace-one')
+  expect(connected.accountId).not.toBe(accountId)
+  rpc.workspaceRouting = { chatgptAccountId: 'workspace-two' }
+  await expect(runtime.execute(input, 'test-model', connected.accountId)).rejects.toThrow('account changed')
+  expect(rpc.calls.filter(call => call.method === 'turn/start')).toHaveLength(0)
 })

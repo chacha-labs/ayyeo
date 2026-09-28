@@ -22,8 +22,9 @@ function read(relative) {
 try {
   const mismatches = []
   const counts = {}
-  for (const dataset of ['before', 'after', 'final-smoke']) {
-    const project = read(`${dataset === 'final-smoke' ? 'after' : dataset}/project.json`)
+  for (const dataset of ['before', 'after', 'final-smoke', 'final-acceptance', 'release-smoke']) {
+    const projectDataset = dataset === 'final-smoke' ? 'after' : dataset === 'release-smoke' ? 'final-acceptance' : dataset
+    const project = read(`${projectDataset}/project.json`)
     const rows = read(`${dataset}/stored-snapshots.json`)
     counts[dataset] = rows.length
     for (const row of rows) {

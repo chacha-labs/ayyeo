@@ -1,0 +1,5 @@
+
+> canonry@5.29.0 plugin:check $WORKSPACE
+> node scripts/sync-canonry-plugin.mjs --check
+
+Canonry plugin matches v5.29.0.

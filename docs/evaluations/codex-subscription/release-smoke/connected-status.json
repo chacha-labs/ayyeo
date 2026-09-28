@@ -1,0 +1,45 @@
+{
+  "state": "connected",
+  "enabled": true,
+  "model": "gpt-6-astra",
+  "runtimeVersion": "0.158.0",
+  "models": [
+    {
+      "id": "gpt-6-astra",
+      "displayName": "GPT-6-Astra",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-6-sol",
+      "displayName": "GPT-6-Sol",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-6-luna",
+      "displayName": "GPT-6-Luna",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "displayName": "GPT-5.6-Sol",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "displayName": "GPT-5.6-Terra",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "displayName": "GPT-5.6-Luna",
+      "tier": "standard"
+    },
+    {
+      "id": "gpt-5.5",
+      "displayName": "GPT-5.5",
+      "tier": "standard"
+    }
+  ],
+  "checkedAt": "2026-09-28T18:02:07.770Z",
+  "message": "Codex subscription connected. Queries use your subscription allowance."
+}

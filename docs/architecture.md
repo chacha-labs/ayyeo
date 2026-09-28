@@ -78,6 +78,7 @@ flowchart TD
     gemini["provider-gemini"]
     openai["provider-openai"]
     claude["provider-claude"]
+    codex["provider-codex"]
     local["provider-local"]
     perplexity["provider-perplexity"]
     cdp["provider-cdp"]
@@ -97,13 +98,13 @@ flowchart TD
   canonry --> config
   canonry --> contracts
   canonry --> intelligence
-  canonry --> gemini & openai & claude & local & perplexity & cdp
+  canonry --> gemini & openai & claude & local & perplexity & cdp & codex
 
   routes --> db
   routes --> contracts
   routes --> gsc & ga4 & bing & wp
 
-  gemini & openai & claude & local & perplexity & cdp --> contracts
+  gemini & openai & claude & local & perplexity & cdp & codex --> contracts
   gsc & ga4 & bing & wp --> contracts
   db --> contracts
 ```

@@ -764,12 +764,12 @@
     {
       "source": "generated task handoff",
       "file": "HANDOFF.md",
-      "sha256": "d1f4f46d3ab7abd55be3630292c28962897f9f219af3cdfa53a304db78775857"
+      "sha256": "7a915063789c7d4b362dc108d7382ea68fc5b6c30d5e79c7705cf2705595045e"
     },
     {
       "source": "generated task handoff",
       "file": "README.md",
-      "sha256": "6f94f6db518ae207b664b37088a9926066c5deb9892b7aab7b22770a8ea4fe7d"
+      "sha256": "edba704bd204987f85cc1ebe20b8e69c202946ac13b2e6a9f4496a7d20989188"
     },
     {
       "source": "generated task handoff",
@@ -928,6 +928,281 @@
       "source": "generated PR validation",
       "file": "redirect-investigation-2026-09-28/retained-failure.json.gz",
       "sha256": "c9a9b7d49ba9821b6836a8f1197fb794fa87f369aa9ff877103fdf5a34de5812"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-3-created.json",
+      "sha256": "b790c4219a52fd53e7513d369a027e5afb182adb135180b860ad4c941578aa22"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/summary.json",
+      "sha256": "21e12a12b6fdd11a022e665d80f697f7a8c70d3724af851e3692cedc8a9a4a8b"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/observations.json.gz",
+      "sha256": "b239b2608dc970cf65acdcaf7f0427655ca372760898f985038efdb43f584bca"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/evaluate-pr-acceptance.mjs.txt",
+      "sha256": "fb2767459daa5f97a47ebeee0fe97c717cecb63d9a93fcdde1daa77eee9e436b"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-2-created.json",
+      "sha256": "a96a74f8072c08d11e906f04c1c10583ade6338525cef4dc4c75174fc37df7f7"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/provenance.json",
+      "sha256": "db3e1582ea32b39fd13d5218e6e7c6edfdc24d252112801d8fa57c32c8b4591e"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/stored-runs.json",
+      "sha256": "cb0f149df14522093c9288aa992fe6e7c7d8f15da29b31fcc66994376310de9c"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/project.json",
+      "sha256": "fb4d93075c35748c4842451d8f3c5b13d1ff60131c455eefd1be67564b070f55"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/health.json",
+      "sha256": "6a3ad2243db63666cc2c318010d118c1ef81507a48313e8fe137f21da986c1f9"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/query-add.json",
+      "sha256": "f279894e58aab9073de3d93ce3ac41a88d174d6c45054b43a81b295e2f81255a"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/disconnected-status.json",
+      "sha256": "c283a4b6aa4d4c337d682afabaef7b4b84d8abff32514c40a1d5c840b73200c7"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/visibility-stats.json",
+      "sha256": "78f81076226c5e1f9833d4a3541aa497854c5ad0619084ac0e8ba1613607fff1"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/queries.json",
+      "sha256": "880dbd6ee0a3f23cb78691fcd992482b4655d6938af7ae9ddd37fae448b31ff6"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/assistant-reviews.json",
+      "sha256": "7c3c35340343940ea7c5ca2f572c5c88ab327e91be4b4cb635e014557b530093"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/failed-turns.json",
+      "sha256": "b3079bb397aaabce1e53c01bf7f1f469d5eb1862e9a3dd18f0543712d6195360"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/README.md",
+      "sha256": "2f9392ad669bacf9d6f73bcb370364ceb11e413a0c27f7fa61296cc51805f5f1"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/codex-connected.json",
+      "sha256": "9a0e563387dac123714dcbe812aa22d55264beb01a29b075994c0f832b11581c"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/stored-snapshots.json.gz",
+      "sha256": "e316645ba9cf6cb0d86f0083f670acce81fb17d73760fdc39a4298f7bb16164a"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-1.json.gz",
+      "sha256": "9bf902c0f4fa3de985bbf395a3d54943270640c29d61e7905cf2697e0d7ec7bc"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/manifest.json",
+      "sha256": "81b6e0c42735ffde522e8d26b8b8121b0f64532cc48971d44e3418742028ae24"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pr-live-acceptance.py.txt",
+      "sha256": "0dd23e595aec04c03fbccc5838cc8c55e20f9a0a87ebe6bdd4c7007c9c18a7a4"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/progress.json",
+      "sha256": "48eee6e32d30f9f4610ddf9691b9777e9eaac9af7a09a6e43d90b4e3c1e59406"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-2.json.gz",
+      "sha256": "9e13cbaf735b21ef71abd6854ac5e620295c04b26240a11d9e157664f959bf57"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/failure-review.json",
+      "sha256": "f3e3ea7ea9de2a1990ea01c9825f923a59f1d4ebf821dc957ef572ddbe0db35c"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-1-created.json",
+      "sha256": "f52dae04b885acac9924369c46dc6b800971d9e5bed1dd6d9392b03527529618"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/release-notes.json",
+      "sha256": "c71dc3c64b1ae3feca8628a3c5010875e629b6b8ae40a61e1065e033cfb8f757"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/evaluation.json",
+      "sha256": "7087f235155912d38331294bb0277e29c3b06e5e5e50c48c9be17f52ba4b836e"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/server.log.gz",
+      "sha256": "d368f05cfa187f95f3f7a906d03255a5dfdcb97db9af45553b2d311c5ecdcd10"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/pass-3.json.gz",
+      "sha256": "a5566916d9602910198b0b160bb05393cf3ca255cdd30998bae57ed4d1f2f3ec"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/summary.json",
+      "sha256": "aef192c0f58e8794774056462122aa366abcd0c2d01b6a511b4120111c196093"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/stored-snapshots.json",
+      "sha256": "2ed8012030b48cea48d981f0a7eb53f2db8c2001a13facdc1ea9de515cbaa9c0"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/result.json",
+      "sha256": "65fe1b70e49d1623b216f2d062ff31d9f2f38426d8446550ed6886f934fbe9a1"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/health.json",
+      "sha256": "92fbdda4e49664d9263d896da6dc18f101c2272ca868f9f7df124f4b5938eae8"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/disconnected-status.json",
+      "sha256": "4b10afbf059ec2028f68d7213c0def4c39e62c9da1d1a9f971bcc513bd0197a5"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/restored-status.json",
+      "sha256": "87564076f939ea44ed74a81939a33b55e1157c28ac3dadbbabf02943ef3c8895"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/refreshed-status.json",
+      "sha256": "b004f85c92d9eeb614abbc09b8149318f42104adfd04524efda81ddd2673f61a"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/connected-status.json",
+      "sha256": "0ae26cc48a401621c24efbf8f904fbf7e0d5acf7213aca927f2e04aef2436cbd"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "release-smoke/server.log.gz",
+      "sha256": "b1e8db767b9a3cd39b5db26ade9fa68648f74901a6e63bdc47bc83198cff8a30"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-web-typecheck.log",
+      "sha256": "8020b60f6b383b1a27b95740aca19ebe5b088ec4bd6abbda16b8ebe892334efb"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-regression-tests.json.gz",
+      "sha256": "0ec56b459ef32db0b5e63dbb88b0b67c595e970057040b6ef4807504dd16c78a"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-agent-model-tests.log",
+      "sha256": "f67669740f3bd445be1ea6a8489e5bc80b656d647bb8f2d88c905e378d4acad6"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-provider-typecheck.log",
+      "sha256": "36e38aed0488abe88c5d9e58c729087e21a3028f72a2192e2304e85f86c4e90b"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-runtime-diagnostic-tests.log",
+      "sha256": "04ca00763233a1ae7430cb7ec72bfc5161c762155294010b011fd6cf655cb0ee"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-complete-replay.json",
+      "sha256": "2855a079f38bc777f5a2cf693ab4064460ddfd8cfe50ac2b15037fb289ffe9c4"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-gen-check.log",
+      "sha256": "a137cd51ca3089c086e0b1d676422b0b3643b8d3951ab5db3f04f86e94012481"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-web-build.log",
+      "sha256": "d3531c7fb2e9157905b0a8b043b4f4b4d818a6b0290579e909d74090056e42c1"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-baseline-replay.json",
+      "sha256": "ca68faaf04ca9232ab9aefe059cdd1e8409f286c682fe8cd3374fb36927a4287"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-api-typecheck.log",
+      "sha256": "34188082301c44e0b8b1a1856025403ecb0a5ee33a1a609592fd61916f310805"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-model-selection-tests.log",
+      "sha256": "0949a25ded7ca17577b921b3a67b61cf742e500d3e36ad6c77bad9bfed9aec9b"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-val-skills-check.log",
+      "sha256": "23a68f2f2ca985891ea12e40288b08329accef24e5993d7b866b9b10744ceaef"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-cli-build.log",
+      "sha256": "dd673ab961ffcf66973d0b6e47f842cbddbb7e5a1cff74bf0e419437b5a4a6c2"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/validation-summary.json",
+      "sha256": "0595b6453a9fab9180d57547638e42f0b0c5c72f15dbd513dd42544c92a5c955"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-plugin-check.log",
+      "sha256": "e2bb605ab0e54c4e05dcc65a51d050a1fed661f32d7b86a4f01dea2373b36a2b"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-check.log",
+      "sha256": "67bbb87f3b99ab7d0103a5b041d0b5fdbad62ca8ea1baa79b53a453054143cf7"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "checks/pr-preparation/pr-cli-typecheck.log",
+      "sha256": "329dda7e4ddeb4d4bfba90f2a3d6afc3912fadd210774afa73aed5521ada8f11"
     }
   ],
   "excluded": [

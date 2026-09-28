@@ -20,6 +20,8 @@ flowchart LR
   Runner --> Providers[Existing API providers]
 ```
 
+PR: [chacha-labs/ayyeo#1](https://github.com/chacha-labs/ayyeo/pull/1), against `main`. Actions remains disabled as requested; local verification is recorded under `checks/pr-preparation/`. No merge or deployment has been performed.
+
 ## Use this build
 
 Install workspace dependencies and build/start the modified Canonry server using the normal development workflow. The globally installed `cnry` binary or an already-running older server does not automatically acquire these routes.
@@ -68,12 +70,12 @@ See [the evaluation overview](README.md), [machine-readable results](after/evalu
 - Offline replay of the portable published corpus checks **139 observations**: 40 before, 98 after, and one final smoke result. It reproduces the saved fields with zero mismatches and makes no network calls.
 - The final AST guard was added after the three-pass benchmark. It accepts all 16 real pilot programs and rejects synthesized/transformed tool output. A separate live compiled-server smoke query exercised the hardened path successfully; disconnect left the CLI subscription authenticated. Do not claim that the entire 60-query benchmark ran after this last hardening.
 - Focused tests cover provider normalization/protocol/process failures, timeout/cancellation, identity changes, actual authenticated API/CLI/MCP calls and base paths, denied narrow/viewer access, Simple default exclusion, Advanced scope/model/location retention, probe exclusion, and UI behavior. Current test summaries are in `checks/validation-summary.json`.
-- CLI and web builds, affected typechecks, `pnpm check`, generated-client drift, and plugin drift were checked locally. Existing OpenAPI comment and web bundle-size warnings are retained. Full workspace CI is separate; consult GitHub for its status.
-- No signed-in browser walkthrough was completed; component tests and the production web build passed. The attempted isolated browser preview stopped at its sign-in screen.
+- CLI and web builds, affected typechecks, `pnpm check`, generated-client drift, and plugin drift were checked locally. Existing OpenAPI comment and web bundle-size warnings are retained. Full workspace CI is separate; Actions remains disabled on this fork at the operator’s request.
+- The original handoff lacked a signed-in browser walkthrough. This was completed during PR preparation; see the update below.
 
 ## September 28 failure investigation
 
-Both originally rejected queries were rerun three times each with pre-validation diagnostic capture; all six new attempts passed. See [the investigation and retained answers](failure-rerun-2026-09-28/README.md). The original causes remain unknown because their answer bodies were not retained. At capture time, the installed runtime was 0.158.0 and the production guard still allowed only 0.157.1, so these were explicitly separate diagnostic-pilot calls. The PR preparation below subsequently added evaluated 0.158.0 support. The original 58/60 benchmark is unchanged. See the PR preparation update below for the subsequent fixes and validation.
+Both originally rejected queries were rerun three times each with pre-validation diagnostic capture; all six new attempts passed. See [the investigation and retained answers](failure-rerun-2026-09-28/README.md). The original causes remain unprovable because their answer bodies were not retained; the later full-basket run reproduced and fixed a native-redirect failure on the same Enact/Solo query. At capture time, the installed runtime was 0.158.0 and the production guard still allowed only 0.157.1, so these were explicitly separate diagnostic-pilot calls. The PR preparation below subsequently added evaluated 0.158.0 support. The original 58/60 benchmark is unchanged. See the PR preparation update below for the subsequent fixes and validation.
 
 ## PR preparation (September 28)
 
@@ -81,13 +83,15 @@ Both originally rejected queries were rerun three times each with pre-validation
 - Added evaluated 0.158.0 compatibility, two captured replay fixtures, and supported/unsupported-version tests. Unknown runtime versions still fail closed.
 - Failed measurement turns now retain allowlisted final-answer/web evidence in owner-only gzip JSON files under the local config directory's `diagnostics/codex/`. Retention is bounded to 100 captures / 100 MiB. Storage failure never masks the original provider failure. These are host-only files, not observations or public API payloads.
 - Completed a signed-in dashboard walkthrough: Settings connect, refresh, disconnect, setup connect, explicit project engine enrollment, and recognition of configured readiness. Fixed duplicate refresh buttons and the misleading disconnected label when Codex was connected but not selected. Captured screenshots remain in `.context/`.
-- Replayed the unchanged 139-observation corpus with zero mismatches; 296 focused regression tests passed, including the new failure-storage and setup cases. The first final-build attempt reproduced an Enact/Solo attribution failure: the adapter ignored native redirect metadata. See [the retained evidence and fix](redirect-investigation-2026-09-28/README.md). The interrupted attempt is not counted as acceptance. A fresh 60-query run is underway with the corrected parser; results and source review remain a release gate.
+- Replayed the unchanged 139-observation corpus with zero mismatches; 328 focused regression tests passed, including the new failure-storage and setup cases. The first final-build attempt reproduced an Enact/Solo attribution failure: the adapter ignored native redirect metadata. See [the retained evidence and fix](redirect-investigation-2026-09-28/README.md). The interrupted attempt is not counted as acceptance. The [fresh acceptance run](final-acceptance/README.md) completed 59/60 (98.3%), with zero replay or reviewed extraction mismatches. All 60 final answers, including one rejected for unverified source evidence, were retained and reviewed. A separate final-build smoke passed after the diagnostic/identity refinements.
+
+- Current complete archive replay covers **199 observations**, with zero mismatches. The 328-test focused suite, affected typechecks, CLI/web builds, `pnpm check`, and generated-client/plugin/skill drift checks passed. Full-workspace CI was not run.
 
 ## Important limits for the next engineer
 
 1. **Experimental protocol dependency.** Supported App Server runtimes are `0.157.1` and `0.158.0`. The launcher reported `0.144.5`, so the integration reads runtime identity from initialization. Do not loosen the version guard without new protocol/evidence fixtures and a bounded live pilot.
 2. **Evidence can be unavailable.** Public search events alone are insufficient. Missing raw evidence, transformed tool output, unresolved citations, or unsupported formatting fail closed. Improve supported formats with real fixtures; never weaken the source requirement to improve completion numbers.
-3. **Account identity visibility.** The protocol exposes email, not a separate workspace identity. Canonry stores an email fingerprint and detects observable account changes; it cannot distinguish all same-email workspace changes.
+3. **Account identity visibility.** Canonry fingerprints email plus workspace account ID when the runtime discloses it (verified on 0.158.0). Older responses without workspace identity fall back to email, so same-email workspace changes cannot be detected there. Upgrading from an email-only pin requires reconnecting.
 4. **Shared CLI context.** Repository instructions, skills, plugins, MCP tools, shell, and image tools are disabled. Codex can still list its global CLI `AGENTS.md`; this is documented, and it can be relevant when comparing different operator environments.
 5. **Measurement scope.** Live acceptance used Simple portfolios. Advanced behavior is covered by automated execution tests. The dataset is one software category and one domain, not a broad answer-quality benchmark or a measurement of consumer ChatGPT behavior.
 6. **Review meaning.** Source review is assistant review of captured evidence, not an external human audit or exhaustive fact-check of vendor claims. Many rankings are explicitly qualified model judgments. Live answer variation is not itself a software regression.

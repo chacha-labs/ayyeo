@@ -1,0 +1,11 @@
+{
+  "query": "solar proposal software pricing for enterprise",
+  "pass": 2,
+  "unmatchedUrl": "https://www.solargraf.com/pricing",
+  "capturedFetchOutcome": "403 Forbidden",
+  "verdict": "No matching source in trusted captured evidence; rejecting the observation is required by the current evidence contract.",
+  "limits": "An earlier search action occurred, but its program/output was not retained in this benchmark build. Do not infer that the model invented the price or that the site was unavailable in every search result. Final code now retains rejected exec calls separately for future diagnosis.",
+  "answerRetained": true,
+  "reviewedBy": "assistant",
+  "countedAsObservation": false
+}

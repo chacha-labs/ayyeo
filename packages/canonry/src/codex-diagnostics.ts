@@ -7,10 +7,12 @@ import type { CodexFailureCapture } from '@ainyc/canonry-provider-codex'
 /** Host-only failure evidence, separate from observations and API-visible errors. */
 export function createCodexFailureStore(directory: string, maxFiles = 100, maxBytes = 100 * 1024 * 1024) {
   let queue: Promise<unknown> = Promise.resolve()
+  let lastTimestamp = 0
   return (capture: CodexFailureCapture): Promise<void> => {
     const work = queue.then(async () => {
       await mkdir(directory, { recursive: true, mode: 0o700 })
-      const name = `${Date.now()}-${randomUUID()}.json.gz`
+      lastTimestamp = Math.max(Date.now(), lastTimestamp + 1)
+      const name = `${lastTimestamp}-${randomUUID()}.json.gz`
       const destination = path.join(directory, name)
       const temporary = `${destination}.tmp`
       const data = gzipSync(JSON.stringify({ schemaVersion: 1, ...capture }))

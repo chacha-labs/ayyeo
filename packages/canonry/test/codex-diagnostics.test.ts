@@ -1,13 +1,13 @@
 import { mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
-import { gunzipSync } from 'node:zlib'
-import { afterEach, expect, it } from 'vitest'
+import { gzipSync, gunzipSync } from 'node:zlib'
+import { afterEach, expect, it, vi } from 'vitest'
 import type { CodexFailureCapture } from '@ainyc/canonry-provider-codex'
 import { createCodexFailureStore } from '../src/codex-diagnostics.js'
 
 const directories: string[] = []
-afterEach(async () => { await Promise.all(directories.splice(0).map(dir => rm(dir, { recursive: true, force: true }))) })
+afterEach(async () => { vi.restoreAllMocks(); await Promise.all(directories.splice(0).map(dir => rm(dir, { recursive: true, force: true }))) })
 async function directory() {
   const root = await mkdtemp(path.join(os.tmpdir(), 'canonry-failure-test-')); directories.push(root)
   return path.join(root, 'diagnostics')
@@ -44,4 +44,18 @@ it('rejects an oversized capture without leaving an incomplete artifact', async 
   const dir = await directory()
   await expect(createCodexFailureStore(dir, 100, 1)(capture)).rejects.toThrow('storage limit')
   expect(await readdir(dir)).toEqual([])
+})
+
+it('prunes oldest captures by bytes even when writes share a clock tick', async () => {
+  vi.spyOn(Date, 'now').mockReturnValue(1000)
+  const dir = await directory()
+  const captures = ['one', 'two', 'new'].map(query => ({ ...capture, query }))
+  const maxBytes = captures.slice(1).reduce((sum, item) => sum + gzipSync(JSON.stringify({ schemaVersion: 1, ...item })).length, 0)
+  const save = createCodexFailureStore(dir, 100, maxBytes)
+  await Promise.all(captures.map(save))
+  const files = await readdir(dir)
+  const saved = await Promise.all(files.map(async file => JSON.parse(gunzipSync(await readFile(path.join(dir, file))).toString())))
+  expect(saved.map(item => item.query).sort()).toEqual(['new', 'two'])
+  const bytes = (await Promise.all(files.map(file => stat(path.join(dir, file))))).reduce((sum, item) => sum + item.size, 0)
+  expect(bytes).toBe(maxBytes)
 })

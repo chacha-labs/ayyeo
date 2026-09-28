@@ -1,0 +1,11 @@
+
+> canonry@5.29.0 gen:check $WORKSPACE
+> pnpm --filter @ainyc/canonry-api-client gen:check
+
+
+> @ainyc/canonry-api-client@0.0.0 gen:check $WORKSPACE/packages/api-client-generated
+> node --import tsx codegen.ts --check
+
+Generated client unchanged (cached)
+(node:48300) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)

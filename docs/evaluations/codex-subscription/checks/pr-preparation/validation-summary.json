@@ -1,0 +1,42 @@
+{
+  "focusedTests": {
+    "total": 328,
+    "passed": 328,
+    "failed": 0,
+    "success": true
+  },
+  "archiveReplay": {
+    "datasets": {
+      "before": 40,
+      "after": 98,
+      "final-smoke": 1,
+      "final-acceptance": 59,
+      "release-smoke": 1
+    },
+    "mismatches": [],
+    "passed": true
+  },
+  "liveAcceptance": {
+    "requested": 60,
+    "accepted": 59,
+    "completionPercent": 98.3,
+    "acceptedAnswersReviewed": 59,
+    "rejectedAnswersReviewed": 1,
+    "extractionMismatches": 0
+  },
+  "releaseSmoke": {
+    "status": "completed",
+    "snapshots": 1,
+    "cliStillSubscriptionAuthenticated": true,
+    "verbatimWebPrograms": 1
+  },
+  "localChecks": [
+    "affected provider/CLI/API/web typechecks",
+    "CLI and web builds",
+    "pnpm check",
+    "generated SDK drift",
+    "plugin drift",
+    "Val skill mirror drift"
+  ],
+  "ci": "Not run: operator explicitly requested leaving fork Actions disabled."
+}

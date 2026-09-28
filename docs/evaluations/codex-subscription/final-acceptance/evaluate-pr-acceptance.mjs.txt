@@ -1,0 +1,81 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import { isDeepStrictEqual } from 'node:util'
+import { geminiAdapter } from '../packages/provider-gemini/src/adapter.ts'
+import { claudeAdapter } from '../packages/provider-claude/src/adapter.ts'
+import { normalizeCodexEvidence } from '../packages/provider-codex/src/evidence.ts'
+import { compileQueryClassifier, effectiveBrandNames, effectiveDomains, determineAnswerMentioned } from '../packages/contracts/src/index.ts'
+import { determineCitationState } from '../packages/canonry/src/citation-utils.ts'
+
+const session = JSON.parse(fs.readFileSync('.context/pr-live-session.json', 'utf8'))
+const directory = session.artifactDir
+const read = file => JSON.parse(fs.readFileSync(path.join(directory, file), 'utf8'))
+const snapshots = read('stored-snapshots.json')
+const project = read('project.json')
+const queries = new Map(read('queries.json').map(query => [query.id, query.query]))
+const manifest = read('manifest.json')
+const review = new Map(JSON.parse(fs.readFileSync('.context/pr-live-reviews.json', 'utf8')).map(item => [item.snapshotId, item]))
+const classifier = compileQueryClassifier(effectiveBrandNames(project))
+const apiAdapters = { gemini: geminiAdapter, claude: claudeAdapter }
+const failures = []
+const duplicateKeys = new Set()
+const observations = []
+for (const snapshot of snapshots) {
+  if (snapshot.provider !== 'codex' || snapshot.model !== manifest.codexModel || snapshot.location !== null || snapshot.retrieval_contract !== 'codex-web-search-v1') failures.push({ id: snapshot.id, field: 'scope-or-model' })
+  const envelope = snapshot.raw_response
+  const normalized = snapshot.provider === 'codex' ? normalizeCodexEvidence(envelope.apiResponse)
+    : apiAdapters[snapshot.provider].normalizeResult({ provider: snapshot.provider, model: snapshot.model, rawResponse: envelope.apiResponse,
+      groundingSources: envelope.groundingSources, searchQueries: envelope.searchQueries, retrievalStatus: snapshot.retrieval_status })
+  const actual = {
+    answerText: normalized.answerText, citedDomains: normalized.citedDomains, groundingSources: normalized.groundingSources,
+    searchQueries: normalized.searchQueries, answerMentioned: determineAnswerMentioned(normalized.answerText, effectiveBrandNames(project), effectiveDomains(project)),
+    citationState: determineCitationState(normalized, effectiveDomains(project)),
+  }
+  const expected = { answerText: snapshot.answer_text, citedDomains: JSON.parse(snapshot.cited_domains), groundingSources: envelope.groundingSources,
+    searchQueries: envelope.searchQueries, answerMentioned: Boolean(snapshot.answer_mentioned), citationState: snapshot.citation_state }
+  for (const key of Object.keys(expected)) if (!isDeepStrictEqual(actual[key], expected[key])) failures.push({ id: snapshot.id, field: key })
+  const query = snapshot.query_text ?? queries.get(snapshot.query_id)
+  const queryKey = manifest.queries.find(item => item.text === query)?.key
+  const identity = JSON.stringify([snapshot.run_id, snapshot.provider, query, snapshot.model, snapshot.location])
+  if (duplicateKeys.has(identity)) failures.push({ id: snapshot.id, field: 'duplicate' })
+  duplicateKeys.add(identity)
+  if (!queryKey) failures.push({ id: snapshot.id, field: 'unexpected-query' })
+  if (snapshot.provider === 'codex') {
+    const reviewed = review.get(snapshot.id)
+    if (!reviewed || reviewed.mentioned !== expected.answerMentioned || reviewed.cited !== (expected.citationState === 'cited')) failures.push({ id: snapshot.id, field: 'independent-review' })
+  }
+  observations.push({ id: snapshot.id, runId: snapshot.run_id, provider: snapshot.provider, model: snapshot.model, queryKey, query,
+    queryClass: classifier.classify(query), mentioned: expected.answerMentioned, cited: expected.citationState === 'cited', sources: normalized.groundingSources })
+}
+const classes = ['non-brand', 'branded']
+const providerResults = Object.entries(manifest.plannedPasses).map(([provider, repeats]) => {
+  const rows = observations.filter(row => row.provider === provider)
+  const expected = manifest.queries.length * repeats
+  return { provider, expected, measured: rows.length, failed: expected - rows.length, successPercent: Math.round(rows.length / expected * 1000) / 10,
+    byQueryClass: classes.map(queryClass => {
+      const group = rows.filter(row => row.queryClass === queryClass)
+      const expected = manifest.queries.filter(item => classifier.classify(item.text) === queryClass).length * repeats
+      return { queryClass, expected, measured: group.length, missing: expected - group.length, mentioned: group.filter(row => row.mentioned).length, cited: group.filter(row => row.cited).length }
+    }) }
+})
+const repeatability = manifest.queries.map(query => {
+  const rows = observations.filter(row => row.provider === 'codex' && row.query === query.text)
+  return { queryKey: query.key, query: query.text, completePasses: rows.length, allThreeMeasured: rows.length === 3,
+    mentionChanged: rows.length === 3 && new Set(rows.map(row => row.mentioned)).size > 1,
+    citationChanged: rows.length === 3 && new Set(rows.map(row => row.cited)).size > 1 }
+})
+const codex = providerResults.find(row => row.provider === 'codex')
+const runs = read('stored-runs.json')
+if (runs.length !== 3 || runs.some(run => run.trigger !== 'probe' || run.project_id !== project.id)) failures.push({ field: 'run-scope' })
+const knownRuns = new Set(runs.map(run => run.id))
+if (snapshots.some(snapshot => !knownRuns.has(snapshot.run_id))) failures.push({ field: 'unknown-run' })
+const result = { benchmarkThresholdPassed: codex.measured / codex.expected >= 0.95 && failures.length === 0,
+  snapshotCount: snapshots.length, replayMismatches: failures, independentlyReviewedCodexAnswers: review.size,
+  providerResults, repeatability,
+  limits: ['Source review is assistant review of captured evidence, not an external human audit or exhaustive verification of vendor claims.',
+    'This fresh capture uses runtime 0.158.0 and the native redirect parser fix; earlier captures remain separate.',
+    'Simple portfolios were exercised live; Advanced execution is covered by automated tests.'] }
+fs.writeFileSync(path.join(directory, 'evaluation.json'), JSON.stringify(result, null, 2) + '\n')
+fs.writeFileSync(path.join(directory, 'observations.json'), JSON.stringify(observations, null, 2) + '\n')
+console.log(JSON.stringify({ thresholdPassed: result.benchmarkThresholdPassed, snapshots: snapshots.length, replayMismatches: failures, codexReviewed: review.size, providerResults }, null, 2))
+if (!result.benchmarkThresholdPassed) process.exitCode = 1

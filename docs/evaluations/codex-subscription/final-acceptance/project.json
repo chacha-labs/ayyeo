@@ -1,0 +1,28 @@
+{
+  "id": "e98c5ee0-a10a-470d-a797-59a87a83bd10",
+  "name": "final-acceptance-aurora-solar",
+  "displayName": "Aurora Solar",
+  "canonicalDomain": "aurorasolar.com",
+  "ownedDomains": [],
+  "aliases": [],
+  "country": "US",
+  "language": "en",
+  "tags": [],
+  "labels": {},
+  "providers": [],
+  "providerModels": {},
+  "measurement": {
+    "marketingHosts": [],
+    "brandTerms": [],
+    "leadEventNames": [
+      "generate_lead"
+    ]
+  },
+  "locations": [],
+  "defaultLocation": null,
+  "autoExtractBacklinks": false,
+  "configSource": "api",
+  "configRevision": 1,
+  "createdAt": "2026-09-28T17:31:12.993Z",
+  "updatedAt": "2026-09-28T17:31:12.993Z"
+}

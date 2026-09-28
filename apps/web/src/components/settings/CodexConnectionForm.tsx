@@ -31,7 +31,7 @@ export function CodexConnectionForm({ leadingField, secondaryActions, onSaved }:
     {status.data?.models.length ? <div className="space-y-1">
       <label htmlFor="codex-model" className="block text-sm text-secondary">Codex model</label>
       <select id="codex-model" className="setup-input" value={model || status.data.model || ''} onChange={event => setModel(event.target.value)} disabled={busy}>
-        <option value="">Use the CLI default model</option>
+        <option value="">{status.data.model ? 'Keep the saved model' : 'Use the CLI default model'}</option>
         {status.data.models.map(item => <option key={item.id} value={item.id}>{item.displayName}</option>)}
       </select>
     </div> : null}

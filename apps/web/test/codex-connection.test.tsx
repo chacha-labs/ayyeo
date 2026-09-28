@@ -36,3 +36,21 @@ it('renders the server unavailable state and keeps connection disabled', async (
   await screen.findByText('Local Canonry required.')
   expect(screen.getByRole('button', { name: 'Connect existing Codex' }).hasAttribute('disabled')).toBe(true)
 })
+
+it('submits an explicitly selected model and identifies the saved-model fallback accurately', async () => {
+  const bodies: unknown[] = []
+  restore.push(mockFetch((url, init) => {
+    if (pathOf(url).endsWith('/connect')) bodies.push(JSON.parse(String(init?.body)))
+    return jsonResponse({ state: 'connected', enabled: true, message: 'Connected', model: 'saved-model', runtimeVersion: '0.158.0', checkedAt: null,
+      models: [{ id: 'saved-model', displayName: 'Saved model', tier: 'standard' }, { id: 'chosen-model', displayName: 'Chosen model', tier: 'standard' }] })
+  }))
+  const onSaved = vi.fn()
+  render(<QueryClientProvider client={new QueryClient()}><CodexConnectionForm onSaved={onSaved} /></QueryClientProvider>)
+  await screen.findByText('Connected')
+  expect(screen.getByRole('option', { name: 'Keep the saved model' })).toBeTruthy()
+  expect(screen.queryByRole('option', { name: 'Use the CLI default model' })).toBeNull()
+  fireEvent.change(screen.getByLabelText('Codex model'), { target: { value: 'chosen-model' } })
+  fireEvent.click(screen.getByRole('button', { name: 'Reconnect Codex' }))
+  await waitFor(() => expect(onSaved).toHaveBeenCalledOnce())
+  expect(bodies).toEqual([{ model: 'chosen-model' }])
+})

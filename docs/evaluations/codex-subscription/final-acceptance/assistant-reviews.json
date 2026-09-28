@@ -1,0 +1,356 @@
+[
+  {
+    "snapshotId": "41e70ac3-d707-4641-bf3b-8b590ef8f5a9",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar text; official product and pricing sources support the software-versus-EPC distinction."
+  },
+  {
+    "snapshotId": "93309d86-d912-4a91-af14-279e443254d5",
+    "mentioned": true,
+    "cited": true,
+    "review": "Official website answer; brand text and homepage source agree."
+  },
+  {
+    "snapshotId": "edcf76f4-1524-4ea1-86fa-eff10af1a65b",
+    "mentioned": false,
+    "cited": false,
+    "review": "Enact/Solo comparison with relevant vendor sources; no Aurora target in visible text or final citations. Verified Enact redirect accepted."
+  },
+  {
+    "snapshotId": "935ce0f8-64b0-4e2a-bcf3-04a41a3eb9f4",
+    "mentioned": false,
+    "cited": true,
+    "review": "Visible text uses Aurora alone; official product, API, and partner documentation are cited. Full Aurora Solar alias not present."
+  },
+  {
+    "snapshotId": "fc20aae0-23dd-4cdc-93be-98697a62b410",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar table entry with official pricing citation; cloud/desktop comparison is qualified model judgment."
+  },
+  {
+    "snapshotId": "6a982c48-566f-4817-a89d-8562eb83aabd",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar recommendation with official pricing; other vendors have matching product/pricing citations."
+  },
+  {
+    "snapshotId": "c41f6da4-b664-4922-bf5f-434bbeb2b8a2",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar visible in source labels; target articles and financial documentation match the workflow topic."
+  },
+  {
+    "snapshotId": "dacc5b88-9491-467d-865a-3d34519cf422",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar table entry with official sales-mode and pricing citations; other vendor sources correspond to the compared products."
+  },
+  {
+    "snapshotId": "5042397d-4aeb-48c8-a41e-5cc3eb35d432",
+    "mentioned": false,
+    "cited": true,
+    "review": "Aurora short name only in visible answer; official API and Solaris case-study sources are cited. Benefits qualified rather than guaranteed."
+  },
+  {
+    "snapshotId": "1a065a73-4078-4e0e-9a8b-a86d966cac8a",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar shortlist; corresponding product homepage and other vendor sources support the category comparison."
+  },
+  {
+    "snapshotId": "3649d918-e26c-42ee-a317-7fe11a195166",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar table entry and pricing citation. Separate vendor acquisition claim has an Enphase announcement source."
+  },
+  {
+    "snapshotId": "5af1db49-a51d-4752-8941-faa861e9ce2d",
+    "mentioned": false,
+    "cited": false,
+    "review": "Comparison-directory answer cites Capterra, G2 and GetApp only; Aurora target absent from both signals."
+  },
+  {
+    "snapshotId": "2900350d-9dc8-4dc3-a62c-8e696015cc55",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar table row has official pricing citation; estimates and calculated competitor pricing are labeled."
+  },
+  {
+    "snapshotId": "ff2f2fa9-7495-4872-8255-931e1b0d17a1",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar named in shortlist and tied to installer product source; enterprise comparison sources match the vendors."
+  },
+  {
+    "snapshotId": "28ed10d2-0798-4652-b1a2-88e75c9d0fb5",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar named in enterprise shortlist and cited to official homepage; recommendations explicitly qualified."
+  },
+  {
+    "snapshotId": "d9c7ab33-00d9-4849-b605-9fec335677ab",
+    "mentioned": false,
+    "cited": true,
+    "review": "Only Aurora short name appears; official pricing page is cited. ROI arithmetic is explicitly illustrative, not a vendor performance claim."
+  },
+  {
+    "snapshotId": "2ca62d26-6f52-4f6c-b977-421e6a8151f6",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar visible in comparison; sales-mode and AI-announcement URLs support the target examples."
+  },
+  {
+    "snapshotId": "17ade208-f8df-476a-822d-7155c92a8ed1",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar example and relevant official Sales Mode overview citation."
+  },
+  {
+    "snapshotId": "9c3c3b25-cb91-4e82-88ea-4c419bef48e5",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar explicitly named; official API overview and API help-center sources support integration discussion."
+  },
+  {
+    "snapshotId": "6fefa97a-4251-4a7b-967f-f365778ecf76",
+    "mentioned": false,
+    "cited": false,
+    "review": "DOE-only design explanation; neither target brand nor target-domain citation appears."
+  },
+  {
+    "snapshotId": "c57baea4-4d67-4dd5-8762-8300e6db88fd",
+    "mentioned": true,
+    "cited": true,
+    "review": "Pass 2 comparison explicitly names Aurora Solar; official design/product links and EPC/UK installer sources distinguish entities."
+  },
+  {
+    "snapshotId": "1da9816e-8e9d-4bf3-bf6d-2a850866560d",
+    "mentioned": true,
+    "cited": true,
+    "review": "Pass 2 official website answer has visible full brand and target homepage citation."
+  },
+  {
+    "snapshotId": "534c6994-e46d-4489-a0ec-ea0b3d88dcd2",
+    "mentioned": false,
+    "cited": false,
+    "review": "Pass 2 Enact/Solo comparison excludes Aurora. Verified native redirect destinations for platform and pricing are accepted; cited sources match vendors."
+  },
+  {
+    "snapshotId": "9f246bee-d9f4-482a-864f-c3b92817a298",
+    "mentioned": false,
+    "cited": true,
+    "review": "Aurora short name only, with official sales/help/API sources and case study citations. No full brand text."
+  },
+  {
+    "snapshotId": "e1f3e8fa-fc5e-411e-979e-219ee3fc8e1b",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar option with official pricing; local/cloud alternatives supported by vendor pages."
+  },
+  {
+    "snapshotId": "bb5b641e-5d6e-439a-b55d-1f83344d2f07",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar Enterprise recommendation tied to official pricing. Competitor budget calculation labeled and sourced."
+  },
+  {
+    "snapshotId": "faed108e-05b4-4a48-8cb7-7e56a7c4571c",
+    "mentioned": false,
+    "cited": true,
+    "review": "Only Aurora short name in visible prose/labels; Aurora-hosted ROI paper and HelioScope are cited. DOE adds independent context."
+  },
+  {
+    "snapshotId": "3f191b02-1b72-4ca5-a742-9b053dd5e14d",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar brand in table; Sales Mode page supports target features. Other platform sources align with comparison."
+  },
+  {
+    "snapshotId": "91852187-5f00-40d1-aaa5-e79e1527c751",
+    "mentioned": false,
+    "cited": true,
+    "review": "Aurora short name in API source label only; official Aurora/OpenSolar integration documentation provides cited evidence."
+  },
+  {
+    "snapshotId": "292a8fa1-85c9-45a1-839f-e20477efb957",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar shortlist with official homepage; relevant competitor product documentation."
+  },
+  {
+    "snapshotId": "c7d42a44-66c2-4690-9cfb-cd4e57ae692e",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar table row, official product citation, and product-specific competitor links."
+  },
+  {
+    "snapshotId": "270dde05-13bb-4ea4-abb9-a782e8d1fb34",
+    "mentioned": false,
+    "cited": false,
+    "review": "Directory-only answer cites Capterra, G2, GetApp, List.Solar; neither target signal present."
+  },
+  {
+    "snapshotId": "2783f0fc-2661-4029-990d-c8d2d54b904c",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar Enterprise named and official pricing cited; product/workflow vendor sources align."
+  },
+  {
+    "snapshotId": "27182060-c0f2-4bc7-93e4-6836f94205f0",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar ranked as a subjective recommendation; official pricing and comparable enterprise sources cited."
+  },
+  {
+    "snapshotId": "0195d9a7-e99a-47fb-b27c-4132d6c240ec",
+    "mentioned": false,
+    "cited": true,
+    "review": "Short Aurora name only; Sales Mode and Solaris case study cited, with modeled ROI distinguished from vendor results."
+  },
+  {
+    "snapshotId": "b6f8f846-d8c1-460b-8abe-77953b64c516",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar named as an automation alternative; official AI, CRM and proposal documentation cited."
+  },
+  {
+    "snapshotId": "0e067989-adaa-4b00-b7bc-94a0d1d390e9",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full brand in definition with official proposal API and pricing evidence; cautions distinguish estimates from guarantees."
+  },
+  {
+    "snapshotId": "47166143-d8d0-4f5b-bc5f-34b43d8e627a",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar recommendation and API/pricing sources; connector example has a HubSpot marketplace source."
+  },
+  {
+    "snapshotId": "a259f23d-4c15-42b8-9266-6627d276fa3f",
+    "mentioned": false,
+    "cited": false,
+    "review": "PVWatts/DOE design explanation has no target mention or target source."
+  },
+  {
+    "snapshotId": "ca639b76-c79f-492a-84b1-21f53ea294ee",
+    "mentioned": true,
+    "cited": true,
+    "review": "Pass 3 names Aurora Solar and its domain; product and marketplace sources support software-versus-installer distinction."
+  },
+  {
+    "snapshotId": "c1145c63-2a87-4228-bcec-ec1b15a21cf2",
+    "mentioned": true,
+    "cited": true,
+    "review": "Pass 3 official website answer; visible full brand and homepage citation."
+  },
+  {
+    "snapshotId": "2342efdf-8070-4fd7-868f-d66390d4cac3",
+    "mentioned": false,
+    "cited": false,
+    "review": "Pass 3 Enact/Solo comparison has relevant vendor sources and native pricing/platform redirects; no Aurora target signal."
+  },
+  {
+    "snapshotId": "a6e914f0-91d3-4c75-b5ea-f4ae2cbfddc0",
+    "mentioned": false,
+    "cited": true,
+    "review": "Aurora short name only in visible labels; official sales/pricing pages cited alongside CRM and DOE context."
+  },
+  {
+    "snapshotId": "5ef0e638-58f0-485c-8664-c0ecddd577cd",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar table entry with official pricing citation; cloud/local comparison uses corresponding vendor sources."
+  },
+  {
+    "snapshotId": "20d45b8d-e3d1-4e5b-b9e3-7aa1cd275880",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar Enterprise named with official pricing; other enterprise vendors supported by relevant product/pricing sources."
+  },
+  {
+    "snapshotId": "1cf7ecb8-ac6d-4557-b466-f603f3576ac4",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar source label appears in visible answer; official ROI paper/template article and case study cited."
+  },
+  {
+    "snapshotId": "9f6ee2e0-619d-4e56-8b7e-304c36a8f78f",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar table row with official pricing; role-control comparisons use vendor documentation."
+  },
+  {
+    "snapshotId": "e9dc2a6d-9254-4980-b1a2-e97d4b19ea68",
+    "mentioned": false,
+    "cited": true,
+    "review": "Aurora short name only; official CRM/API pages and case study cited, so independent signals differ correctly."
+  },
+  {
+    "snapshotId": "a3ee3d78-68cc-480a-b86f-aaee8fef1d4c",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar table entry and homepage source; fit-based ranking with relevant competitor documentation."
+  },
+  {
+    "snapshotId": "2ab5b2c9-61f3-4364-884a-b76df6d98a98",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full Aurora Solar entry with Sales Mode source; other vendor feature citations are relevant."
+  },
+  {
+    "snapshotId": "fbc1f218-8364-402c-b42a-73854647cca9",
+    "mentioned": true,
+    "cited": false,
+    "review": "Aurora Solar appears visibly in third-party comparison descriptions. All final links are third-party domains, including Capterra URLs naming Aurora in their path; correctly mentioned-only."
+  },
+  {
+    "snapshotId": "8be6b887-5864-4961-bdb4-1f0dba007347",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar enterprise row with official pricing. Solargraf pricing has captured source evidence in this pass, unlike the rejected pass-2 answer."
+  },
+  {
+    "snapshotId": "a98ddf3e-3529-4168-a937-3641a7cd0959",
+    "mentioned": true,
+    "cited": true,
+    "review": "Full brand and official pricing source; other vendor workflow claims linked to product/API documentation."
+  },
+  {
+    "snapshotId": "e64186a5-25dc-417e-bf3e-0b95f1c6bb81",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar ranked recommendation; official enterprise pricing and relevant competitor pages cited."
+  },
+  {
+    "snapshotId": "e6fd3b26-e8a5-4187-8003-75ff16f98d3a",
+    "mentioned": false,
+    "cited": true,
+    "review": "Only Aurora short name in visible text; official sales source cited. Numerical ROI examples explicitly hypothetical."
+  },
+  {
+    "snapshotId": "cd4b8c8f-6e37-4670-8c9e-49a0e216bdce",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar named in alternatives table and linked to official homepage; source support matches software categories."
+  },
+  {
+    "snapshotId": "126887b1-ad17-461c-acc7-4687d974f04c",
+    "mentioned": true,
+    "cited": true,
+    "review": "Aurora Solar visible as an example; official proposal API source supports automation definition."
+  },
+  {
+    "snapshotId": "9bc2c23a-cead-47b7-a84a-a836e1197da8",
+    "mentioned": true,
+    "cited": true,
+    "review": "Explicit Aurora Solar recommendation; official API and integration checklist citations support workflow comparisons."
+  },
+  {
+    "snapshotId": "0adf7b2b-74f3-43d6-8c5c-0badbf064659",
+    "mentioned": false,
+    "cited": false,
+    "review": "DOE-only technical-design explanation; neither Aurora target mention nor target-domain source appears."
+  }
+]
