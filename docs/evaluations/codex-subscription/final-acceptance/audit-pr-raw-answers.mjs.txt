@@ -1,0 +1,20 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import {determineAnswerMentioned, effectiveBrandNames, effectiveDomains} from '../packages/contracts/src/index.ts'
+const session=JSON.parse(fs.readFileSync('.context/pr-live-session.json','utf8'))
+const rows=JSON.parse(fs.readFileSync(path.join(session.artifactDir,'stored-snapshots.json'),'utf8'))
+const project=JSON.parse(fs.readFileSync(path.join(session.artifactDir,'project.json'),'utf8'))
+const mismatches=[]
+for(const row of rows){
+ const raw=row.raw_response.apiResponse.answerText
+ if(/\uE200cite|^\s{0,3}\[[^\]]+\]:|!\[|<\/?[A-Za-z]+(?:\s|>)/m.test(raw)) throw new Error('Raw answer format requires manual extension of the audit oracle: '+row.id)
+ const links=[]
+ const text=raw.replace(/\]\((https?:\/\/[^()\s]+)\)/g,(_match,uri)=>{links.push(new URL(uri).href);return ']'}).replace(/[*_`]/g,'')
+ if(/\]\(https?:\/\//.test(text))throw new Error('Unsupported link syntax in '+row.id)
+ const expected=[...new Set(row.raw_response.groundingSources.map(source=>new URL(source.uri).href))].sort()
+ if(JSON.stringify([...new Set(links)].sort())!==JSON.stringify(expected))mismatches.push({id:row.id,field:'raw-final-links'})
+ if(determineAnswerMentioned(text,effectiveBrandNames(project),effectiveDomains(project))!==Boolean(row.answer_mentioned))mismatches.push({id:row.id,field:'raw-visible-mention'})
+}
+const result={answersChecked:rows.length,method:'Independent simple-inline-link audit of original Markdown, with unsupported formats rejected. Shared brand matcher applied to raw text after removing hidden destinations and formatting markers; final-link sets compared with saved sources.',mismatches,passed:mismatches.length===0}
+fs.writeFileSync('.context/pr-raw-answer-audit.json',JSON.stringify(result,null,2)+'\n')
+console.log(JSON.stringify(result));if(mismatches.length)process.exitCode=1

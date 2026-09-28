@@ -1007,7 +1007,7 @@
     {
       "source": "generated PR validation",
       "file": "final-acceptance/README.md",
-      "sha256": "2f9392ad669bacf9d6f73bcb370364ceb11e413a0c27f7fa61296cc51805f5f1"
+      "sha256": "6e104d20f383d85be5ebc2b887e9fda70dbab93cbb3fa9ca515361f7bf533da6"
     },
     {
       "source": "generated PR validation",
@@ -1187,7 +1187,7 @@
     {
       "source": "generated PR validation",
       "file": "checks/pr-preparation/validation-summary.json",
-      "sha256": "0595b6453a9fab9180d57547638e42f0b0c5c72f15dbd513dd42544c92a5c955"
+      "sha256": "0bc7d9af7fc0089044a60486ad7fdac7a8f5bb2c500ea671ce6297efa508750e"
     },
     {
       "source": "generated PR validation",
@@ -1203,6 +1203,16 @@
       "source": "generated PR validation",
       "file": "checks/pr-preparation/pr-cli-typecheck.log",
       "sha256": "329dda7e4ddeb4d4bfba90f2a3d6afc3912fadd210774afa73aed5521ada8f11"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/raw-answer-audit.json",
+      "sha256": "a3a39c2100af591a4e35f46b2288e2cb6460a78d4a24c687b2eb8caf309e45da"
+    },
+    {
+      "source": "generated PR validation",
+      "file": "final-acceptance/audit-pr-raw-answers.mjs.txt",
+      "sha256": "94a64b417908f002d4a0596c2c71f933b852e97341f252b5be7309a9aea81de2"
     }
   ],
   "excluded": [

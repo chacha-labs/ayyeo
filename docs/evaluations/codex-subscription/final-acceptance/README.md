@@ -1,6 +1,6 @@
 # Final Codex acceptance: September 28, 2026
 
-**59 of 60 requested observations succeeded (98.3%).** The three frozen-basket passes saved 20, 19, and 20 results. This exceeds the 95% completion gate. All 60 final answers were inspected, including the rejected answer; all 59 saved observations agree with the independently recorded mention/citation review. Replay found zero extraction differences or duplicate/mis-scoped observations. This is assistant evidence review, not an external human audit or exhaustive fact-check of vendor claims.
+**59 of 60 requested observations succeeded (98.3%).** The three frozen-basket passes saved 20, 19, and 20 results. This exceeds the 95% completion gate. All 60 final answers were inspected, including the rejected answer; all 59 saved observations agree with the independently recorded mention/citation review. Replay found zero extraction differences or duplicate/mis-scoped observations. A separate audit of all 59 original Markdown answers also found zero differences in visible target mentions or final-link sets; its restricted-format oracle is archived in `audit-pr-raw-answers.mjs.txt`. This is assistant evidence review, not an external human audit or exhaustive fact-check of vendor claims.
 
 | Query class | Requested | Saved | Missing | Mentioned | Cited |
 |---|---:|---:|---:|---:|---:|
